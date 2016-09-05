@@ -63,8 +63,7 @@ public class Game {
   printMessage("They have rolled a " + roll);
   if (inPenaltyBox[currentPlayer]) {
    if (!(roll % 2 != 0)) {
-    printMessage(players.get(currentPlayer)
-     + " is not getting out of the penalty box");
+    printIsNotLeavingPenaltyBox();
     isGettingOutOfPenaltyBox = false;
     return;
    }
@@ -75,6 +74,11 @@ public class Game {
   updateLocationOfCurrentPlayer(roll);
   printCurrentCategory();
   askQuestion();
+ }
+
+ private void printIsNotLeavingPenaltyBox() {
+  printMessage(players.get(currentPlayer)
+   + " is not getting out of the penalty box");
  }
 
  private void printCurrentCategory() {
