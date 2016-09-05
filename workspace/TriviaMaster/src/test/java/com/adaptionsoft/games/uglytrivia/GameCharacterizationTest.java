@@ -39,7 +39,8 @@ public class GameCharacterizationTest {
  }
 
  @Test
- void whenSecondPlayerIsAddedThenSomethingHappens() {
+ void
+  whenSecondPlayerIsAddedThenFirstAndSecondPlayerNamesAndNumbersArePublished() {
   game.add("John");
   game.add("Harry");
 
