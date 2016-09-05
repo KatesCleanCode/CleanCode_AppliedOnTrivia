@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Random;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
@@ -18,6 +19,7 @@ import com.adaptionsoft.games.trivia.runner.GameRunner;
 public class GoldenMasterCreator {
 
  @Test
+ @Disabled
  public void createGoldenMaster() throws IOException {
   Path path = Paths.get("src/test/resources/goldenmasterData");
   if (Files.notExists(path)) {
