@@ -215,10 +215,14 @@ public class Game {
  public boolean wrongAnswer() {
   printAnswerWasIncorrect();
   printPlayerWasSentToPenaltyBox();
-  inPenaltyBox[currentPlayer] = true;
+  sendCurrentPlayerToPenaltyBox();
 
   switchToNextPlayer();
   return true;
+ }
+
+ private void sendCurrentPlayerToPenaltyBox() {
+  inPenaltyBox[currentPlayer] = true;
  }
 
  private void printPlayerWasSentToPenaltyBox() {
