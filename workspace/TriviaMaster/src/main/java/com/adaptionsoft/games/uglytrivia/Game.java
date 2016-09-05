@@ -13,6 +13,7 @@ public class Game {
  private static final int MAX_DIE_ROLL_OF_TWO_DICES = 12;
  private static final int MAX_NUMBER_OF_PLAYERS = 6;
  private static final int MAX_NUMBER_OF_QUESTIONS = 50;
+ private static final int WINNING_PURSUS = 6;
 
  private ArrayList<String> players = new ArrayList<>();
  private int[] places = new int[MAX_NUMBER_OF_PLAYERS];
@@ -197,6 +198,6 @@ public class Game {
  }
 
  private boolean didPlayerWin() {
-  return !(purses[currentPlayer] == 6);
+  return !(purses[currentPlayer] == WINNING_PURSUS);
  }
 }
