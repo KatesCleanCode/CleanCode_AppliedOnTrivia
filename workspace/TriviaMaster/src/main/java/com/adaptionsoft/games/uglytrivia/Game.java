@@ -61,17 +61,18 @@ public class Game {
   printMessage(players.get(currentPlayer) + " is the current player");
   printMessage("They have rolled a " + roll);
   if (inPenaltyBox[currentPlayer]) {
-   if (roll % 2 != 0) {
+   if (!(roll % 2 != 0)) {
+    printMessage(players.get(currentPlayer)
+     + " is not getting out of the penalty box");
+    isGettingOutOfPenaltyBox = false;
+    return;
+   } else {
     isGettingOutOfPenaltyBox = true;
     printMessage(players.get(currentPlayer)
      + " is getting out of the penalty box");
     updateLocationOfCurrentPlayer(roll);
     printCurrentCategory();
     askQuestion();
-   } else {
-    printMessage(players.get(currentPlayer)
-     + " is not getting out of the penalty box");
-    isGettingOutOfPenaltyBox = false;
    }
   } else {
    updateLocationOfCurrentPlayer(roll);
