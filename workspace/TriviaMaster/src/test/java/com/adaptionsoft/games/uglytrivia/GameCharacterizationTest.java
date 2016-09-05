@@ -70,7 +70,7 @@ public class GameCharacterizationTest {
   game.add(FIRST_PLAYER);
   initializeOutput();
   game.wasCorrectlyAnswered();
-
+// TODO, kknaus Sep 5, 2016: Incorrect spelling should be fixed
   assertThat(getCurrentOutput(), equalTo("Answer was corrent!!!!\r\n"
    + FIRST_PLAYER + " now has 1 Gold Coins.\r\n"));
  }
