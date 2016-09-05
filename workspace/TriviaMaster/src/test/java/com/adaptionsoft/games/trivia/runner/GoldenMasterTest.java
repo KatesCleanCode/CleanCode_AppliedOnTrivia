@@ -30,7 +30,7 @@ public class GoldenMasterTest {
   }
  }
 
- public Path getPathToGoldenMaster(int seed) {
+ public static Path getPathToGoldenMaster(int seed) {
   return Paths.get("src/test/resources/goldenmasterData",
    seed + ".txt");
  }
