@@ -1,6 +1,7 @@
 package com.adaptionsoft.games.trivia.runner;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -24,10 +25,15 @@ public class GoldenMasterTest {
    GameRunner.playGame(new Random(seed));
    String gameOutput = output.toString();
 
-   Path pathToFile = GoldenMasterSupplier.getPathToGoldenMaster(seed);
-   byte[] readBytes = Files.readAllBytes(pathToFile);
-   String goldenMaster = new String(readBytes);
+   String goldenMaster = getGoldenMasterForSeed(seed);
    Assert.assertEquals(goldenMaster, gameOutput);
   }
+ }
+
+ public static String getGoldenMasterForSeed(int seed)
+  throws IOException {
+  Path pathToFile = GoldenMasterSupplier.getPathToGoldenMaster(seed);
+  byte[] readBytes = Files.readAllBytes(pathToFile);
+  return new String(readBytes);
  }
 }
