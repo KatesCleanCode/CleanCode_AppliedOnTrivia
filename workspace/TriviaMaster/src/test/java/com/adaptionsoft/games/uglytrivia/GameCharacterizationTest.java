@@ -76,7 +76,7 @@ public class GameCharacterizationTest {
  }
 
  @Test
- void whenAnswerIsIncorrectThenSomethingHappens() {
+ void whenAnswerIsIncorrectThenPlayerIsSentToPenaltyBox() {
   game.add(FIRST_PLAYER);
   initializeOutput();
   game.wrongAnswer();
