@@ -5,12 +5,13 @@ import java.util.LinkedList;
 
 public class Game {
 
+ private static final int MAX_NUMBER_OF_PLAYERS = 6;
  private static final int MAX_NUMBER_OF_QUESTIONS = 50;
 
  private ArrayList<String> players = new ArrayList<>();
- private int[] places = new int[6];
- private int[] purses = new int[6];
- private boolean[] inPenaltyBox = new boolean[6];
+ private int[] places = new int[MAX_NUMBER_OF_PLAYERS];
+ private int[] purses = new int[MAX_NUMBER_OF_PLAYERS];
+ private boolean[] inPenaltyBox = new boolean[MAX_NUMBER_OF_PLAYERS];
 
  private LinkedList<String> popQuestions = new LinkedList<>();
  private LinkedList<String> scienceQuestions = new LinkedList<>();
