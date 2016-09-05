@@ -75,7 +75,6 @@ public class Game {
      + " is not getting out of the penalty box");
     isGettingOutOfPenaltyBox = false;
    }
-
   } else {
 
    places[currentPlayer] = places[currentPlayer] + roll;
