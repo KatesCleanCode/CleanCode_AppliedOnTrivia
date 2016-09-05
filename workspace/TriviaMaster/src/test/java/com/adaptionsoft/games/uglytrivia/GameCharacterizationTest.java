@@ -15,6 +15,8 @@ import static org.junit.Assert.assertThat;
 @RunWith(JUnitPlatform.class)
 public class GameCharacterizationTest {
 
+ private static final String FIRST_PLAYER = "John";
+
  private ByteArrayOutputStream output;
  private Game game;
 
@@ -31,15 +33,15 @@ public class GameCharacterizationTest {
 
  @Test
  void whenOnePlayerIsAddedThenHisNameAndNumberArePublished() {
-  game.add("John");
+  game.add(FIRST_PLAYER);
   // TODO, kknaus Sep 5, 2016: Incorrect spelling should be fixed
-  assertThat(getCurrentOutput(),
-   equalTo("John was added\r\nThey are player number 1\r\n"));
+  assertThat(getCurrentOutput(), equalTo(
+   FIRST_PLAYER + " was added\r\nThey are player number 1\r\n"));
  }
 
  @Test
  void whenSecondPlayerIsAddedThenHisNameAndNumberIsPublished() {
-  game.add("John");
+  game.add(FIRST_PLAYER);
   initializeOutput();
   game.add("Harry");
 
