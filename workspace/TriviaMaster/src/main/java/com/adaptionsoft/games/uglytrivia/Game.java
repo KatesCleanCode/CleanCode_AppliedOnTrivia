@@ -48,8 +48,8 @@ public class Game {
   purses[howManyPlayers()] = 0;
   inPenaltyBox[howManyPlayers()] = false;
 
-  System.out.println(playerName + " was added");
-  System.out.println("He/She is player number " + players.size());
+  printMessage(playerName + " was added");
+  printMessage("He/She is player number " + players.size());
   return true;
  }
 
@@ -58,15 +58,14 @@ public class Game {
  }
 
  public void roll(int roll) {
-  System.out
-   .println(players.get(currentPlayer) + " is the current player");
-  System.out.println("They have rolled a " + roll);
+  printMessage(players.get(currentPlayer) + " is the current player");
+  printMessage("They have rolled a " + roll);
 
   if (inPenaltyBox[currentPlayer]) {
    if (roll % 2 != 0) {
     isGettingOutOfPenaltyBox = true;
 
-    System.out.println(players.get(currentPlayer)
+    printMessage(players.get(currentPlayer)
      + " is getting out of the penalty box");
     places[currentPlayer] = places[currentPlayer] + roll;
     if (places[currentPlayer] > MAX_LOCATION) {
@@ -74,12 +73,12 @@ public class Game {
       places[currentPlayer] - MAX_DIE_ROLL_OF_TWO_DICES;
     }
 
-    System.out.println(players.get(currentPlayer)
-     + "'s new location is " + places[currentPlayer]);
-    System.out.println("The category is " + currentCategory());
+    printMessage(players.get(currentPlayer) + "'s new location is "
+     + places[currentPlayer]);
+    printMessage("The category is " + currentCategory());
     askQuestion();
    } else {
-    System.out.println(players.get(currentPlayer)
+    printMessage(players.get(currentPlayer)
      + " is not getting out of the penalty box");
     isGettingOutOfPenaltyBox = false;
    }
@@ -90,9 +89,9 @@ public class Game {
      places[currentPlayer] - MAX_DIE_ROLL_OF_TWO_DICES;
    }
 
-   System.out.println(players.get(currentPlayer)
-    + "'s new location is " + places[currentPlayer]);
-   System.out.println("The category is " + currentCategory());
+   printMessage(players.get(currentPlayer) + "'s new location is "
+    + places[currentPlayer]);
+   printMessage("The category is " + currentCategory());
    askQuestion();
   }
 
@@ -100,16 +99,16 @@ public class Game {
 
  private void askQuestion() {
   if (currentCategory() == QUESTION_CATEGORY_POP) {
-   System.out.println(popQuestions.removeFirst());
+   printMessage(popQuestions.removeFirst());
   }
   if (currentCategory() == QUESTION_CATEGORY_SCIENCE) {
-   System.out.println(scienceQuestions.removeFirst());
+   printMessage(scienceQuestions.removeFirst());
   }
   if (currentCategory() == QUESTION_CATEGORY_SPORTS) {
-   System.out.println(sportsQuestions.removeFirst());
+   printMessage(sportsQuestions.removeFirst());
   }
   if (currentCategory() == QUESTION_CATEGORY_ROCK) {
-   System.out.println(rockQuestions.removeFirst());
+   printMessage(rockQuestions.removeFirst());
   }
  }
 
@@ -149,7 +148,7 @@ public class Game {
    if (isGettingOutOfPenaltyBox) {
     printMessage("Answer was correct!!!!");
     purses[currentPlayer]++;
-    System.out.println(players.get(currentPlayer) + " now has "
+    printMessage(players.get(currentPlayer) + " now has "
      + purses[currentPlayer] + " Gold Coins.");
 
     boolean winner = didPlayerWin();
@@ -171,7 +170,7 @@ public class Game {
 
    printMessage("Answer was correct!!!!");
    purses[currentPlayer]++;
-   System.out.println(players.get(currentPlayer) + " now has "
+   printMessage(players.get(currentPlayer) + " now has "
     + purses[currentPlayer] + " Gold Coins.");
 
    boolean winner = didPlayerWin();
@@ -189,8 +188,8 @@ public class Game {
  }
 
  public boolean wrongAnswer() {
-  System.out.println("Question was incorrectly answered");
-  System.out.println(
+  printMessage("Question was incorrectly answered");
+  printMessage(
    players.get(currentPlayer) + " was sent to the penalty box");
   inPenaltyBox[currentPlayer] = true;
 
