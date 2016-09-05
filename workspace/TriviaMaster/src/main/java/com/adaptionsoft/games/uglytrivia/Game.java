@@ -66,19 +66,14 @@ public class Game {
      + " is not getting out of the penalty box");
     isGettingOutOfPenaltyBox = false;
     return;
-   } else {
-    isGettingOutOfPenaltyBox = true;
-    printMessage(players.get(currentPlayer)
-     + " is getting out of the penalty box");
-    updateLocationOfCurrentPlayer(roll);
-    printCurrentCategory();
-    askQuestion();
    }
-  } else {
-   updateLocationOfCurrentPlayer(roll);
-   printCurrentCategory();
-   askQuestion();
+   isGettingOutOfPenaltyBox = true;
+   printMessage(players.get(currentPlayer)
+    + " is getting out of the penalty box");
   }
+  updateLocationOfCurrentPlayer(roll);
+  printCurrentCategory();
+  askQuestion();
  }
 
  private void printCurrentCategory() {
