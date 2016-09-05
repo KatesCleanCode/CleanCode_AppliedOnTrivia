@@ -15,6 +15,7 @@ import static org.junit.Assert.assertThat;
 @RunWith(JUnitPlatform.class)
 public class GameCharacterizationTest {
 
+ private static final int SCIENCE_QUESTION_DIE_ROLL = 5;
  private static final String FIRST_PLAYER = "John";
 
  private ByteArrayOutputStream output;
@@ -54,7 +55,7 @@ public class GameCharacterizationTest {
   whenDicesAreRolledThenCurrentPlayerDataAndQuestionArePublished() {
   game.add(FIRST_PLAYER);
   initializeOutput();
-  game.roll(5);
+  game.roll(SCIENCE_QUESTION_DIE_ROLL);
 
   assertThat(getCurrentOutput(),
    equalTo(FIRST_PLAYER
