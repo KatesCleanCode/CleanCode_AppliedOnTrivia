@@ -20,8 +20,7 @@ public class GameCharacterizationTest {
 
  @BeforeEach
  void setUp() {
-  output = new ByteArrayOutputStream();
-  System.setOut(new PrintStream(output));
+  initializeOutput();
   game = new Game();
  }
 
@@ -50,5 +49,10 @@ public class GameCharacterizationTest {
 
  private String getCurrentOutput() {
   return output.toString();
+ }
+
+ private void initializeOutput() {
+  output = new ByteArrayOutputStream();
+  System.setOut(new PrintStream(output));
  }
 }
