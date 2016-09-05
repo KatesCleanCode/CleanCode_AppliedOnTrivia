@@ -3,6 +3,7 @@ package com.adaptionsoft.games.uglytrivia;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
@@ -17,6 +18,7 @@ public class GameCharacterizationTest {
  private ByteArrayOutputStream output;
  private Game game;
 
+ @BeforeEach
  void setUp() {
   output = new ByteArrayOutputStream();
   System.setOut(new PrintStream(output));
