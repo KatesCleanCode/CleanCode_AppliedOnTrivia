@@ -63,8 +63,7 @@ public class Game {
   printMessage("They have rolled a " + roll);
   if (inPenaltyBox[currentPlayer]) {
    if (!(roll % 2 != 0)) {
-    printIsNotLeavingPenaltyBox();
-    isGettingOutOfPenaltyBox = false;
+    stayInPenaltyBox();
     return;
    }
    isGettingOutOfPenaltyBox = true;
@@ -73,6 +72,11 @@ public class Game {
   updateLocationOfCurrentPlayer(roll);
   printCurrentCategory();
   askQuestion();
+ }
+
+ private void stayInPenaltyBox() {
+  printIsNotLeavingPenaltyBox();
+  isGettingOutOfPenaltyBox = false;
  }
 
  private void printIsLeavingPenaltyBox() {
