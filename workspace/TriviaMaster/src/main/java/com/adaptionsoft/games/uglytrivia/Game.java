@@ -83,7 +83,7 @@ public class Game {
   printCurrentPlayer();
   printDieRoll(roll);
   if (currentPlayerIsInPenaltyBox()) {
-   if (roll % 2 == 0) {
+   if (isEven(roll)) {
     stayInPenaltyBox();
     return;
    }
@@ -92,6 +92,10 @@ public class Game {
   updateLocationOfCurrentPlayer(roll);
   printCurrentCategory();
   askQuestion();
+ }
+
+ private boolean isEven(int dieRoll) {
+  return dieRoll % 2 == 0;
  }
 
  private boolean currentPlayerIsInPenaltyBox() {
