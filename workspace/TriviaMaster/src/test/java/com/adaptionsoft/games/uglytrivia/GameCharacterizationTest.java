@@ -3,11 +3,13 @@ package com.adaptionsoft.games.uglytrivia;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import org.hamcrest.CoreMatchers;
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+
+import static org.junit.Assert.assertThat;
 
 @RunWith(JUnitPlatform.class)
 public class GameCharacterizationTest {
@@ -18,8 +20,8 @@ public class GameCharacterizationTest {
   System.setOut(new PrintStream(output));
   Game game = new Game();
   game.add("John");
-
-  Assert.assertThat(output.toString(), CoreMatchers
-   .equalTo("John was added\r\nThey are player number 1\r\n"));
+  // TODO, kknaus Sep 5, 2016: Incorrect spelling should be fixed
+  assertThat(output.toString(),
+   equalTo("John was added\r\nThey are player number 1\r\n"));
  }
 }
