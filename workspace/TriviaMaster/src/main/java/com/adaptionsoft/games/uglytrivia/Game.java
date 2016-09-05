@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 public class Game {
 
+ private static final int MAX_DIE_ROLL_OF_TWO_DICES = 12;
  private static final int MAX_NUMBER_OF_PLAYERS = 6;
  private static final int MAX_NUMBER_OF_QUESTIONS = 50;
 
@@ -63,7 +64,8 @@ public class Game {
      + " is getting out of the penalty box");
     places[currentPlayer] = places[currentPlayer] + roll;
     if (places[currentPlayer] > 11) {
-     places[currentPlayer] = places[currentPlayer] - 12;
+     places[currentPlayer] =
+      places[currentPlayer] - MAX_DIE_ROLL_OF_TWO_DICES;
     }
 
     System.out.println(players.get(currentPlayer)
@@ -78,7 +80,8 @@ public class Game {
   } else {
    places[currentPlayer] = places[currentPlayer] + roll;
    if (places[currentPlayer] > 11) {
-    places[currentPlayer] = places[currentPlayer] - 12;
+    places[currentPlayer] =
+     places[currentPlayer] - MAX_DIE_ROLL_OF_TWO_DICES;
    }
 
    System.out.println(players.get(currentPlayer)
