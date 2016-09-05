@@ -212,13 +212,11 @@ public class Game {
   System.out.println(message);
  }
 
- public boolean wrongAnswer() {
+ public void wrongAnswer() {
   printAnswerWasIncorrect();
   printPlayerWasSentToPenaltyBox();
   sendCurrentPlayerToPenaltyBox();
-
   switchToNextPlayer();
-  return true;
  }
 
  private void sendCurrentPlayerToPenaltyBox() {
