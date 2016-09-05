@@ -1,10 +1,7 @@
 package com.adaptionsoft.games.trivia.runner;
 
+import static com.adaptionsoft.games.utils.SystemTestHelper.generateGameOutput;
 import static com.adaptionsoft.games.utils.goldenMaster.GoldenMasterSupplier.getGoldenMasterForSeed;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import java.util.Random;
 
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
@@ -22,12 +19,5 @@ public class GoldenMasterTest {
    String goldenMaster = getGoldenMasterForSeed(seed);
    assertEquals(goldenMaster, gameOutput);
   }
- }
-
- public static String generateGameOutput(int seed) {
-  ByteArrayOutputStream output = new ByteArrayOutputStream();
-  System.setOut(new PrintStream(output));
-  GameRunner.playGame(new Random(seed));
-  return output.toString();
  }
 }
