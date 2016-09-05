@@ -25,10 +25,15 @@ public class GoldenMasterCreator {
 
   for (int seed = 0; seed < NUMBER_OF_GM_TESTS; seed++) {
    String gameOutput = generateGameOutput(seed);
-   Path pathToGoldenMaster = getPathToGoldenMaster(seed);
-   Path newFile = Files.createFile(pathToGoldenMaster);
-   Files.write(newFile, gameOutput.getBytes());
+   persistOutput(seed, gameOutput);
   }
+ }
+
+ private void persistOutput(int seed, String gameOutput)
+  throws IOException {
+  Path pathToGoldenMaster = getPathToGoldenMaster(seed);
+  Path newFile = Files.createFile(pathToGoldenMaster);
+  Files.write(newFile, gameOutput.getBytes());
  }
 
  private void createGMFileDirectory() throws IOException {
