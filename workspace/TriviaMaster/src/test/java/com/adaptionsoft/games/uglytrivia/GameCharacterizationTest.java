@@ -35,9 +35,9 @@ public class GameCharacterizationTest {
  @Test
  void whenOnePlayerIsAddedThenHisNameAndNumberArePublished() {
   game.add(FIRST_PLAYER);
-  // TODO, kknaus Sep 5, 2016: Incorrect spelling should be fixed
+
   assertThat(getCurrentOutput(), equalTo(
-   FIRST_PLAYER + " was added\r\nThey are player number 1\r\n"));
+   FIRST_PLAYER + " was added\r\nHe/She is player number 1\r\n"));
  }
 
  @Test
