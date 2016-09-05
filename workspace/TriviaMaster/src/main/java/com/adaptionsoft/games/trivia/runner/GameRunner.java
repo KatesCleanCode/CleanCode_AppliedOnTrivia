@@ -7,6 +7,8 @@ import com.adaptionsoft.games.uglytrivia.Game;
 
 public final class GameRunner {
 
+ /** The player has the probability 1/(bound-1) for a wrong answer. */
+ private static final int BOUND_FOR_WRONG_ANSWER = 9;
  private static final int MAX_DIE_ROLL = 5;
  private static final int MIN_DIE_ROLL = 1;
  private static final int WRONG_ANSWER = 7;
@@ -29,7 +31,7 @@ public final class GameRunner {
 
   do {
    aGame.roll(rand.nextInt(MAX_DIE_ROLL) + MIN_DIE_ROLL);
-   if (rand.nextInt(9) == WRONG_ANSWER) {
+   if (rand.nextInt(BOUND_FOR_WRONG_ANSWER) == WRONG_ANSWER) {
     notAWinner = aGame.wrongAnswer();
    } else {
     notAWinner = aGame.wasCorrectlyAnswered();
