@@ -32,7 +32,8 @@ public final class GameRunner {
   do {
    aGame.roll(rand.nextInt(MAX_DIE_ROLL) + MIN_DIE_ROLL);
    if (rand.nextInt(BOUND_FOR_WRONG_ANSWER) == WRONG_ANSWER) {
-    notAWinner = aGame.wrongAnswer();
+    notAWinner = true;
+    aGame.wrongAnswer();
    } else {
     notAWinner = aGame.wasCorrectlyAnswered();
    }
