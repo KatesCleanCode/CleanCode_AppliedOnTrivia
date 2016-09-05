@@ -107,7 +107,7 @@ public class Game {
 
  private String currentCategory() {
   int location = places[currentPlayer];
-  if (location == 0) {
+  if (location % 4 == 0) {
    return QUESTION_CATEGORY_POP;
   }
   if (location == 4) {
