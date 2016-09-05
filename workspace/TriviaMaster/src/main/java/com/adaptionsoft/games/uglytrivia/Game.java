@@ -147,31 +147,28 @@ public class Game {
   if (inPenaltyBox[currentPlayer]) {
    if (isGettingOutOfPenaltyBox) {
     printMessage("Answer was correct!!!!");
-    purses[currentPlayer]++;
-    printMessage(players.get(currentPlayer) + " now has "
-     + purses[currentPlayer] + " Gold Coins.");
-
+    increasePursusOfCurrentPlayer();
     boolean winner = didPlayerWin();
     switchToNextPlayer();
-
     return winner;
    } else {
     switchToNextPlayer();
     return true;
    }
-
   } else {
-
    printMessage("Answer was correct!!!!");
-   purses[currentPlayer]++;
-   printMessage(players.get(currentPlayer) + " now has "
-    + purses[currentPlayer] + " Gold Coins.");
+   increasePursusOfCurrentPlayer();
 
    boolean winner = didPlayerWin();
    switchToNextPlayer();
-
    return winner;
   }
+ }
+
+ private void increasePursusOfCurrentPlayer() {
+  purses[currentPlayer]++;
+  printMessage(players.get(currentPlayer) + " now has "
+   + purses[currentPlayer] + " Gold Coins.");
  }
 
  private void switchToNextPlayer() {
