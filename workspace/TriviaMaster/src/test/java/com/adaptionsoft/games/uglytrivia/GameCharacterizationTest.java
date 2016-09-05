@@ -15,7 +15,7 @@ import static org.junit.Assert.assertThat;
 public class GameCharacterizationTest {
 
  @Test
- void whenGameIsCreatedThenSomethingHappens() {
+ void whenGameIsCreatedThenNothingIsDisplayed() {
   ByteArrayOutputStream output = new ByteArrayOutputStream();
   System.setOut(new PrintStream(output));
   Game game = new Game();
