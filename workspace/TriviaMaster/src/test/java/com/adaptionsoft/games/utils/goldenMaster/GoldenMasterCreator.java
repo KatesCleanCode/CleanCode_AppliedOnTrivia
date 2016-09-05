@@ -21,15 +21,20 @@ public class GoldenMasterCreator {
  @Test
  @Disabled
  public void createGoldenMaster() throws IOException {
-  Path path = getPathToGoldenMasterDir();
-  if (Files.notExists(path)) {
-   Files.createDirectories(path);
-  }
+  createGMFileDirectory();
+
   for (int seed = 0; seed < NUMBER_OF_GM_TESTS; seed++) {
    String gameOutput = generateGameOutput(seed);
    Path pathToGoldenMaster = getPathToGoldenMaster(seed);
    Path newFile = Files.createFile(pathToGoldenMaster);
    Files.write(newFile, gameOutput.getBytes());
+  }
+ }
+
+ private void createGMFileDirectory() throws IOException {
+  Path path = getPathToGoldenMasterDir();
+  if (Files.notExists(path)) {
+   Files.createDirectories(path);
   }
  }
 }
