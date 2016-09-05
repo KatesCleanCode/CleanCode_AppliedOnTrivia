@@ -80,7 +80,7 @@ public class Game {
  }
 
  public void roll(int roll) {
-  printMessage(players.get(currentPlayer) + " is the current player");
+  printCurrentPlayer();
   printMessage("They have rolled a " + roll);
   if (inPenaltyBox[currentPlayer]) {
    if (roll % 2 == 0) {
@@ -92,6 +92,10 @@ public class Game {
   updateLocationOfCurrentPlayer(roll);
   printCurrentCategory();
   askQuestion();
+ }
+
+ private void printCurrentPlayer() {
+  printMessage(players.get(currentPlayer) + " is the current player");
  }
 
  private void leavePenaltyBox() {
