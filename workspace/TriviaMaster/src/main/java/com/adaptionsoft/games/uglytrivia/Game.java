@@ -42,14 +42,13 @@ public class Game {
   }
  }
 
- public boolean addPlayer(String playerName) {
+ public void addPlayer(String playerName) {
   players.add(playerName);
   initializeLocation();
   initializePurses();
   initializePenaltyBox();
   printPlayerWasAdded(playerName);
   printPlayersNumber();
-  return true;
  }
 
  private void printPlayersNumber() {
