@@ -148,20 +148,13 @@ public class Game {
    if (!isGettingOutOfPenaltyBox) {
     switchToNextPlayer();
     return true;
-   } else {
-    printAnswerWasCorrect();
-    increasePursusOfCurrentPlayer();
-    boolean winner = didPlayerWin();
-    switchToNextPlayer();
-    return winner;
    }
-  } else {
-   printAnswerWasCorrect();
-   increasePursusOfCurrentPlayer();
-   boolean winner = didPlayerWin();
-   switchToNextPlayer();
-   return winner;
   }
+  printAnswerWasCorrect();
+  increasePursusOfCurrentPlayer();
+  boolean winner = didPlayerWin();
+  switchToNextPlayer();
+  return winner;
  }
 
  private void printAnswerWasCorrect() {
