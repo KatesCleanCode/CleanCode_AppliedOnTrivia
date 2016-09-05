@@ -15,6 +15,15 @@ import static org.junit.Assert.assertThat;
 public class GameCharacterizationTest {
 
  @Test
+ void whenGameIsCreatedThenSomethingHappens() {
+  ByteArrayOutputStream output = new ByteArrayOutputStream();
+  System.setOut(new PrintStream(output));
+  Game game = new Game();
+
+  assertThat(output.toString(), equalTo("something happened"));
+ }
+
+ @Test
  void whenOnePlayerIsAddedThenHisNameAndNumberArePublished() {
   ByteArrayOutputStream output = new ByteArrayOutputStream();
   System.setOut(new PrintStream(output));
