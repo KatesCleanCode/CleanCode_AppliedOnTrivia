@@ -14,11 +14,14 @@ import static org.junit.Assert.assertThat;
 @RunWith(JUnitPlatform.class)
 public class GameCharacterizationTest {
 
+ private ByteArrayOutputStream output;
+ private Game game;
+
  @Test
  void whenGameIsCreatedThenNothingIsDisplayed() {
-  ByteArrayOutputStream output = new ByteArrayOutputStream();
+  output = new ByteArrayOutputStream();
   System.setOut(new PrintStream(output));
-  Game game = new Game();
+  game = new Game();
 
   assertThat(output.toString(), equalTo(""));
  }
