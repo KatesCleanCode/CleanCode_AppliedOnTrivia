@@ -27,16 +27,11 @@ public class GameCharacterizationTest {
 
  @Test
  void whenGameIsCreatedThenNothingIsDisplayed() {
-  setUp();
-
   assertThat(output.toString(), equalTo(""));
  }
 
  @Test
  void whenOnePlayerIsAddedThenHisNameAndNumberArePublished() {
-  ByteArrayOutputStream output = new ByteArrayOutputStream();
-  System.setOut(new PrintStream(output));
-  Game game = new Game();
   game.add("John");
   // TODO, kknaus Sep 5, 2016: Incorrect spelling should be fixed
   assertThat(output.toString(),
