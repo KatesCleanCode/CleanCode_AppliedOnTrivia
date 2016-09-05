@@ -20,7 +20,7 @@ public class GameCharacterizationTest {
   System.setOut(new PrintStream(output));
   Game game = new Game();
 
-  assertThat(output.toString(), equalTo("something happened"));
+  assertThat(output.toString(), equalTo(""));
  }
 
  @Test
