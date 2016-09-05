@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 public class Game {
 
+ private static final String QUESTION_CATEGORY_SCIENCE = "Science";
  private static final String QUESTION_CATEGORY_POP = "Pop";
  private static final int MAX_LOCATION = 11;
  private static final int MAX_DIE_ROLL_OF_TWO_DICES = 12;
@@ -98,7 +99,7 @@ public class Game {
   if (currentCategory() == QUESTION_CATEGORY_POP) {
    System.out.println(popQuestions.removeFirst());
   }
-  if (currentCategory() == "Science") {
+  if (currentCategory() == QUESTION_CATEGORY_SCIENCE) {
    System.out.println(scienceQuestions.removeFirst());
   }
   if (currentCategory() == "Sports") {
@@ -120,13 +121,13 @@ public class Game {
    return QUESTION_CATEGORY_POP;
   }
   if (places[currentPlayer] == 1) {
-   return "Science";
+   return QUESTION_CATEGORY_SCIENCE;
   }
   if (places[currentPlayer] == 5) {
-   return "Science";
+   return QUESTION_CATEGORY_SCIENCE;
   }
   if (places[currentPlayer] == 9) {
-   return "Science";
+   return QUESTION_CATEGORY_SCIENCE;
   }
   if (places[currentPlayer] == 2) {
    return "Sports";
