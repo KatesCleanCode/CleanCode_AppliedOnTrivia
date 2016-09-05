@@ -81,8 +81,9 @@ public class GameCharacterizationTest {
   initializeOutput();
   game.wrongAnswer();
 
-  assertThat(getCurrentOutput(), equalTo("Question was incorrectly answered\r\n"
-   + FIRST_PLAYER + " was sent to the penalty box\r\n"));
+  assertThat(getCurrentOutput(),
+   equalTo("Question was incorrectly answered\r\n" + FIRST_PLAYER
+    + " was sent to the penalty box\r\n"));
  }
 
  private String getCurrentOutput() {
