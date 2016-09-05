@@ -1,5 +1,7 @@
 package com.adaptionsoft.games.utils.goldenMaster;
 
+import static com.adaptionsoft.games.utils.goldenMaster.GoldenMasterSupplier.getPathToGoldenMasterDir;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -38,9 +40,5 @@ public class GoldenMasterCreator {
    Path newFile = Files.createFile(pathToGoldenMaster);
    Files.write(newFile, gameOutput.getBytes());
   }
- }
-
- public static Path getPathToGoldenMasterDir() {
-  return Paths.get("src/test/resources/goldenmasterData");
  }
 }

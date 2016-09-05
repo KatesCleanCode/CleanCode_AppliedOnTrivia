@@ -24,4 +24,8 @@ public final class GoldenMasterSupplier {
   byte[] readBytes = Files.readAllBytes(pathToFile);
   return new String(readBytes);
  }
+
+ public static Path getPathToGoldenMasterDir() {
+  return Paths.get(PATH_TO_GOLDEN_MASTER_DIR);
+ }
 }
