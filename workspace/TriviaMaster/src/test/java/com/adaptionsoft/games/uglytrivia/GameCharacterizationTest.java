@@ -66,7 +66,7 @@ public class GameCharacterizationTest {
  }
 
  @Test
- void whenAnswerIsCorrectThenSomethingHappens() {
+ void whenAnswerIsCorrectThenCoinsAreGivenToPlayer() {
   game.add(FIRST_PLAYER);
   initializeOutput();
   game.wasCorrectlyAnswered();
