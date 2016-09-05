@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 public class Game {
 
+ private static final String QUESTION_CATEGORY_ROCK = "Rock";
  private static final String QUESTION_CATEGORY_SPORTS = "Sports";
  private static final String QUESTION_CATEGORY_SCIENCE = "Science";
  private static final String QUESTION_CATEGORY_POP = "Pop";
@@ -106,7 +107,7 @@ public class Game {
   if (currentCategory() == QUESTION_CATEGORY_SPORTS) {
    System.out.println(sportsQuestions.removeFirst());
   }
-  if (currentCategory() == "Rock") {
+  if (currentCategory() == QUESTION_CATEGORY_ROCK) {
    System.out.println(rockQuestions.removeFirst());
   }
  }
@@ -139,7 +140,7 @@ public class Game {
   if (places[currentPlayer] == 10) {
    return QUESTION_CATEGORY_SPORTS;
   }
-  return "Rock";
+  return QUESTION_CATEGORY_ROCK;
  }
 
  public boolean wasCorrectlyAnswered() {
