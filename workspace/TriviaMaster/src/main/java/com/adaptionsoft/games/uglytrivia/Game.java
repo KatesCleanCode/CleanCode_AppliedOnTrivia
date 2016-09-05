@@ -66,12 +66,16 @@ public class Game {
     stayInPenaltyBox();
     return;
    }
-   isGettingOutOfPenaltyBox = true;
-   printIsLeavingPenaltyBox();
+   leavePenaltyBox();
   }
   updateLocationOfCurrentPlayer(roll);
   printCurrentCategory();
   askQuestion();
+ }
+
+ private void leavePenaltyBox() {
+  isGettingOutOfPenaltyBox = true;
+  printIsLeavingPenaltyBox();
  }
 
  private void stayInPenaltyBox() {
