@@ -113,19 +113,7 @@ public class Game {
   if (location % 4 == 1) {
    return QUESTION_CATEGORY_SCIENCE;
   }
-  if (location == 5) {
-   return QUESTION_CATEGORY_SCIENCE;
-  }
-  if (location == 9) {
-   return QUESTION_CATEGORY_SCIENCE;
-  }
   if (location % 4 == 2) {
-   return QUESTION_CATEGORY_SPORTS;
-  }
-  if (location == 6) {
-   return QUESTION_CATEGORY_SPORTS;
-  }
-  if (location == 10) {
    return QUESTION_CATEGORY_SPORTS;
   }
   return QUESTION_CATEGORY_ROCK;
