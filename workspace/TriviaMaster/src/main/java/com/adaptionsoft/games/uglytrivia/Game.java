@@ -81,7 +81,7 @@ public class Game {
 
  public void roll(int roll) {
   printCurrentPlayer();
-  printMessage("They have rolled a " + roll);
+  printDieRoll(roll);
   if (inPenaltyBox[currentPlayer]) {
    if (roll % 2 == 0) {
     stayInPenaltyBox();
@@ -92,6 +92,10 @@ public class Game {
   updateLocationOfCurrentPlayer(roll);
   printCurrentCategory();
   askQuestion();
+ }
+
+ private void printDieRoll(int dieRoll) {
+  printMessage("They have rolled a " + dieRoll);
  }
 
  private void printCurrentPlayer() {
