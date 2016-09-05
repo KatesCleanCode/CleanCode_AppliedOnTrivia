@@ -49,8 +49,12 @@ public class Game {
   initializePenaltyBox();
 
   printPlayerWasAdded(playerName);
-  printMessage("He/She is player number " + players.size());
+  printPlayersNumber();
   return true;
+ }
+
+ private void printPlayersNumber() {
+  printMessage("He/She is player number " + players.size());
  }
 
  private void printPlayerWasAdded(String playerName) {
