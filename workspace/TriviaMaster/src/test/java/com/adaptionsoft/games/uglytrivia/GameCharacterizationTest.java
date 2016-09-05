@@ -38,6 +38,14 @@ public class GameCharacterizationTest {
    equalTo("John was added\r\nThey are player number 1\r\n"));
  }
 
+ @Test
+ void whenSecondPlayerIsAddedThenSomethingHappens() {
+  game.add("John");
+  game.add("Harry");
+
+  assertThat(getCurrentOutput(), equalTo("something happend"));
+ }
+
  private String getCurrentOutput() {
   return output.toString();
  }
