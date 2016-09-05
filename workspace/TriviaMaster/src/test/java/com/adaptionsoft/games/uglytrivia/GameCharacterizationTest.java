@@ -49,6 +49,15 @@ public class GameCharacterizationTest {
    equalTo("Harry was added\r\nThey are player number 2\r\n"));
  }
 
+ @Test
+ void whenDicesAreRolledThenSomethingHappens() {
+  game.add(FIRST_PLAYER);
+  initializeOutput();
+  game.roll(5);
+
+  assertThat(getCurrentOutput(), equalTo("something happend"));
+ }
+
  private String getCurrentOutput() {
   return output.toString();
  }
