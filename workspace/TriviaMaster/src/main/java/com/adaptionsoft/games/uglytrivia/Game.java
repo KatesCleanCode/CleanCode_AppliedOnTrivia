@@ -110,12 +110,6 @@ public class Game {
   if (location % 4 == 0) {
    return QUESTION_CATEGORY_POP;
   }
-  if (location == 4) {
-   return QUESTION_CATEGORY_POP;
-  }
-  if (location == 8) {
-   return QUESTION_CATEGORY_POP;
-  }
   if (location == 1) {
    return QUESTION_CATEGORY_SCIENCE;
   }
