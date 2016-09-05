@@ -7,13 +7,15 @@ import java.nio.file.Paths;
 
 public final class GoldenMasterSupplier {
 
+ private static final String PATH_TO_GOLDEN_MASTER_DIR =
+  "src/test/resources/goldenmasterData";
+
  private GoldenMasterSupplier() {
 // Utility class must not be instantiated
  }
 
  public static Path getPathToGoldenMaster(int seed) {
-  return Paths.get("src/test/resources/goldenmasterData",
-   seed + ".txt");
+  return Paths.get(PATH_TO_GOLDEN_MASTER_DIR, seed + ".txt");
  }
 
  public static String getGoldenMasterForSeed(int seed)
