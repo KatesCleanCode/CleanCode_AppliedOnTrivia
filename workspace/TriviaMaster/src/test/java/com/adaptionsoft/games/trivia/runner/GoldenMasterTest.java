@@ -18,7 +18,7 @@ public class GoldenMasterTest {
   for (int seed = 0; seed < NUMBER_OF_GM_TESTS; seed++) {
    String gameOutput = generateGameOutput(seed);
    String goldenMaster = getGoldenMasterForSeed(seed);
-   assertEquals(goldenMaster, gameOutput);
+   assertEquals("Seed " + seed, goldenMaster, gameOutput);
   }
  }
 }
