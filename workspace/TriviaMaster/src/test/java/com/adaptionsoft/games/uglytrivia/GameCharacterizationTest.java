@@ -50,7 +50,8 @@ public class GameCharacterizationTest {
  }
 
  @Test
- void whenDicesAreRolledThenSomethingHappens() {
+ void
+  whenDicesAreRolledThenCurrentPlayerDataAndQuestionArePublished() {
   game.add(FIRST_PLAYER);
   initializeOutput();
   game.roll(5);
