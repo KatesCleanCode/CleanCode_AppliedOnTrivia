@@ -18,13 +18,16 @@ public class GoldenMasterTest {
  @Test
  public void checkSystemAgainstGoldenMaster() throws Exception {
   for (int seed = 0; seed < 10_000; seed++) {
-   ByteArrayOutputStream output = new ByteArrayOutputStream();
-   System.setOut(new PrintStream(output));
-   GameRunner.playGame(new Random(seed));
-   String gameOutput = output.toString();
-
+   String gameOutput = generateGameOutput(seed);
    String goldenMaster = getGoldenMasterForSeed(seed);
    assertEquals(goldenMaster, gameOutput);
   }
+ }
+
+ public static String generateGameOutput(int seed) {
+  ByteArrayOutputStream output = new ByteArrayOutputStream();
+  System.setOut(new PrintStream(output));
+  GameRunner.playGame(new Random(seed));
+  return output.toString();
  }
 }
