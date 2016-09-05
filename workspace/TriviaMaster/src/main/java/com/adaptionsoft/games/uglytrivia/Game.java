@@ -43,12 +43,16 @@ public class Game {
  }
 
  public void addPlayer(String playerName) {
-  players.add(playerName);
+  addPlayerNameToPlayers(playerName);
   initializeLocation();
   initializePurses();
   initializePenaltyBox();
   printPlayerWasAdded(playerName);
   printPlayersNumber();
+ }
+
+ private void addPlayerNameToPlayers(String playerName) {
+  players.add(playerName);
  }
 
  private void printPlayersNumber() {
