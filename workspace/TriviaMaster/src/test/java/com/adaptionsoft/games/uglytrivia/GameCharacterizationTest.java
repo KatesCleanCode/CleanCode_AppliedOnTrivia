@@ -41,10 +41,11 @@ public class GameCharacterizationTest {
  void
   whenSecondPlayerIsAddedThenFirstAndSecondPlayerNamesAndNumbersArePublished() {
   game.add("John");
+  initializeOutput();
   game.add("Harry");
 
-  assertThat(getCurrentOutput(), equalTo(
-   "John was added\r\nThey are player number 1\r\nHarry was added\r\nThey are player number 2\r\n"));
+  assertThat(getCurrentOutput(),
+   equalTo("Harry was added\r\nThey are player number 2\r\n"));
  }
 
  private String getCurrentOutput() {
