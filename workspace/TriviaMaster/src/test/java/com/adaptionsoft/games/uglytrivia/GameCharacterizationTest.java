@@ -17,11 +17,15 @@ public class GameCharacterizationTest {
  private ByteArrayOutputStream output;
  private Game game;
 
- @Test
- void whenGameIsCreatedThenNothingIsDisplayed() {
+ void setUp() {
   output = new ByteArrayOutputStream();
   System.setOut(new PrintStream(output));
   game = new Game();
+ }
+
+ @Test
+ void whenGameIsCreatedThenNothingIsDisplayed() {
+  setUp();
 
   assertThat(output.toString(), equalTo(""));
  }
