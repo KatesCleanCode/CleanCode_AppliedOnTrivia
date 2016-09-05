@@ -43,7 +43,8 @@ public class GameCharacterizationTest {
   game.add("John");
   game.add("Harry");
 
-  assertThat(getCurrentOutput(), equalTo("something happend"));
+  assertThat(getCurrentOutput(), equalTo(
+   "John was added\r\nThey are player number 1\r\nHarry was added\r\nThey are player number 2\r\n"));
  }
 
  private String getCurrentOutput() {
