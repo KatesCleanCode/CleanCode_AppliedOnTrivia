@@ -42,12 +42,11 @@ public class Game {
   }
  }
 
- public boolean add(String playerName) {
+ public boolean addPlayer(String playerName) {
   players.add(playerName);
   initializeLocation();
   initializePurses();
   initializePenaltyBox();
-
   printPlayerWasAdded(playerName);
   printPlayersNumber();
   return true;

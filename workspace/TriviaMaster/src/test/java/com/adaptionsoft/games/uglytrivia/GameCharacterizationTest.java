@@ -34,7 +34,7 @@ public class GameCharacterizationTest {
 
  @Test
  void whenOnePlayerIsAddedThenHisNameAndNumberArePublished() {
-  game.add(FIRST_PLAYER);
+  game.addPlayer(FIRST_PLAYER);
 
   assertThat(getCurrentOutput(), equalTo(
    FIRST_PLAYER + " was added\r\nHe/She is player number 1\r\n"));
@@ -42,9 +42,9 @@ public class GameCharacterizationTest {
 
  @Test
  void whenSecondPlayerIsAddedThenHisNameAndNumberIsPublished() {
-  game.add(FIRST_PLAYER);
+  game.addPlayer(FIRST_PLAYER);
   initializeOutput();
-  game.add("Harry");
+  game.addPlayer("Harry");
 
   assertThat(getCurrentOutput(),
    equalTo("Harry was added\r\nHe/She is player number 2\r\n"));
@@ -53,7 +53,7 @@ public class GameCharacterizationTest {
  @Test
  void
   whenDicesAreRolledThenCurrentPlayerDataAndQuestionArePublished() {
-  game.add(FIRST_PLAYER);
+  game.addPlayer(FIRST_PLAYER);
   initializeOutput();
   game.roll(SCIENCE_QUESTION_DIE_ROLL);
 
@@ -67,7 +67,7 @@ public class GameCharacterizationTest {
 
  @Test
  void whenAnswerIsCorrectThenCoinsAreGivenToPlayer() {
-  game.add(FIRST_PLAYER);
+  game.addPlayer(FIRST_PLAYER);
   initializeOutput();
   game.wasCorrectlyAnswered();
 
@@ -77,7 +77,7 @@ public class GameCharacterizationTest {
 
  @Test
  void whenAnswerIsIncorrectThenPlayerIsSentToPenaltyBox() {
-  game.add(FIRST_PLAYER);
+  game.addPlayer(FIRST_PLAYER);
   initializeOutput();
   game.wrongAnswer();
 
