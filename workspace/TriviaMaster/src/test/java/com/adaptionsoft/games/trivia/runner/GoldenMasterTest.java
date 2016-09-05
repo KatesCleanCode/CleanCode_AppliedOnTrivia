@@ -1,6 +1,7 @@
 package com.adaptionsoft.games.trivia.runner;
 
 import static com.adaptionsoft.games.utils.SystemTestHelper.generateGameOutput;
+import static com.adaptionsoft.games.utils.goldenMaster.GoldenMasterCreator.NUMBER_OF_GM_TESTS;
 import static com.adaptionsoft.games.utils.goldenMaster.GoldenMasterSupplier.getGoldenMasterForSeed;
 
 import org.junit.jupiter.api.Test;
@@ -11,8 +12,6 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(JUnitPlatform.class)
 public class GoldenMasterTest {
-
- public static final int NUMBER_OF_GM_TESTS = 10_000;
 
  @Test
  public void checkSystemAgainstGoldenMaster() throws Exception {

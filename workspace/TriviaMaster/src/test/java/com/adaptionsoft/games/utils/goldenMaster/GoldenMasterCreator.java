@@ -18,6 +18,8 @@ import com.adaptionsoft.games.trivia.runner.GameRunner;
 @RunWith(JUnitPlatform.class)
 public class GoldenMasterCreator {
 
+ public static final int NUMBER_OF_GM_TESTS = 10_000;
+
  @Test
  @Disabled
  public void createGoldenMaster() throws IOException {
