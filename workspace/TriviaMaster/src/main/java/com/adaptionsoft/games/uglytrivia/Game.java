@@ -66,7 +66,7 @@ public class Game {
     printMessage(players.get(currentPlayer)
      + " is getting out of the penalty box");
     updateLocationOfCurrentPlayer(roll);
-    printMessage("The category is " + currentCategory());
+    printCurrentCategory();
     askQuestion();
    } else {
     printMessage(players.get(currentPlayer)
@@ -75,9 +75,13 @@ public class Game {
    }
   } else {
    updateLocationOfCurrentPlayer(roll);
-   printMessage("The category is " + currentCategory());
+   printCurrentCategory();
    askQuestion();
   }
+ }
+
+ private void printCurrentCategory() {
+  printMessage("The category is " + currentCategory());
  }
 
  private void updateLocationOfCurrentPlayer(int roll) {
