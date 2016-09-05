@@ -213,13 +213,17 @@ public class Game {
  }
 
  public boolean wrongAnswer() {
-  printMessage("Question was incorrectly answered");
+  printAnswerWasIncorrect();
   printMessage(
    players.get(currentPlayer) + " was sent to the penalty box");
   inPenaltyBox[currentPlayer] = true;
 
   switchToNextPlayer();
   return true;
+ }
+
+ private void printAnswerWasIncorrect() {
+  printMessage("Question was incorrectly answered");
  }
 
  private boolean didPlayerWin() {
