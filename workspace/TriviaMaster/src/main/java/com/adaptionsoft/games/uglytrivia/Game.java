@@ -82,7 +82,7 @@ public class Game {
  public void roll(int roll) {
   printCurrentPlayer();
   printDieRoll(roll);
-  if (inPenaltyBox[currentPlayer]) {
+  if (currentPlayerIsInPenaltyBox()) {
    if (roll % 2 == 0) {
     stayInPenaltyBox();
     return;
@@ -92,6 +92,10 @@ public class Game {
   updateLocationOfCurrentPlayer(roll);
   printCurrentCategory();
   askQuestion();
+ }
+
+ private boolean currentPlayerIsInPenaltyBox() {
+  return inPenaltyBox[currentPlayer];
  }
 
  private void printDieRoll(int dieRoll) {
@@ -166,7 +170,7 @@ public class Game {
  }
 
  public boolean wasCorrectlyAnswered() {
-  if (inPenaltyBox[currentPlayer]) {
+  if (currentPlayerIsInPenaltyBox()) {
    if (!isGettingOutOfPenaltyBox) {
     switchToNextPlayer();
     return true;
