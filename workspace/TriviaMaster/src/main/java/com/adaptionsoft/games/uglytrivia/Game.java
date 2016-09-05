@@ -175,7 +175,7 @@ public class Game {
 
  public boolean wasCorrectlyAnswered() {
   if (currentPlayerIsInPenaltyBox()) {
-   if (!isGettingOutOfPenaltyBox) {
+   if (currentPlayerIsNotLeavingPenaltyBox()) {
     switchToNextPlayer();
     return true;
    }
@@ -185,6 +185,10 @@ public class Game {
   boolean winner = didPlayerWin();
   switchToNextPlayer();
   return winner;
+ }
+
+ private boolean currentPlayerIsNotLeavingPenaltyBox() {
+  return !isGettingOutOfPenaltyBox;
  }
 
  private void printAnswerWasCorrect() {
