@@ -65,6 +65,15 @@ public class GameCharacterizationTest {
     + "Science Question 0\r\n"));
  }
 
+ @Test
+ void whenAnswerIsCorrectThenSomethingHappens() {
+  game.add(FIRST_PLAYER);
+  initializeOutput();
+  game.wasCorrectlyAnswered();
+
+  assertThat(getCurrentOutput(), equalTo("something happend"));
+ }
+
  private String getCurrentOutput() {
   return output.toString();
  }
