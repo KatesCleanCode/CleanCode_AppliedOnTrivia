@@ -27,14 +27,18 @@ public class GameCharacterizationTest {
 
  @Test
  void whenGameIsCreatedThenNothingIsDisplayed() {
-  assertThat(output.toString(), equalTo(""));
+  assertThat(getCurrentOutput(), equalTo(""));
  }
 
  @Test
  void whenOnePlayerIsAddedThenHisNameAndNumberArePublished() {
   game.add("John");
   // TODO, kknaus Sep 5, 2016: Incorrect spelling should be fixed
-  assertThat(output.toString(),
+  assertThat(getCurrentOutput(),
    equalTo("John was added\r\nThey are player number 1\r\n"));
+ }
+
+ private String getCurrentOutput() {
+  return output.toString();
  }
 }
