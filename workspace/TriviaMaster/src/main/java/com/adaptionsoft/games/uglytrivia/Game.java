@@ -48,9 +48,13 @@ public class Game {
   initializePurses();
   initializePenaltyBox();
 
-  printMessage(playerName + " was added");
+  printPlayerWasAdded(playerName);
   printMessage("He/She is player number " + players.size());
   return true;
+ }
+
+ private void printPlayerWasAdded(String playerName) {
+  printMessage(playerName + " was added");
  }
 
  private void initializePenaltyBox() {
