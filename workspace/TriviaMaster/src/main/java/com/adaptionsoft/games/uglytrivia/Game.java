@@ -62,7 +62,7 @@ public class Game {
   printMessage(players.get(currentPlayer) + " is the current player");
   printMessage("They have rolled a " + roll);
   if (inPenaltyBox[currentPlayer]) {
-   if (!(roll % 2 != 0)) {
+   if (roll % 2 == 0) {
     stayInPenaltyBox();
     return;
    }
