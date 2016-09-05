@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Game {
-
  private static final String QUESTION_CATEGORY_ROCK = "Rock";
  private static final String QUESTION_CATEGORY_SPORTS = "Sports";
  private static final String QUESTION_CATEGORY_SCIENCE = "Science";
