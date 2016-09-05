@@ -46,11 +46,15 @@ public class Game {
   players.add(playerName);
   initializeLocation();
   initializePurses();
-  inPenaltyBox[howManyPlayers()] = false;
+  initializePenaltyBox();
 
   printMessage(playerName + " was added");
   printMessage("He/She is player number " + players.size());
   return true;
+ }
+
+ private void initializePenaltyBox() {
+  inPenaltyBox[howManyPlayers()] = false;
  }
 
  private void initializePurses() {
