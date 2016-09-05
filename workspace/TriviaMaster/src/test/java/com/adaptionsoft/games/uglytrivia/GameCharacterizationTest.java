@@ -71,7 +71,8 @@ public class GameCharacterizationTest {
   initializeOutput();
   game.wasCorrectlyAnswered();
 
-  assertThat(getCurrentOutput(), equalTo("something happend"));
+  assertThat(getCurrentOutput(), equalTo("Answer was corrent!!!!\r\n"
+   + FIRST_PLAYER + " now has 1 Gold Coins.\r\n"));
  }
 
  private String getCurrentOutput() {
