@@ -23,7 +23,7 @@ public class GoldenMasterCreator {
  @Test
  @Disabled
  public void createGoldenMaster() throws IOException {
-  Path path = Paths.get("src/test/resources/goldenmasterData");
+  Path path = getPathToGoldenMasterDir();
   if (Files.notExists(path)) {
    Files.createDirectories(path);
   }
@@ -38,5 +38,9 @@ public class GoldenMasterCreator {
    Path newFile = Files.createFile(pathToGoldenMaster);
    Files.write(newFile, gameOutput.getBytes());
   }
+ }
+
+ public static Path getPathToGoldenMasterDir() {
+  return Paths.get("src/test/resources/goldenmasterData");
  }
 }
