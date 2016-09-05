@@ -19,7 +19,7 @@ public class GameCharacterizationTest {
   Game game = new Game();
   game.add("John");
 
-  Assert.assertThat(output.toString(),
-   CoreMatchers.equalTo("something happened"));
+  Assert.assertThat(output.toString(), CoreMatchers
+   .equalTo("John was added\r\nThey are player number 1\r\n"));
  }
 }
