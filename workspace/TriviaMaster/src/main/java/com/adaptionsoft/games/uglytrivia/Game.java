@@ -214,12 +214,16 @@ public class Game {
 
  public boolean wrongAnswer() {
   printAnswerWasIncorrect();
-  printMessage(
-   players.get(currentPlayer) + " was sent to the penalty box");
+  printPlayerWasSentToPenaltyBox();
   inPenaltyBox[currentPlayer] = true;
 
   switchToNextPlayer();
   return true;
+ }
+
+ private void printPlayerWasSentToPenaltyBox() {
+  printMessage(
+   players.get(currentPlayer) + " was sent to the penalty box");
  }
 
  private void printAnswerWasIncorrect() {
