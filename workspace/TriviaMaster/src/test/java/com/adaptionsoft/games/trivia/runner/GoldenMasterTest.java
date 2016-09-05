@@ -23,11 +23,15 @@ public class GoldenMasterTest {
    GameRunner.playGame(new Random(seed));
    String gameOutput = output.toString();
 
-   Path pathToFile =
-    Paths.get("src/test/resources/goldenmasterData", seed + ".txt");
+   Path pathToFile = getPathToGoldenMaster(seed);
    byte[] readBytes = Files.readAllBytes(pathToFile);
    String goldenMaster = new String(readBytes);
    Assert.assertEquals(goldenMaster, gameOutput);
   }
+ }
+
+ public Path getPathToGoldenMaster(int seed) {
+  return Paths.get("src/test/resources/goldenmasterData",
+   seed + ".txt");
  }
 }
