@@ -13,7 +13,7 @@ public class Game {
  private static final int MAX_DIE_ROLL_OF_TWO_DICES = 12;
  private static final int MAX_NUMBER_OF_PLAYERS = 6;
  private static final int MAX_NUMBER_OF_QUESTIONS = 50;
- private static final int WINNING_PURSUS = 6;
+ private static final int WINNING_PURSES = 6;
 
  private ArrayList<String> players = new ArrayList<>();
  private int[] places = new int[MAX_NUMBER_OF_PLAYERS];
@@ -145,24 +145,27 @@ public class Game {
 
  public boolean wasCorrectlyAnswered() {
   if (inPenaltyBox[currentPlayer]) {
-   if (isGettingOutOfPenaltyBox) {
-    printMessage("Answer was correct!!!!");
+   if (!isGettingOutOfPenaltyBox) {
+    switchToNextPlayer();
+    return true;
+   } else {
+    printAnswerWasCorrect();
     increasePursusOfCurrentPlayer();
     boolean winner = didPlayerWin();
     switchToNextPlayer();
     return winner;
-   } else {
-    switchToNextPlayer();
-    return true;
    }
   } else {
-   printMessage("Answer was correct!!!!");
+   printAnswerWasCorrect();
    increasePursusOfCurrentPlayer();
-
    boolean winner = didPlayerWin();
    switchToNextPlayer();
    return winner;
   }
+ }
+
+ private void printAnswerWasCorrect() {
+  printMessage("Answer was correct!!!!");
  }
 
  private void increasePursusOfCurrentPlayer() {
@@ -193,6 +196,6 @@ public class Game {
  }
 
  private boolean didPlayerWin() {
-  return !(purses[currentPlayer] == WINNING_PURSUS);
+  return !(purses[currentPlayer] == WINNING_PURSES);
  }
 }
