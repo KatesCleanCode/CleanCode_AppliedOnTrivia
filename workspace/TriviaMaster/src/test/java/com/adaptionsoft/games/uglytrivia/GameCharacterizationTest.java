@@ -75,6 +75,15 @@ public class GameCharacterizationTest {
    + FIRST_PLAYER + " now has 1 Gold Coins.\r\n"));
  }
 
+ @Test
+ void whenAnswerIsIncorrectThenSomethingHappens() {
+  game.add(FIRST_PLAYER);
+  initializeOutput();
+  game.wrongAnswer();
+
+  assertThat(getCurrentOutput(), equalTo("something happend"));
+ }
+
  private String getCurrentOutput() {
   return output.toString();
  }
