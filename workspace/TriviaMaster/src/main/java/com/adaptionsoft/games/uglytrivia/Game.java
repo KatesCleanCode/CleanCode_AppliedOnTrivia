@@ -44,13 +44,17 @@ public class Game {
 
  public boolean add(String playerName) {
   players.add(playerName);
-  places[howManyPlayers()] = 0;
+  initializeLocation();
   purses[howManyPlayers()] = 0;
   inPenaltyBox[howManyPlayers()] = false;
 
   printMessage(playerName + " was added");
   printMessage("He/She is player number " + players.size());
   return true;
+ }
+
+ private void initializeLocation() {
+  places[howManyPlayers()] = 0;
  }
 
  public int howManyPlayers() {
