@@ -60,21 +60,12 @@ public class Game {
  public void roll(int roll) {
   printMessage(players.get(currentPlayer) + " is the current player");
   printMessage("They have rolled a " + roll);
-
   if (inPenaltyBox[currentPlayer]) {
    if (roll % 2 != 0) {
     isGettingOutOfPenaltyBox = true;
-
     printMessage(players.get(currentPlayer)
      + " is getting out of the penalty box");
-    places[currentPlayer] = places[currentPlayer] + roll;
-    if (places[currentPlayer] > MAX_LOCATION) {
-     places[currentPlayer] =
-      places[currentPlayer] - MAX_DIE_ROLL_OF_TWO_DICES;
-    }
-
-    printMessage(players.get(currentPlayer) + "'s new location is "
-     + places[currentPlayer]);
+    updateLocationOfCurrentPlayer(roll);
     printMessage("The category is " + currentCategory());
     askQuestion();
    } else {
@@ -83,18 +74,20 @@ public class Game {
     isGettingOutOfPenaltyBox = false;
    }
   } else {
-   places[currentPlayer] = places[currentPlayer] + roll;
-   if (places[currentPlayer] > MAX_LOCATION) {
-    places[currentPlayer] =
-     places[currentPlayer] - MAX_DIE_ROLL_OF_TWO_DICES;
-   }
-
-   printMessage(players.get(currentPlayer) + "'s new location is "
-    + places[currentPlayer]);
+   updateLocationOfCurrentPlayer(roll);
    printMessage("The category is " + currentCategory());
    askQuestion();
   }
+ }
 
+ private void updateLocationOfCurrentPlayer(int roll) {
+  places[currentPlayer] = places[currentPlayer] + roll;
+  if (places[currentPlayer] > MAX_LOCATION) {
+   places[currentPlayer] =
+    places[currentPlayer] - MAX_DIE_ROLL_OF_TWO_DICES;
+  }
+  printMessage(players.get(currentPlayer) + "'s new location is "
+   + places[currentPlayer]);
  }
 
  private void askQuestion() {
