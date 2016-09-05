@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
 public class GameCharacterizationTest {
 
  @Test
- void whenOnePlayerIsAddedThenSomethingHappens() {
+ void whenOnePlayerIsAddedThenHisNameAndNumberArePublished() {
   ByteArrayOutputStream output = new ByteArrayOutputStream();
   System.setOut(new PrintStream(output));
   Game game = new Game();
