@@ -55,7 +55,12 @@ public class GameCharacterizationTest {
   initializeOutput();
   game.roll(5);
 
-  assertThat(getCurrentOutput(), equalTo("something happend"));
+  assertThat(getCurrentOutput(),
+   equalTo(FIRST_PLAYER
+    + " is the current player\r\nThey have rolled a 5\r\n"
+    + FIRST_PLAYER
+    + "'s new location is 5\r\nThe category is Science\r\n"
+    + "Science Question 0\r\n"));
  }
 
  private String getCurrentOutput() {
