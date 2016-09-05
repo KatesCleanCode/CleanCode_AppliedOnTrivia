@@ -47,7 +47,7 @@ public class GameCharacterizationTest {
   game.add("Harry");
 
   assertThat(getCurrentOutput(),
-   equalTo("Harry was added\r\nThey are player number 2\r\n"));
+   equalTo("Harry was added\r\nHe/She is player number 2\r\n"));
  }
 
  @Test
