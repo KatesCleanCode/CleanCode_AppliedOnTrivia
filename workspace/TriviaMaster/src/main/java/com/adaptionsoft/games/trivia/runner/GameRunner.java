@@ -5,9 +5,13 @@ import java.util.Random;
 
 import com.adaptionsoft.games.uglytrivia.Game;
 
-public class GameRunner {
+public final class GameRunner {
 
  private static boolean notAWinner;
+
+ private GameRunner() {
+// Utility class must not be instantiated
+ }
 
  public static void main(String[] args) {
   Random rand = new Random();
