@@ -36,10 +36,10 @@ public class Game {
  private Questions questions = new Questions();
 
  public Game() {
-  initializeQuestions();
+  initializeQuestions(popQuestions, scienceQuestions, sportsQuestions, rockQuestions);
  }
 
- private void initializeQuestions() {
+ private void initializeQuestions(LinkedList<String> popQuestions, LinkedList<String> scienceQuestions, LinkedList<String> sportsQuestions, LinkedList<String> rockQuestions) {
   for (int i = 0; i < MAX_NUMBER_OF_QUESTIONS; i++) {
    popQuestions.addLast("Pop Question " + i);
    scienceQuestions.addLast("Science Question " + i);
