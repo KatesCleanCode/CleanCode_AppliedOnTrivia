@@ -253,7 +253,6 @@ public class Game {
     notAWinner = wasCorrectlyAnswered();
    }
   } while (notAWinner);
-
  }
 
  private boolean playerAnsweredWrong(Random random) {
