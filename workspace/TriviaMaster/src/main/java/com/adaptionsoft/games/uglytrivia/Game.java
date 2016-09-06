@@ -28,15 +28,11 @@ public class Game {
 
  public void addPlayer(String playerName) {
   player.addPlayerNameToPlayers(playerName);
-  initializeLocation(places);
+  player.initializeLocation(places);
   player.initializePurses();
   player.initializePenaltyBox();
   news.playerAdded(playerName);
   news.playersNumber(player.getNumberOfPlayers());
- }
-
- private void initializeLocation(int[] places) {
-  places[player.getNumberOfPlayers()] = 0;
  }
 
  public void roll(int roll) {

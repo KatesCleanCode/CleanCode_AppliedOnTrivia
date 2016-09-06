@@ -45,4 +45,8 @@ public class Players {
  public void increasePursesOfCurrentPlayer(int currentPlayer) {
   purses[currentPlayer]++;
  }
+
+ public void initializeLocation(int[] places) {
+  places[getNumberOfPlayers()] = 0;
+ }
 }
