@@ -31,6 +31,13 @@ public class Players {
   return players.get(currentPlayer);
  }
 
+ /**
+  * Ends the turn of the current player and gives it to next player. <br>
+  * Next player can be retrieved with {@link #getCurrentPlayer()} after
+  * execution of this method.
+  *
+  * @see #getCurrentPlayer()
+  */
  public void switchToNextPlayer() {
   if (!players.isEmpty()) {
    currentPlayer++;
