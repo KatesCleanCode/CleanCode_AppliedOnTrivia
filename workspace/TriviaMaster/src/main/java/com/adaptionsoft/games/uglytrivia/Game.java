@@ -14,15 +14,15 @@ public class Game {
  private static final int MAX_DIE_ROLL = 5;
  private static final int MIN_DIE_ROLL = 1;
  private static final int WRONG_ANSWER = 7;
- private static final String QUESTION_CATEGORY_ROCK = "Rock";
- private static final String QUESTION_CATEGORY_SPORTS = "Sports";
- private static final String QUESTION_CATEGORY_SCIENCE = "Science";
- private static final String QUESTION_CATEGORY_POP = "Pop";
+ public static final String QUESTION_CATEGORY_ROCK = "Rock";
+ public static final String QUESTION_CATEGORY_SPORTS = "Sports";
+ public static final String QUESTION_CATEGORY_SCIENCE = "Science";
+ public static final String QUESTION_CATEGORY_POP = "Pop";
  private static final int MAX_LOCATION = 11;
  private static final int MAX_DIE_ROLL_OF_TWO_DICES = 12;
  private static final int MAX_NUMBER_OF_PLAYERS = 6;
  private static final int MAX_NUMBER_OF_QUESTIONS = 50;
- private static final int NUMBER_OF_QUESTION_CATEGORIES = 4;
+ public static final int NUMBER_OF_QUESTION_CATEGORIES = 4;
  private static final int WINNING_PURSES = 6;
 
  private ArrayList<String> players = new ArrayList<>();
@@ -93,7 +93,7 @@ public class Game {
    leavePenaltyBox();
   }
   updateLocationOfCurrentPlayer(roll);
-  news.category(currentCategory(places[currentPlayer]));
+  news.category(questions.currentCategory(places[currentPlayer]));
   askQuestion();
  }
 
@@ -126,32 +126,18 @@ public class Game {
  }
 
  private void askQuestion() {
-  if (currentCategory(places[currentPlayer]) == QUESTION_CATEGORY_POP) {
+  if (questions.currentCategory(places[currentPlayer]) == QUESTION_CATEGORY_POP) {
    news.question(popQuestions.removeFirst());
   }
-  if (currentCategory(places[currentPlayer]) == QUESTION_CATEGORY_SCIENCE) {
+  if (questions.currentCategory(places[currentPlayer]) == QUESTION_CATEGORY_SCIENCE) {
    news.question(scienceQuestions.removeFirst());
   }
-  if (currentCategory(places[currentPlayer]) == QUESTION_CATEGORY_SPORTS) {
+  if (questions.currentCategory(places[currentPlayer]) == QUESTION_CATEGORY_SPORTS) {
    news.question(sportsQuestions.removeFirst());
   }
-  if (currentCategory(places[currentPlayer]) == QUESTION_CATEGORY_ROCK) {
+  if (questions.currentCategory(places[currentPlayer]) == QUESTION_CATEGORY_ROCK) {
    news.question(rockQuestions.removeFirst());
   }
- }
-
- private String currentCategory(int location) {
-  int questionOrder = location % NUMBER_OF_QUESTION_CATEGORIES;
-  if (questionOrder == 0) {
-   return QUESTION_CATEGORY_POP;
-  }
-  if (questionOrder == 1) {
-   return QUESTION_CATEGORY_SCIENCE;
-  }
-  if (questionOrder == 2) {
-   return QUESTION_CATEGORY_SPORTS;
-  }
-  return QUESTION_CATEGORY_ROCK;
  }
 
  public boolean wasCorrectlyAnswered() {
