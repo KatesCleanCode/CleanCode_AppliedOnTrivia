@@ -125,7 +125,7 @@ public class Game {
    places[currentPlayer]);
  }
 
- private void askQuestion(int location) {
+ private String askQuestion(int location) {
   String currentCategory = questions.currentCategory(location);
   String askedQuestion = "";
   if (currentCategory == QUESTION_CATEGORY_POP) {
@@ -141,6 +141,7 @@ public class Game {
    askedQuestion = rockQuestions.removeFirst();
   }
   news.question(askedQuestion);
+  return askedQuestion;
  }
 
  public boolean wasCorrectlyAnswered() {
