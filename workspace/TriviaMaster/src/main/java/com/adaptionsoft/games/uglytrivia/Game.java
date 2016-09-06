@@ -121,7 +121,8 @@ public class Game {
    places[currentPlayer] =
     places[currentPlayer] - MAX_DIE_ROLL_OF_TWO_DICES;
   }
-  news.playersNewLocation(players.get(currentPlayer), places[currentPlayer]);
+  news.playersNewLocation(players.get(currentPlayer),
+   places[currentPlayer]);
  }
 
  private void askQuestion() {
@@ -173,12 +174,12 @@ public class Game {
 
  private void increasePursusOfCurrentPlayer() {
   purses[currentPlayer]++;
-  printPurses();
+  printPurses(players.get(currentPlayer), purses[currentPlayer]);
  }
 
- private void printPurses() {
-  printer.printMessage(players.get(currentPlayer) + " now has "
-   + purses[currentPlayer] + " Gold Coins.");
+ private void printPurses(String playersName, int purses) {
+  printer
+   .printMessage(playersName + " now has " + purses + " Gold Coins.");
  }
 
  private void switchToNextPlayer() {
