@@ -121,12 +121,12 @@ public class Game {
    places[currentPlayer] =
     places[currentPlayer] - MAX_DIE_ROLL_OF_TWO_DICES;
   }
-  printNewLocation();
+  printNewLocation(players.get(currentPlayer), places[currentPlayer]);
  }
 
- private void printNewLocation() {
-  printer.printMessage(players.get(currentPlayer)
-   + "'s new location is " + places[currentPlayer]);
+ private void printNewLocation(String playersName, int location) {
+  printer
+   .printMessage(playersName + "'s new location is " + location);
  }
 
  private void askQuestion() {
