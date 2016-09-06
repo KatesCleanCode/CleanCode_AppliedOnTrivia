@@ -1,21 +1,9 @@
 package com.adaptionsoft.games.trivia.player;
 
-import java.util.ArrayList;
-
 @Deprecated
 public class PlayersOld {
 
- private static final int MAX_DIE_ROLL_OF_TWO_DICES = 12;
- private static final int MAX_NUMBER_OF_PLAYERS = 6;
-
- private ArrayList<String> playersOld = new ArrayList<>();
  private Players players = new Players();
-
- private boolean[] inPenaltyBox = new boolean[MAX_NUMBER_OF_PLAYERS];
- private int[] purses = new int[MAX_NUMBER_OF_PLAYERS];
- private int[] places = new int[MAX_NUMBER_OF_PLAYERS];
- private boolean isGettingOutOfPenaltyBox;
- private int currentPlayer = 0;
 
  public void add(String playerName) {
   players.add(playerName);
