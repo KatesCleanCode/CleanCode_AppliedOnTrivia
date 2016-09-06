@@ -58,16 +58,12 @@ public class Game {
   initializeLocation();
   initializePurses();
   initializePenaltyBox();
-  printPlayerWasAdded(playerName);
+  news.printPlayerWasAdded(this, playerName);
   news.playersNumber(players.size());
  }
 
  private void addPlayerNameToPlayers(String playerName) {
   players.add(playerName);
- }
-
- private void printPlayerWasAdded(String playerName) {
-  printer.printMessage(playerName + " was added");
  }
 
  private void initializePenaltyBox() {
