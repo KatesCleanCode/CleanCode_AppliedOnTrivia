@@ -35,6 +35,7 @@ public class Game {
 
  private int currentPlayer = 0;
  private boolean isGettingOutOfPenaltyBox;
+
  private News news = new News();
 
  public Game() {
