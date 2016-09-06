@@ -10,16 +10,15 @@ import static org.junit.Assert.assertThat;
 
 @RunWith(JUnitPlatform.class)
 public class PlayersTest {
+ private Players players = new Players();
 
  @Test
  void whenPlayersIsInitializedThenNumberOfPlayersIsZero() {
-  Players players = new Players();
   assertThat(players.getNumberOfPlayers(), equalTo(0));
  }
 
  @Test
  void whenOnePlayerIsAddedThenNumberOfPlayersIncreaseByOne() {
-  Players players = new Players();
   players.add("Sue");
 
   assertThat(players.getNumberOfPlayers(), equalTo(1));
