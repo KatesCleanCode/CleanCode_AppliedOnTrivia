@@ -22,6 +22,7 @@ public class PlayersOld {
   places[getNumberOfPlayers()] = 0;
   purses[getNumberOfPlayers()] = 0;
   inPenaltyBox[getNumberOfPlayers()] = false;
+  players.add(playerName);
  }
 
  public int getNumberOfPlayers() {
@@ -55,7 +56,8 @@ public class PlayersOld {
  public void updateLocationOfCurrentPlayer(int roll) {
   places[currentPlayer] = getLocationOfCurrentPlayer() + roll;
   if (getLocationOfCurrentPlayer() > Player.MAX_LOCATION) {
-   places[currentPlayer] = getLocationOfCurrentPlayer() - MAX_DIE_ROLL_OF_TWO_DICES;
+   places[currentPlayer] =
+    getLocationOfCurrentPlayer() - MAX_DIE_ROLL_OF_TWO_DICES;
   }
  }
 
