@@ -5,7 +5,6 @@ import java.util.LinkedList;
 import java.util.Random;
 
 import com.adaptionsoft.games.trivia.news.News;
-import com.adaptionsoft.games.trivia.printer.ConsolePrinter;
 
 public class Game {
 
@@ -37,7 +36,6 @@ public class Game {
 
  private int currentPlayer = 0;
  private boolean isGettingOutOfPenaltyBox;
- public ConsolePrinter printer = new ConsolePrinter();
  private News news = new News();
 
  public Game() {
@@ -174,7 +172,8 @@ public class Game {
 
  private void increasePursusOfCurrentPlayer() {
   purses[currentPlayer]++;
-  news.playersPurses(players.get(currentPlayer), purses[currentPlayer]);
+  news.playersPurses(players.get(currentPlayer),
+   purses[currentPlayer]);
  }
 
  private void switchToNextPlayer() {
