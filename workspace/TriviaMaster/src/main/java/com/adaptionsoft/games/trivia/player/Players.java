@@ -2,8 +2,7 @@ package com.adaptionsoft.games.trivia.player;
 
 public class Players {
 
- public Object getNumberOfPlayers() {
+ public int getNumberOfPlayers() {
   return 0;
  }
-
 }
