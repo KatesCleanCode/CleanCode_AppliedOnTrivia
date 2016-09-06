@@ -1,7 +1,6 @@
 package com.adaptionsoft.games.trivia.game;
 
 import com.adaptionsoft.games.trivia.news.Printer;
-import com.adaptionsoft.games.uglytrivia.Game;
 
 public final class GameFactory {
 

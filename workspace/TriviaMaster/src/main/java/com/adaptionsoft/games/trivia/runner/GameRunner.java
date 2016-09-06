@@ -2,10 +2,10 @@ package com.adaptionsoft.games.trivia.runner;
 
 import java.util.Random;
 
+import com.adaptionsoft.games.trivia.game.Game;
 import com.adaptionsoft.games.trivia.game.GameFactory;
 import com.adaptionsoft.games.trivia.news.Printer;
 import com.adaptionsoft.games.trivia.printer.ConsolePrinter;
-import com.adaptionsoft.games.uglytrivia.Game;
 
 public final class GameRunner {
 
