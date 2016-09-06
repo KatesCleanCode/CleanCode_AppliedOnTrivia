@@ -2,6 +2,7 @@ package com.adaptionsoft.games.trivia.runner;
 
 import java.util.Random;
 
+import com.adaptionsoft.games.trivia.printer.ConsolePrinter;
 import com.adaptionsoft.games.uglytrivia.Game;
 
 public final class GameRunner {
@@ -16,7 +17,7 @@ public final class GameRunner {
  }
 
  public static void playGame(Random rand) {
-  Game aGame = new Game();
+  Game aGame = new Game(new ConsolePrinter());
   aGame.addPlayer("Chet");
   aGame.addPlayer("Pat");
   aGame.addPlayer("Sue");

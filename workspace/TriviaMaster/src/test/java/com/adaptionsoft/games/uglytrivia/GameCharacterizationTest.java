@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 
+import com.adaptionsoft.games.trivia.printer.ConsolePrinter;
+
 import static org.hamcrest.CoreMatchers.equalTo;
 
 import static org.junit.Assert.assertThat;
@@ -24,7 +26,7 @@ public class GameCharacterizationTest {
  @BeforeEach
  void setUp() {
   initializeOutput();
-  game = new Game();
+  game = new Game(new ConsolePrinter());
  }
 
  @Test
