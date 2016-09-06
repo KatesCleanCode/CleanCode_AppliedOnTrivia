@@ -141,8 +141,7 @@ public class Game {
  }
 
  private String currentCategory() {
-  int location = places[currentPlayer];
-  int questionOrder = location % NUMBER_OF_QUESTION_CATEGORIES;
+  int questionOrder = places[currentPlayer] % NUMBER_OF_QUESTION_CATEGORIES;
   if (questionOrder == 0) {
    return QUESTION_CATEGORY_POP;
   }
