@@ -12,8 +12,6 @@ public final class GameRunner {
  private static final int MIN_DIE_ROLL = 1;
  private static final int WRONG_ANSWER = 7;
 
- private static boolean notAWinner;
-
  private GameRunner() {
 // Utility class must not be instantiated
  }
@@ -24,6 +22,7 @@ public final class GameRunner {
  }
 
  public static void playGame(Random rand) {
+  boolean notAWinner;
   Game aGame = new Game();
   aGame.addPlayer("Chet");
   aGame.addPlayer("Pat");
