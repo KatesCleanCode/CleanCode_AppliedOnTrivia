@@ -30,7 +30,7 @@ public class Game {
  public void addPlayer(String playerName) {
   player.addPlayerNameToPlayers(playerName);
   initializeLocation();
-  player.initializePurses(purses);
+  player.initializePurses();
   player.initializePenaltyBox();
   news.playerAdded(playerName);
   news.playersNumber(player.getNumberOfPlayers());
@@ -97,9 +97,9 @@ public class Game {
    }
   }
   news.answerWasCorrect();
-  player.increasePursesOfCurrentPlayer(purses, currentPlayer);
+  player.increasePursesOfCurrentPlayer(currentPlayer);
   news.playersPurses(player.getNameOfCurrentPlayer(currentPlayer),
-   player.getPursesOfCurrentPlayer(purses, currentPlayer));
+   player.getPursesOfCurrentPlayer(currentPlayer));
   boolean winner = didPlayerWin();
   switchToNextPlayer();
   return winner;
@@ -125,8 +125,7 @@ public class Game {
  }
 
  private boolean didPlayerWin() {
-  return !(player.getPursesOfCurrentPlayer(purses,
-   currentPlayer) == WINNING_PURSES);
+  return !(player.getPursesOfCurrentPlayer(currentPlayer) == WINNING_PURSES);
  }
 
  public void play(Random random) {

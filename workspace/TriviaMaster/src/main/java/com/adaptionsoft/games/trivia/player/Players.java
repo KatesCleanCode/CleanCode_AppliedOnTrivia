@@ -34,17 +34,15 @@ public class Players {
   return inPenaltyBox[currentPlayer];
  }
 
- public int getPursesOfCurrentPlayer(int[] purses,
-  int currentPlayer) {
+ public int getPursesOfCurrentPlayer(int currentPlayer) {
   return purses[currentPlayer];
  }
 
- public void initializePurses(int[] purses) {
+ public void initializePurses() {
   purses[getNumberOfPlayers()] = 0;
  }
 
- public void increasePursesOfCurrentPlayer(int[] purses,
-  int currentPlayer) {
+ public void increasePursesOfCurrentPlayer(int currentPlayer) {
   purses[currentPlayer]++;
  }
 }
