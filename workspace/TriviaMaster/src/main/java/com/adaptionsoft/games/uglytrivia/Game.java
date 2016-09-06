@@ -209,7 +209,7 @@ public class Game {
  }
 
  public void wrongAnswer() {
-  news.printAnswerWasIncorrect();
+  news.answerWasIncorrect();
   printPlayerWasSentToPenaltyBox();
   sendCurrentPlayerToPenaltyBox();
   switchToNextPlayer();

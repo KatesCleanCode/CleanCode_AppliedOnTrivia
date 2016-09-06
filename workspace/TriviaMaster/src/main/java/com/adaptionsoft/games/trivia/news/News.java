@@ -17,7 +17,7 @@ public class News {
   printer.printMessage("Answer was correct!!!!");
  }
 
- public void printAnswerWasIncorrect() {
+ public void answerWasIncorrect() {
   printer.printMessage("Question was incorrectly answered");
  }
 }
