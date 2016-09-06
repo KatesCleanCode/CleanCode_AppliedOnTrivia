@@ -1,7 +1,6 @@
 package com.adaptionsoft.games.trivia.news;
 
 import com.adaptionsoft.games.trivia.printer.ConsolePrinter;
-import com.adaptionsoft.games.uglytrivia.Game;
 
 public class News {
  private ConsolePrinter printer = new ConsolePrinter();
@@ -57,8 +56,8 @@ public class News {
    .printMessage(playersName + "'s new location is " + location);
  }
 
- public void printPurses(Game game, String playersName, int purses) {
-  game.printer
+ public void printPurses(String playersName, int purses) {
+  printer
    .printMessage(playersName + " now has " + purses + " Gold Coins.");
  }
 }
