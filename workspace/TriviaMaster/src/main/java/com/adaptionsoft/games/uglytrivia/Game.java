@@ -1,7 +1,6 @@
 package com.adaptionsoft.games.uglytrivia;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.Random;
 
 import com.adaptionsoft.games.trivia.news.News;
@@ -23,10 +22,6 @@ public class Game {
  private int[] places = new int[MAX_NUMBER_OF_PLAYERS];
  private int[] purses = new int[MAX_NUMBER_OF_PLAYERS];
  private boolean[] inPenaltyBox = new boolean[MAX_NUMBER_OF_PLAYERS];
- private LinkedList<String> popQuestions = new LinkedList<>();
- private LinkedList<String> scienceQuestions = new LinkedList<>();
- private LinkedList<String> sportsQuestions = new LinkedList<>();
- private LinkedList<String> rockQuestions = new LinkedList<>();
 
  private int currentPlayer = 0;
  private boolean isGettingOutOfPenaltyBox;
