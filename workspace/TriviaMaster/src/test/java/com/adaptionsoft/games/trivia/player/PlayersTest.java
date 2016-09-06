@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 
+import com.adaptionsoft.games.trivia.exceptions.TooManyPlayersException;
+
 import static org.hamcrest.CoreMatchers.equalTo;
 
 import static org.junit.Assert.assertNull;

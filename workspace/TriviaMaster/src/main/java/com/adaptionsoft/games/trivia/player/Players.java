@@ -3,6 +3,8 @@ package com.adaptionsoft.games.trivia.player;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.adaptionsoft.games.trivia.exceptions.TooManyPlayersException;
+
 public class Players {
 
  private List<Player> player = new ArrayList<>();
@@ -13,6 +15,9 @@ public class Players {
  }
 
  public void add(String playerName) {
+  if (getNumberOfPlayers() >= 5) {
+   throw new TooManyPlayersException();
+  }
   player.add(new Player(playerName));
  }
 
