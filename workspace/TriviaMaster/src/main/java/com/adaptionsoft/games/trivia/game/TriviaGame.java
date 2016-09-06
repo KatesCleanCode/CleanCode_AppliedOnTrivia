@@ -7,7 +7,7 @@ import com.adaptionsoft.games.trivia.news.Printer;
 import com.adaptionsoft.games.trivia.player.Players;
 import com.adaptionsoft.games.trivia.questions.Questions;
 
-public class TriviaGame {
+public class TriviaGame implements Game {
 
  /** The player has the probability 1/(bound-1) for a wrong answer. */
  private static final int BOUND_FOR_WRONG_ANSWER = 9;
@@ -24,12 +24,14 @@ public class TriviaGame {
   news = new News(printer);
  }
 
+ @Override
  public void addPlayer(String playerName) {
   players.add(playerName);
   news.playerAdded(playerName);
   news.playersNumber(players.getNumberOfPlayers());
  }
 
+ @Override
  public void play(Random random) {
   boolean notAWinner = true;
   do {

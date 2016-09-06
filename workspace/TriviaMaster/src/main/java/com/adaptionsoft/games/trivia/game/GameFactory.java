@@ -1,5 +1,6 @@
 package com.adaptionsoft.games.trivia.game;
 
+import com.adaptionsoft.games.trivia.news.News;
 import com.adaptionsoft.games.trivia.news.Printer;
 
 public final class GameFactory {
@@ -15,7 +16,7 @@ public final class GameFactory {
   *         {@link Printer} to print {@link News}
   * @return instance of a {@link TriviaGame}
   */
- public static TriviaGame createGame(Printer printer) {
+ public static Game createGame(Printer printer) {
   return new TriviaGame(printer);
  }
 }

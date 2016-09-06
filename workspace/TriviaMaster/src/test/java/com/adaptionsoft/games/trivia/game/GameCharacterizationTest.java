@@ -23,7 +23,7 @@ public class GameCharacterizationTest {
  @BeforeEach
  void setUp() {
   printer = new PrinterStub();
-  game = GameFactory.createGame(printer);
+  game = (TriviaGame) GameFactory.createGame(printer);
  }
 
  @Test
