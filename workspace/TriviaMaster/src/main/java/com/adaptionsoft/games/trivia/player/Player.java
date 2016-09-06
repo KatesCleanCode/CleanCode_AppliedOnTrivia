@@ -40,6 +40,10 @@ public class Player {
   return location;
  }
 
+ public void increasePursus() {
+  pursus++;
+ }
+
  public boolean isLeavingPenaltyBox() {
   return leavingPenaltyBox;
  }
