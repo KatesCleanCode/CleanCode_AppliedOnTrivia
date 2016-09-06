@@ -18,7 +18,6 @@ public class Game {
  public static final int MAX_NUMBER_OF_PLAYERS = 6;
  private static final int WINNING_PURSES = 6;
 
- private int[] places = new int[MAX_NUMBER_OF_PLAYERS];
  private int currentPlayer = 0;
  private boolean isGettingOutOfPenaltyBox;
 
@@ -51,8 +50,8 @@ public class Game {
    player.getLocationOfCurrentPlayer(currentPlayer));
   news.category(questions.currentCategory(
    player.getLocationOfCurrentPlayer(currentPlayer)));
-  String askedQuestion = questions.askQuestion(
-   player.getLocationOfCurrentPlayer(currentPlayer));
+  String askedQuestion = questions
+   .askQuestion(player.getLocationOfCurrentPlayer(currentPlayer));
   news.question(askedQuestion);
  }
 
