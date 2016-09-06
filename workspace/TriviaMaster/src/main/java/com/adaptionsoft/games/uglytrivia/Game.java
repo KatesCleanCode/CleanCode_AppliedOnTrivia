@@ -184,7 +184,7 @@ public class Game {
     return true;
    }
   }
-  printAnswerWasCorrect();
+  news.printAnswerWasCorrect(this);
   increasePursusOfCurrentPlayer();
   boolean winner = didPlayerWin();
   switchToNextPlayer();
@@ -193,10 +193,6 @@ public class Game {
 
  private boolean currentPlayerIsNotLeavingPenaltyBox() {
   return !isGettingOutOfPenaltyBox;
- }
-
- private void printAnswerWasCorrect() {
-  printer.printMessage("Answer was correct!!!!");
  }
 
  private void increasePursusOfCurrentPlayer() {
