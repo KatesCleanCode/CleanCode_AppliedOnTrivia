@@ -51,7 +51,7 @@ public class News {
   printer.printMessage(question);
  }
 
- public void printNewLocation(String playersName, int location) {
+ public void playersNewLocation(String playersName, int location) {
   printer
    .printMessage(playersName + "'s new location is " + location);
  }
