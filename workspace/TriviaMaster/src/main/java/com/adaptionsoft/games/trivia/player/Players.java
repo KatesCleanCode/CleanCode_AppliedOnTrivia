@@ -16,4 +16,8 @@ public class Players {
  public String getNameOfCurrentPlayer(int currentPlayer) {
   return players.get(currentPlayer);
  }
+
+ public void initializePenaltyBox(boolean[] inPenaltyBox) {
+  inPenaltyBox[getNumberOfPlayers()] = false;
+ }
 }
