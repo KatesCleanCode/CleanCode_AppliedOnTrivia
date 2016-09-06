@@ -1,5 +1,7 @@
 package com.adaptionsoft.games.trivia.news;
 
-public class News {
+import com.adaptionsoft.games.trivia.printer.ConsolePrinter;
 
+public class News {
+ private ConsolePrinter printer = new ConsolePrinter();
 }
