@@ -126,16 +126,17 @@ public class Game {
  }
 
  private void askQuestion() {
-  if (questions.currentCategory(places[currentPlayer]) == QUESTION_CATEGORY_POP) {
+  String currentCategory = questions.currentCategory(places[currentPlayer]);
+  if (currentCategory == QUESTION_CATEGORY_POP) {
    news.question(popQuestions.removeFirst());
   }
-  if (questions.currentCategory(places[currentPlayer]) == QUESTION_CATEGORY_SCIENCE) {
+  if (currentCategory == QUESTION_CATEGORY_SCIENCE) {
    news.question(scienceQuestions.removeFirst());
   }
-  if (questions.currentCategory(places[currentPlayer]) == QUESTION_CATEGORY_SPORTS) {
+  if (currentCategory == QUESTION_CATEGORY_SPORTS) {
    news.question(sportsQuestions.removeFirst());
   }
-  if (questions.currentCategory(places[currentPlayer]) == QUESTION_CATEGORY_ROCK) {
+  if (currentCategory == QUESTION_CATEGORY_ROCK) {
    news.question(rockQuestions.removeFirst());
   }
  }
