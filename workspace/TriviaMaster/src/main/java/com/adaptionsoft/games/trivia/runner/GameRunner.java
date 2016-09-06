@@ -11,6 +11,7 @@ public final class GameRunner {
  private static final int MAX_DIE_ROLL = 5;
  private static final int MIN_DIE_ROLL = 1;
  private static final int WRONG_ANSWER = 7;
+
  private static boolean notAWinner;
 
  private GameRunner() {
