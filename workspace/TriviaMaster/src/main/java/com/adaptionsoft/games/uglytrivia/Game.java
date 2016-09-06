@@ -36,6 +36,7 @@ public class Game {
 
  private int currentPlayer = 0;
  private boolean isGettingOutOfPenaltyBox;
+
  private ConsolePrinter printer = new ConsolePrinter();
 
  public Game() {
