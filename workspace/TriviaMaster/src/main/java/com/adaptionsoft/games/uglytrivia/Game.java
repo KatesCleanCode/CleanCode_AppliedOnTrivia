@@ -127,7 +127,7 @@ public class Game {
 
  private void askQuestion() {
   if (currentCategory() == QUESTION_CATEGORY_POP) {
-   news.printQuestion(this, popQuestions.removeFirst());
+   news.printQuestion(popQuestions.removeFirst());
   }
   if (currentCategory() == QUESTION_CATEGORY_SCIENCE) {
    printer.printMessage(scienceQuestions.removeFirst());
