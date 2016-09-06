@@ -5,7 +5,7 @@ import com.adaptionsoft.games.trivia.printer.ConsolePrinter;
 public class News {
  private ConsolePrinter printer = new ConsolePrinter();
 
- public void printPlayersNumber(int playersNumber) {
+ public void playersNumber(int playersNumber) {
   printer.printMessage("He/She is player number " + playersNumber);
  }
 }

@@ -59,7 +59,7 @@ public class Game {
   initializePurses();
   initializePenaltyBox();
   printPlayerWasAdded(playerName);
-  news.printPlayersNumber(players.size());
+  news.playersNumber(players.size());
  }
 
  private void addPlayerNameToPlayers(String playerName) {
