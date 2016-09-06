@@ -2,8 +2,6 @@ package com.adaptionsoft.games.trivia.questions;
 
 import java.util.LinkedList;
 
-import com.adaptionsoft.games.uglytrivia.Game;
-
 public class Questions {
 
  private static final String QUESTION_CATEGORY_ROCK = "Rock";
@@ -11,6 +9,7 @@ public class Questions {
  private static final String QUESTION_CATEGORY_SCIENCE = "Science";
  private static final String QUESTION_CATEGORY_POP = "Pop";
  private static final int NUMBER_OF_QUESTION_CATEGORIES = 4;
+ private static final int MAX_NUMBER_OF_QUESTIONS = 50;
 
  public String currentCategory(int location) {
   int questionOrder = location % NUMBER_OF_QUESTION_CATEGORIES;
@@ -48,13 +47,15 @@ public class Questions {
   return askedQuestion;
  }
 
- public void initializeQuestions(LinkedList<String> popQuestions, LinkedList<String> scienceQuestions, LinkedList<String> sportsQuestions, LinkedList<String> rockQuestions) {
-  for (int i = 0; i < Game.MAX_NUMBER_OF_QUESTIONS; i++) {
+ public void initializeQuestions(LinkedList<String> popQuestions,
+  LinkedList<String> scienceQuestions,
+  LinkedList<String> sportsQuestions,
+  LinkedList<String> rockQuestions) {
+  for (int i = 0; i < MAX_NUMBER_OF_QUESTIONS; i++) {
    popQuestions.addLast("Pop Question " + i);
    scienceQuestions.addLast("Science Question " + i);
    sportsQuestions.addLast("Sports Question " + i);
    rockQuestions.addLast("Rock Question " + i);
   }
  }
-
 }

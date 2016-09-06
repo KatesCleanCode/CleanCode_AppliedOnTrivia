@@ -17,7 +17,6 @@ public class Game {
  private static final int MAX_LOCATION = 11;
  private static final int MAX_DIE_ROLL_OF_TWO_DICES = 12;
  private static final int MAX_NUMBER_OF_PLAYERS = 6;
- public static final int MAX_NUMBER_OF_QUESTIONS = 50;
  private static final int WINNING_PURSES = 6;
 
  private ArrayList<String> players = new ArrayList<>();
