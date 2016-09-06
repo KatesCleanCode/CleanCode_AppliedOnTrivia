@@ -33,7 +33,7 @@ public class News {
   printer.printMessage("They have rolled a " + dieRoll);
  }
 
- public void printIsLeavingPenaltyBox(String playersName) {
+ public void playerIsLeavingPenaltyBox(String playersName) {
   printer
    .printMessage(playersName + " is getting out of the penalty box");
  }
