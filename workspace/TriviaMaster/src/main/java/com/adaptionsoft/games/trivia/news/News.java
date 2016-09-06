@@ -1,6 +1,7 @@
 package com.adaptionsoft.games.trivia.news;
 
 import com.adaptionsoft.games.trivia.printer.ConsolePrinter;
+import com.adaptionsoft.games.uglytrivia.Game;
 
 public class News {
  private ConsolePrinter printer = new ConsolePrinter();
@@ -31,5 +32,10 @@ public class News {
 
  public void rolledDieRoll(int dieRoll) {
   printer.printMessage("They have rolled a " + dieRoll);
+ }
+
+ public void printIsLeavingPenaltyBox(Game game, String playersName) {
+  game.printer
+   .printMessage(playersName + " is getting out of the penalty box");
  }
 }
