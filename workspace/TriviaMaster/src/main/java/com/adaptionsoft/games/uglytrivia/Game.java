@@ -127,20 +127,21 @@ public class Game {
 
  private void askQuestion(int location) {
   String currentCategory = questions.currentCategory(location);
+  String askedQuestion = "";
   if (currentCategory == QUESTION_CATEGORY_POP) {
-   String askedQuestion = popQuestions.removeFirst();
+   askedQuestion = popQuestions.removeFirst();
    news.question(askedQuestion);
   }
   if (currentCategory == QUESTION_CATEGORY_SCIENCE) {
-   String askedQuestion = scienceQuestions.removeFirst();
+   askedQuestion = scienceQuestions.removeFirst();
    news.question(askedQuestion);
   }
   if (currentCategory == QUESTION_CATEGORY_SPORTS) {
-   String askedQuestion = sportsQuestions.removeFirst();
+   askedQuestion = sportsQuestions.removeFirst();
    news.question(askedQuestion);
   }
   if (currentCategory == QUESTION_CATEGORY_ROCK) {
-   String askedQuestion = rockQuestions.removeFirst();
+   askedQuestion = rockQuestions.removeFirst();
    news.question(askedQuestion);
   }
  }
