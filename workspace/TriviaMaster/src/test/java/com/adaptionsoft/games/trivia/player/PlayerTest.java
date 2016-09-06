@@ -16,4 +16,10 @@ public class PlayerTest {
   Player player = new Player("Martin");
   assertThat(player.getLocation(), equalTo(0));
  }
+
+ @Test
+ void whenPlayerIsCreatedThenPursusIsZero() {
+  Player player = new Player("Martin");
+  assertThat(player.getPursus(), equalTo(0));
+ }
 }
