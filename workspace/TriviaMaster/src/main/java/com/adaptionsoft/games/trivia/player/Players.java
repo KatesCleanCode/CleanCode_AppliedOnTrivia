@@ -17,6 +17,9 @@ public class Players {
 
  public void addPlayerNameToPlayers(String playerName) {
   players.add(playerName);
+  initializeLocation();
+  initializePurses();
+  initializePenaltyBox();
  }
 
  public int getNumberOfPlayers() {
@@ -59,7 +62,7 @@ public class Players {
   return places[currentPlayer];
  }
 
- public void setLocationOfCurrentPlayer(int location) {
+ private void setLocationOfCurrentPlayer(int location) {
   places[currentPlayer] = location;
  }
 

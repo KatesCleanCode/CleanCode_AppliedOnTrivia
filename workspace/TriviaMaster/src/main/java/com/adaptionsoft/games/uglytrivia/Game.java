@@ -21,9 +21,6 @@ public class Game {
 
  public void addPlayer(String playerName) {
   player.addPlayerNameToPlayers(playerName);
-  player.initializeLocation();
-  player.initializePurses();
-  player.initializePenaltyBox();
   news.playerAdded(playerName);
   news.playersNumber(player.getNumberOfPlayers());
  }
