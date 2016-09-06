@@ -21,7 +21,7 @@ public class News {
   printer.printMessage("Question was incorrectly answered");
  }
 
- public void printCurrentCategory(String category) {
+ public void category(String category) {
   printer.printMessage("The category is " + category);
  }
 }
