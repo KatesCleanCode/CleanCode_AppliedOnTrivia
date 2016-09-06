@@ -111,13 +111,8 @@ public class Game {
  }
 
  private void stayInPenaltyBox() {
-  printIsNotLeavingPenaltyBox(players.get(currentPlayer));
+  news.printIsNotLeavingPenaltyBox(this, players.get(currentPlayer));
   isGettingOutOfPenaltyBox = false;
- }
-
- private void printIsNotLeavingPenaltyBox(String playersName) {
-  printer.printMessage(
-   playersName + " is not getting out of the penalty box");
  }
 
  private void updateLocationOfCurrentPlayer(int roll) {
