@@ -36,4 +36,8 @@ public class Players {
  public int getPursesOfCurrentPlayer(int[] purses, int currentPlayer) {
   return purses[currentPlayer];
  }
+
+ public void initializePurses(int[] purses) {
+  purses[getNumberOfPlayers()] = 0;
+ }
 }
