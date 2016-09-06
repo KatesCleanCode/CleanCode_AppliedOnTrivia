@@ -17,7 +17,7 @@ public class Game {
  private static final int MAX_LOCATION = 11;
  private static final int MAX_DIE_ROLL_OF_TWO_DICES = 12;
  private static final int MAX_NUMBER_OF_PLAYERS = 6;
- private static final int MAX_NUMBER_OF_QUESTIONS = 50;
+ public static final int MAX_NUMBER_OF_QUESTIONS = 50;
  private static final int WINNING_PURSES = 6;
 
  private ArrayList<String> players = new ArrayList<>();
@@ -36,16 +36,8 @@ public class Game {
  private Questions questions = new Questions();
 
  public Game() {
-  initializeQuestions(popQuestions, scienceQuestions, sportsQuestions, rockQuestions);
- }
-
- private void initializeQuestions(LinkedList<String> popQuestions, LinkedList<String> scienceQuestions, LinkedList<String> sportsQuestions, LinkedList<String> rockQuestions) {
-  for (int i = 0; i < MAX_NUMBER_OF_QUESTIONS; i++) {
-   popQuestions.addLast("Pop Question " + i);
-   scienceQuestions.addLast("Science Question " + i);
-   sportsQuestions.addLast("Sports Question " + i);
-   rockQuestions.addLast("Rock Question " + i);
-  }
+  questions.initializeQuestions(popQuestions, scienceQuestions,
+   sportsQuestions, rockQuestions);
  }
 
  public void addPlayer(String playerName) {

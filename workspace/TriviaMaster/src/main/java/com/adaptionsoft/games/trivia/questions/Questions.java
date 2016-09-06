@@ -2,6 +2,8 @@ package com.adaptionsoft.games.trivia.questions;
 
 import java.util.LinkedList;
 
+import com.adaptionsoft.games.uglytrivia.Game;
+
 public class Questions {
 
  private static final String QUESTION_CATEGORY_ROCK = "Rock";
@@ -44,6 +46,15 @@ public class Questions {
    askedQuestion = rockQuestions.removeFirst();
   }
   return askedQuestion;
+ }
+
+ public void initializeQuestions(LinkedList<String> popQuestions, LinkedList<String> scienceQuestions, LinkedList<String> sportsQuestions, LinkedList<String> rockQuestions) {
+  for (int i = 0; i < Game.MAX_NUMBER_OF_QUESTIONS; i++) {
+   popQuestions.addLast("Pop Question " + i);
+   scienceQuestions.addLast("Science Question " + i);
+   sportsQuestions.addLast("Sports Question " + i);
+   rockQuestions.addLast("Rock Question " + i);
+  }
  }
 
 }
