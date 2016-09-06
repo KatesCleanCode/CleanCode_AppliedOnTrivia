@@ -18,7 +18,6 @@ public class Game {
  private static final int MAX_DIE_ROLL_OF_TWO_DICES = 12;
  private static final int MAX_NUMBER_OF_PLAYERS = 6;
  private static final int MAX_NUMBER_OF_QUESTIONS = 50;
- public static final int NUMBER_OF_QUESTION_CATEGORIES = 4;
  private static final int WINNING_PURSES = 6;
 
  private ArrayList<String> players = new ArrayList<>();

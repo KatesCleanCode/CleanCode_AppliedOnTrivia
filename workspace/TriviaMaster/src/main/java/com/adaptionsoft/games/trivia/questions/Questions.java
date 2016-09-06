@@ -2,17 +2,16 @@ package com.adaptionsoft.games.trivia.questions;
 
 import java.util.LinkedList;
 
-import com.adaptionsoft.games.uglytrivia.Game;
-
 public class Questions {
 
  private static final String QUESTION_CATEGORY_ROCK = "Rock";
  private static final String QUESTION_CATEGORY_SPORTS = "Sports";
  private static final String QUESTION_CATEGORY_SCIENCE = "Science";
  private static final String QUESTION_CATEGORY_POP = "Pop";
+ private static final int NUMBER_OF_QUESTION_CATEGORIES = 4;
 
  public String currentCategory(int location) {
-  int questionOrder = location % Game.NUMBER_OF_QUESTION_CATEGORIES;
+  int questionOrder = location % NUMBER_OF_QUESTION_CATEGORIES;
   if (questionOrder == 0) {
    return QUESTION_CATEGORY_POP;
   }
