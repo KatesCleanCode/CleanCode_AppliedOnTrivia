@@ -34,7 +34,7 @@ public class Game {
   initializePurses();
   initializePenaltyBox();
   news.playerAdded(playerName);
-  news.playersNumber(players.size());
+  news.playersNumber(howManyPlayers());
  }
 
  private void addPlayerNameToPlayers(String playerName) {
