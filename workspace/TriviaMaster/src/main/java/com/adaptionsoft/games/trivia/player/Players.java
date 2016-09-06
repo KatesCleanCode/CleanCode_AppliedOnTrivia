@@ -10,31 +10,31 @@ public class Players {
  /** Maximum 5 players can attend a game. */
  public static final int MAX_NUMBER_OF_PLAYERS = 5;
 
- private List<Player> player = new ArrayList<>();
+ private List<Player> players = new ArrayList<>();
  private int currentPlayer = 0;
 
  public int getNumberOfPlayers() {
-  return player.size();
+  return players.size();
  }
 
  public void add(String playerName) {
   if (getNumberOfPlayers() >= MAX_NUMBER_OF_PLAYERS) {
    throw new TooManyPlayersException(MAX_NUMBER_OF_PLAYERS);
   }
-  player.add(new Player(playerName));
+  players.add(new Player(playerName));
  }
 
  public Player getCurrentPlayer() {
-  if (player.isEmpty()) {
+  if (players.isEmpty()) {
    return null;
   }
-  return player.get(currentPlayer);
+  return players.get(currentPlayer);
  }
 
  public void switchToNextPlayer() {
-  if (!player.isEmpty()) {
+  if (!players.isEmpty()) {
    currentPlayer++;
-   currentPlayer = currentPlayer % player.size();
+   currentPlayer = currentPlayer % players.size();
   }
  }
 }
