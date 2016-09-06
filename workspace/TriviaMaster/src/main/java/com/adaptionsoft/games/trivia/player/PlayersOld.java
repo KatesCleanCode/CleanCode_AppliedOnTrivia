@@ -52,15 +52,10 @@ public class PlayersOld {
   return places[currentPlayer];
  }
 
- private void setLocationOfCurrentPlayer(int location) {
-  places[currentPlayer] = location;
- }
-
  public void updateLocationOfCurrentPlayer(int roll) {
-  setLocationOfCurrentPlayer(getLocationOfCurrentPlayer() + roll);
+  places[currentPlayer] = getLocationOfCurrentPlayer() + roll;
   if (getLocationOfCurrentPlayer() > Player.MAX_LOCATION) {
-   setLocationOfCurrentPlayer(
-    getLocationOfCurrentPlayer() - MAX_DIE_ROLL_OF_TWO_DICES);
+   places[currentPlayer] = getLocationOfCurrentPlayer() - MAX_DIE_ROLL_OF_TWO_DICES;
   }
  }
 
