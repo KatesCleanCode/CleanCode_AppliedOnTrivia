@@ -6,6 +6,7 @@ import java.util.List;
 public class Players {
 
  private List<Player> player = new ArrayList<>();
+ private int currentPlayer = 0;
 
  public int getNumberOfPlayers() {
   return player.size();
@@ -19,11 +20,10 @@ public class Players {
   if (player.isEmpty()) {
    return null;
   }
-  return player.get(0);
+  return player.get(currentPlayer);
  }
 
  public void switchToNextPlayer() {
-  // TODO Auto-generated method stub
-
+  currentPlayer++;
  }
 }
