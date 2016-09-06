@@ -103,7 +103,7 @@ public class Game {
   news.answerWasCorrect();
   increasePursusOfCurrentPlayer();
   news.playersPurses(player.getNameOfCurrentPlayer(currentPlayer),
-   getPursesOfCurrentPlayer());
+   getPursesOfCurrentPlayer(purses, currentPlayer));
   boolean winner = didPlayerWin();
   switchToNextPlayer();
   return winner;
@@ -133,10 +133,12 @@ public class Game {
  }
 
  private boolean didPlayerWin() {
-  return !(getPursesOfCurrentPlayer() == WINNING_PURSES);
+  return !(getPursesOfCurrentPlayer(purses,
+   currentPlayer) == WINNING_PURSES);
  }
 
- private int getPursesOfCurrentPlayer() {
+ private int getPursesOfCurrentPlayer(int[] purses,
+  int currentPlayer) {
   return purses[currentPlayer];
  }
 
