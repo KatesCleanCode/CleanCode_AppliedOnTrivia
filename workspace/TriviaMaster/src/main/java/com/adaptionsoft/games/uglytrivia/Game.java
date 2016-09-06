@@ -59,15 +59,15 @@ public class Game {
   initializePurses();
   initializePenaltyBox();
   printPlayerWasAdded(playerName);
-  printPlayersNumber();
+  printPlayersNumber(players.size());
  }
 
  private void addPlayerNameToPlayers(String playerName) {
   players.add(playerName);
  }
 
- private void printPlayersNumber() {
-  printer.printMessage("He/She is player number " + players.size());
+ private void printPlayersNumber(int playersNumber) {
+  printer.printMessage("He/She is player number " + playersNumber);
  }
 
  private void printPlayerWasAdded(String playerName) {
