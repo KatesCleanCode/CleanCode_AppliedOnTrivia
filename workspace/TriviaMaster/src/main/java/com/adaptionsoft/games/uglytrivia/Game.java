@@ -19,7 +19,6 @@ public class Game {
  private static final int WINNING_PURSES = 6;
 
  private int[] places = new int[MAX_NUMBER_OF_PLAYERS];
- private int[] purses = new int[MAX_NUMBER_OF_PLAYERS];
  private int currentPlayer = 0;
  private boolean isGettingOutOfPenaltyBox;
 
@@ -125,7 +124,8 @@ public class Game {
  }
 
  private boolean didPlayerWin() {
-  return !(player.getPursesOfCurrentPlayer(currentPlayer) == WINNING_PURSES);
+  return !(player
+   .getPursesOfCurrentPlayer(currentPlayer) == WINNING_PURSES);
  }
 
  public void play(Random random) {
