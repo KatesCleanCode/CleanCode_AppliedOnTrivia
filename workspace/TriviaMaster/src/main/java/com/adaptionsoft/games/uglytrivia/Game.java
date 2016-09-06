@@ -94,7 +94,8 @@ public class Game {
   }
   updateLocationOfCurrentPlayer(roll);
   news.category(questions.currentCategory(places[currentPlayer]));
-  askQuestion(places[currentPlayer]);
+  String askedQuestion = askQuestion(places[currentPlayer]);
+  news.question(askedQuestion);
  }
 
  private boolean isEven(int dieRoll) {
@@ -140,7 +141,6 @@ public class Game {
   if (currentCategory == QUESTION_CATEGORY_ROCK) {
    askedQuestion = rockQuestions.removeFirst();
   }
-  news.question(askedQuestion);
   return askedQuestion;
  }
 
