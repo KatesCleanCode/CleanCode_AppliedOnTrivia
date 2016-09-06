@@ -1,7 +1,6 @@
 package com.adaptionsoft.games.trivia.news;
 
 import com.adaptionsoft.games.trivia.printer.ConsolePrinter;
-import com.adaptionsoft.games.uglytrivia.Game;
 
 public class News {
  private ConsolePrinter printer = new ConsolePrinter();
@@ -14,7 +13,7 @@ public class News {
   printer.printMessage(playerName + " was added");
  }
 
- public void printAnswerWasCorrect(Game game) {
-  game.printer.printMessage("Answer was correct!!!!");
+ public void printAnswerWasCorrect() {
+  printer.printMessage("Answer was correct!!!!");
  }
 }
