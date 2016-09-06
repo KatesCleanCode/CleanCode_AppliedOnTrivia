@@ -48,15 +48,16 @@ public class Game {
   updateLocationOfCurrentPlayer(roll);
   news.playersNewLocation(
    player.getNameOfCurrentPlayer(currentPlayer),
-   getLocationOfCurrentPlayer());
-  news
-   .category(questions.currentCategory(getLocationOfCurrentPlayer()));
-  String askedQuestion =
-   questions.askQuestion(getLocationOfCurrentPlayer());
+   getLocationOfCurrentPlayer(places, currentPlayer));
+  news.category(questions.currentCategory(
+   getLocationOfCurrentPlayer(places, currentPlayer)));
+  String askedQuestion = questions
+   .askQuestion(getLocationOfCurrentPlayer(places, currentPlayer));
   news.question(askedQuestion);
  }
 
- private int getLocationOfCurrentPlayer() {
+ private int getLocationOfCurrentPlayer(int[] places,
+  int currentPlayer) {
   return places[currentPlayer];
  }
 
@@ -77,10 +78,13 @@ public class Game {
  }
 
  private void updateLocationOfCurrentPlayer(int roll) {
-  places[currentPlayer] = getLocationOfCurrentPlayer() + roll;
-  if (getLocationOfCurrentPlayer() > MAX_LOCATION) {
+  places[currentPlayer] =
+   getLocationOfCurrentPlayer(places, currentPlayer) + roll;
+  if (getLocationOfCurrentPlayer(places,
+   currentPlayer) > MAX_LOCATION) {
    places[currentPlayer] =
-    getLocationOfCurrentPlayer() - MAX_DIE_ROLL_OF_TWO_DICES;
+    getLocationOfCurrentPlayer(places, currentPlayer)
+     - MAX_DIE_ROLL_OF_TWO_DICES;
   }
  }
 
