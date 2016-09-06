@@ -52,7 +52,8 @@ public class Game {
  }
 
  public void roll(int roll) {
-  news.currentPlayer(getNameOfCurrentPlayer(players, currentPlayer));
+  news.currentPlayer(
+   player.getNameOfCurrentPlayer(players, currentPlayer));
   news.rolledDieRoll(roll);
   if (currentPlayerIsInPenaltyBox()) {
    if (isEven(roll)) {
@@ -62,7 +63,8 @@ public class Game {
    leavePenaltyBox();
   }
   updateLocationOfCurrentPlayer(roll);
-  news.playersNewLocation(getNameOfCurrentPlayer(players, currentPlayer),
+  news.playersNewLocation(
+   player.getNameOfCurrentPlayer(players, currentPlayer),
    getLocationOfCurrentPlayer());
   news
    .category(questions.currentCategory(getLocationOfCurrentPlayer()));
@@ -85,15 +87,13 @@ public class Game {
 
  private void leavePenaltyBox() {
   isGettingOutOfPenaltyBox = true;
-  news.playerIsLeavingPenaltyBox(getNameOfCurrentPlayer(players, currentPlayer));
- }
-
- private String getNameOfCurrentPlayer(ArrayList<String> players, int currentPlayer) {
-  return players.get(currentPlayer);
+  news.playerIsLeavingPenaltyBox(
+   player.getNameOfCurrentPlayer(players, currentPlayer));
  }
 
  private void stayInPenaltyBox() {
-  news.playerIsStayingInPenaltyBox(getNameOfCurrentPlayer(players, currentPlayer));
+  news.playerIsStayingInPenaltyBox(
+   player.getNameOfCurrentPlayer(players, currentPlayer));
   isGettingOutOfPenaltyBox = false;
  }
 
@@ -114,7 +114,8 @@ public class Game {
   }
   news.answerWasCorrect();
   increasePursusOfCurrentPlayer();
-  news.playersPurses(getNameOfCurrentPlayer(players, currentPlayer),
+  news.playersPurses(
+   player.getNameOfCurrentPlayer(players, currentPlayer),
    getPursesOfCurrentPlayer());
   boolean winner = didPlayerWin();
   switchToNextPlayer();
@@ -138,7 +139,8 @@ public class Game {
 
  public void wrongAnswer() {
   news.answerWasIncorrect();
-  news.playerSentToPenaltyBox(getNameOfCurrentPlayer(players, currentPlayer));
+  news.playerSentToPenaltyBox(
+   player.getNameOfCurrentPlayer(players, currentPlayer));
   sendCurrentPlayerToPenaltyBox();
   switchToNextPlayer();
  }

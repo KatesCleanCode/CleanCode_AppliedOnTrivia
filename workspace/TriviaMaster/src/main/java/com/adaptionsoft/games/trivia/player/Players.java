@@ -12,4 +12,8 @@ public class Players {
   return players.size();
  }
 
+ public String getNameOfCurrentPlayer(ArrayList<String> players, int currentPlayer) {
+  return players.get(currentPlayer);
+ }
+
 }
