@@ -2,6 +2,8 @@ package com.adaptionsoft.games.trivia.player;
 
 public class Player {
 
+ private static final int MAX_DIE_ROLL_OF_TWO_DICES = 12;
+
  private String playerName;
  private int location = 0;
  private int pursus = 0;
@@ -33,7 +35,7 @@ public class Player {
  }
 
  public int updateLocation(int dieRoll) {
-  location = (location + dieRoll) % 12;
+  location = (location + dieRoll) % MAX_DIE_ROLL_OF_TWO_DICES;
   return location;
  }
 
