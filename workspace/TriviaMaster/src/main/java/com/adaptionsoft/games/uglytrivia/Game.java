@@ -37,6 +37,7 @@ public class Game {
  private boolean isGettingOutOfPenaltyBox;
 
  private News news = new News();
+ private Questions questions = new Questions();
 
  public Game() {
   initializeQuestions();
