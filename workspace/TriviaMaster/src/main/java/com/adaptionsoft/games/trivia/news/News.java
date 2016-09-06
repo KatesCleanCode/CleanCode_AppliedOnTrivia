@@ -1,7 +1,6 @@
 package com.adaptionsoft.games.trivia.news;
 
 import com.adaptionsoft.games.trivia.printer.ConsolePrinter;
-import com.adaptionsoft.games.uglytrivia.Game;
 
 public class News {
  private ConsolePrinter printer = new ConsolePrinter();
@@ -39,8 +38,8 @@ public class News {
    .printMessage(playersName + " is getting out of the penalty box");
  }
 
- public void printIsNotLeavingPenaltyBox(Game game, String playersName) {
-  game.printer.printMessage(
+ public void printIsNotLeavingPenaltyBox(String playersName) {
+  printer.printMessage(
    playersName + " is not getting out of the penalty box");
  }
 }

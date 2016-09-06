@@ -111,7 +111,7 @@ public class Game {
  }
 
  private void stayInPenaltyBox() {
-  news.printIsNotLeavingPenaltyBox(this, players.get(currentPlayer));
+  news.printIsNotLeavingPenaltyBox(players.get(currentPlayer));
   isGettingOutOfPenaltyBox = false;
  }
 
