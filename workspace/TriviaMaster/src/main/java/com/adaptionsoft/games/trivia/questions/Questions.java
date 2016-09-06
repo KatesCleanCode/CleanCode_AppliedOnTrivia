@@ -8,6 +8,7 @@ public class Questions {
 
  private static final String QUESTION_CATEGORY_ROCK = "Rock";
  private static final String QUESTION_CATEGORY_SPORTS = "Sports";
+ private static final String QUESTION_CATEGORY_SCIENCE = "Science";
 
  public String currentCategory(int location) {
   int questionOrder = location % Game.NUMBER_OF_QUESTION_CATEGORIES;
@@ -15,7 +16,7 @@ public class Questions {
    return Game.QUESTION_CATEGORY_POP;
   }
   if (questionOrder == 1) {
-   return Game.QUESTION_CATEGORY_SCIENCE;
+   return QUESTION_CATEGORY_SCIENCE;
   }
   if (questionOrder == 2) {
    return QUESTION_CATEGORY_SPORTS;
@@ -33,7 +34,7 @@ public class Questions {
   if (currentCategory == Game.QUESTION_CATEGORY_POP) {
    askedQuestion = popQuestions.removeFirst();
   }
-  if (currentCategory == Game.QUESTION_CATEGORY_SCIENCE) {
+  if (currentCategory == QUESTION_CATEGORY_SCIENCE) {
    askedQuestion = scienceQuestions.removeFirst();
   }
   if (currentCategory == QUESTION_CATEGORY_SPORTS) {
