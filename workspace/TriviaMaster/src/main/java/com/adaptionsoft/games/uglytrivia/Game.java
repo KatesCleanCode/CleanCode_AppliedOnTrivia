@@ -16,8 +16,8 @@ public class Game {
  private static final int WINNING_PURSES = 6;
 
  private News news = new News();
- private Questions questions = new Questions();
  private Players player = new Players();
+ private Questions questions = new Questions();
 
  public void addPlayer(String playerName) {
   player.add(playerName);
