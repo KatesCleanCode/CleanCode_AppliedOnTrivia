@@ -19,9 +19,9 @@ public class PlayersOld {
 
  public void add(String playerName) {
   playersOld.add(playerName);
-  initializeLocation();
-  initializePurses();
-  initializePenaltyBox();
+  places[getNumberOfPlayers()] = 0;
+  purses[getNumberOfPlayers()] = 0;
+  inPenaltyBox[getNumberOfPlayers()] = false;
  }
 
  public int getNumberOfPlayers() {
@@ -30,10 +30,6 @@ public class PlayersOld {
 
  public String getNameOfCurrentPlayer() {
   return playersOld.get(currentPlayer);
- }
-
- private void initializePenaltyBox() {
-  inPenaltyBox[getNumberOfPlayers()] = false;
  }
 
  public void sendCurrentPlayerToPenaltyBox() {
@@ -48,16 +44,8 @@ public class PlayersOld {
   return purses[currentPlayer];
  }
 
- private void initializePurses() {
-  purses[getNumberOfPlayers()] = 0;
- }
-
  public void increasePursesOfCurrentPlayer() {
   purses[currentPlayer]++;
- }
-
- private void initializeLocation() {
-  places[getNumberOfPlayers()] = 0;
  }
 
  public int getLocationOfCurrentPlayer() {
