@@ -52,11 +52,6 @@ public class PlayersOld {
  }
 
  public void updateLocationOfCurrentPlayer(int roll) {
-  places[currentPlayer] = getLocationOfCurrentPlayer() + roll;
-  if (getLocationOfCurrentPlayer() > Player.MAX_LOCATION) {
-   places[currentPlayer] =
-    getLocationOfCurrentPlayer() - MAX_DIE_ROLL_OF_TWO_DICES;
-  }
   players.getCurrentPlayer().updateLocation(roll);
  }
 
