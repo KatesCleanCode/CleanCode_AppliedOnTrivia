@@ -2,6 +2,7 @@ package com.adaptionsoft.games.trivia.player;
 
 import java.util.ArrayList;
 
+@Deprecated
 public class PlayersOld {
 
  private static final int MAX_DIE_ROLL_OF_TWO_DICES = 12;
