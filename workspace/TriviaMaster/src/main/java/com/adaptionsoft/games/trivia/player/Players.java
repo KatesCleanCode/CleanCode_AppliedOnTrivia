@@ -12,13 +12,13 @@ public class Players {
  }
 
  public void add(String playerName) {
-  player.add(new Player());
+  player.add(new Player(playerName));
  }
 
  public Player getCurrentPlayer() {
   if (player.isEmpty()) {
    return null;
   }
-  return new Player();
+  return new Player("Sue");
  }
 }
