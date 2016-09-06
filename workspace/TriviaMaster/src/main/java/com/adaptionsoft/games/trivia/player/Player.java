@@ -28,6 +28,10 @@ public class Player {
   return isInPenaltyBox;
  }
 
+ public void sendToPenaltyBox() {
+  isInPenaltyBox = true;
+ }
+
  public boolean isLeavingPenaltyBox() {
   return leavingPenaltyBox;
  }
