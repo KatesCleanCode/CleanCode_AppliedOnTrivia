@@ -11,7 +11,7 @@ public class Players {
   return playerNames.size();
  }
 
- public void add(String string) {
-  playerNames.add(string);
+ public void add(String playerName) {
+  playerNames.add(playerName);
  }
 }
