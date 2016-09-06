@@ -9,11 +9,12 @@ public class Questions {
  private static final String QUESTION_CATEGORY_ROCK = "Rock";
  private static final String QUESTION_CATEGORY_SPORTS = "Sports";
  private static final String QUESTION_CATEGORY_SCIENCE = "Science";
+ private static final String QUESTION_CATEGORY_POP = "Pop";
 
  public String currentCategory(int location) {
   int questionOrder = location % Game.NUMBER_OF_QUESTION_CATEGORIES;
   if (questionOrder == 0) {
-   return Game.QUESTION_CATEGORY_POP;
+   return QUESTION_CATEGORY_POP;
   }
   if (questionOrder == 1) {
    return QUESTION_CATEGORY_SCIENCE;
@@ -31,7 +32,7 @@ public class Questions {
   LinkedList<String> popQuestions) {
   String currentCategory = currentCategory(location);
   String askedQuestion = "";
-  if (currentCategory == Game.QUESTION_CATEGORY_POP) {
+  if (currentCategory == QUESTION_CATEGORY_POP) {
    askedQuestion = popQuestions.removeFirst();
   }
   if (currentCategory == QUESTION_CATEGORY_SCIENCE) {
