@@ -21,7 +21,7 @@ public class News {
   printer.printMessage("Question was incorrectly answered");
  }
 
- public void printPlayerWasSentToPenaltyBox(String playersName) {
+ public void playerSentToPenaltyBox(String playersName) {
   printer.printMessage(playersName + " was sent to the penalty box");
  }
 
