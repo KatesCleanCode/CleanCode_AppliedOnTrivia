@@ -128,7 +128,8 @@ public class Game {
  private void askQuestion(int location) {
   String currentCategory = questions.currentCategory(location);
   if (currentCategory == QUESTION_CATEGORY_POP) {
-   news.question(popQuestions.removeFirst());
+   String askedQuestion = popQuestions.removeFirst();
+   news.question(askedQuestion);
   }
   if (currentCategory == QUESTION_CATEGORY_SCIENCE) {
    news.question(scienceQuestions.removeFirst());
