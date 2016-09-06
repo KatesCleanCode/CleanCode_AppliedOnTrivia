@@ -15,7 +15,7 @@ public class Game {
  private static final int WRONG_ANSWER = 7;
  private static final int WINNING_PURSES = 6;
 
- private int currentPlayer = 0;
+ public int currentPlayer = 0;
 
  private News news = new News();
  private Questions questions = new Questions();
@@ -70,7 +70,7 @@ public class Game {
  public boolean wasCorrectlyAnswered() {
   if (player.currentPlayerIsInPenaltyBox(currentPlayer)) {
    if (player.currentPlayerIsNotLeavingPenaltyBox()) {
-    switchToNextPlayer();
+    player.switchToNextPlayer(this);
     return true;
    }
   }
@@ -79,15 +79,8 @@ public class Game {
   news.playersPurses(player.getNameOfCurrentPlayer(currentPlayer),
    player.getPursesOfCurrentPlayer(currentPlayer));
   boolean winner = didPlayerWin();
-  switchToNextPlayer();
+  player.switchToNextPlayer(this);
   return winner;
- }
-
- private void switchToNextPlayer() {
-  currentPlayer++;
-  if (currentPlayer == player.getNumberOfPlayers()) {
-   currentPlayer = 0;
-  }
  }
 
  public void wrongAnswer() {
@@ -95,7 +88,7 @@ public class Game {
   news.playerSentToPenaltyBox(
    player.getNameOfCurrentPlayer(currentPlayer));
   player.sendCurrentPlayerToPenaltyBox(currentPlayer);
-  switchToNextPlayer();
+  player.switchToNextPlayer(this);
  }
 
  private boolean didPlayerWin() {

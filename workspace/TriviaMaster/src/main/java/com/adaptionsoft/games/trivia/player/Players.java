@@ -2,6 +2,8 @@ package com.adaptionsoft.games.trivia.player;
 
 import java.util.ArrayList;
 
+import com.adaptionsoft.games.uglytrivia.Game;
+
 public class Players {
 
  private static final int MAX_DIE_ROLL_OF_TWO_DICES = 12;
@@ -80,5 +82,12 @@ public class Players {
 
  public boolean currentPlayerIsNotLeavingPenaltyBox() {
   return !isGettingOutOfPenaltyBox;
+ }
+
+ public void switchToNextPlayer(Game game) {
+  game.currentPlayer++;
+  if (game.currentPlayer == getNumberOfPlayers()) {
+   game.currentPlayer = 0;
+  }
  }
 }
