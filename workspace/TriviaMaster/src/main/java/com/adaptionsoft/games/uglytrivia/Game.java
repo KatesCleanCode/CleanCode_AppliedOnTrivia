@@ -33,7 +33,7 @@ public class Game {
  }
 
  private Players getPlayers() {
-  return playersOld.players;
+  return players;
  }
 
  public void roll(int roll) {
@@ -47,11 +47,10 @@ public class Game {
    leavePenaltyBox();
   }
   getPlayers().getCurrentPlayer().updateLocation(roll);
-  news.playersNewLocation(
-   getPlayers().getCurrentPlayer().getName(),
+  news.playersNewLocation(getPlayers().getCurrentPlayer().getName(),
    getPlayers().getCurrentPlayer().getLocation());
-  news.category(questions.currentCategory(
-   getPlayers().getCurrentPlayer().getLocation()));
+  news.category(questions
+   .currentCategory(getPlayers().getCurrentPlayer().getLocation()));
   String askedQuestion = questions
    .askQuestion(getPlayers().getCurrentPlayer().getLocation());
   news.question(askedQuestion);
@@ -91,8 +90,8 @@ public class Game {
 
  public void wrongAnswer() {
   news.answerWasIncorrect();
-  news.playerSentToPenaltyBox(
-   getPlayers().getCurrentPlayer().getName());
+  news
+   .playerSentToPenaltyBox(getPlayers().getCurrentPlayer().getName());
   getPlayers().getCurrentPlayer().sendToPenaltyBox();
   getPlayers().switchToNextPlayer();
  }
