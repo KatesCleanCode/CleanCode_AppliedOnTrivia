@@ -12,6 +12,7 @@ public class Players {
  private boolean[] inPenaltyBox = new boolean[MAX_NUMBER_OF_PLAYERS];
  private int[] purses = new int[MAX_NUMBER_OF_PLAYERS];
  private int[] places = new int[MAX_NUMBER_OF_PLAYERS];
+ private static final int MAX_LOCATION = 11;
 
  public void addPlayerNameToPlayers(String playerName) {
   players.add(playerName);
@@ -66,7 +67,7 @@ public class Players {
   int currentPlayer) {
   setLocationOfCurrentPlayer(currentPlayer,
    getLocationOfCurrentPlayer(currentPlayer) + roll);
-  if (getLocationOfCurrentPlayer(currentPlayer) > Game.MAX_LOCATION) {
+  if (getLocationOfCurrentPlayer(currentPlayer) > MAX_LOCATION) {
    setLocationOfCurrentPlayer(currentPlayer,
     getLocationOfCurrentPlayer(currentPlayer)
      - Game.MAX_DIE_ROLL_OF_TWO_DICES);
