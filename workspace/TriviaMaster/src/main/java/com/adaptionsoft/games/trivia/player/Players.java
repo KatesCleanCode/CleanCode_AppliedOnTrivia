@@ -11,6 +11,7 @@ public class Players {
  private ArrayList<String> players = new ArrayList<>();
  private boolean[] inPenaltyBox = new boolean[MAX_NUMBER_OF_PLAYERS];
  private int[] purses = new int[MAX_NUMBER_OF_PLAYERS];
+ private int[] places = new int[MAX_NUMBER_OF_PLAYERS];
 
  public void addPlayerNameToPlayers(String playerName) {
   players.add(playerName);
@@ -52,15 +53,18 @@ public class Players {
   places[getNumberOfPlayers()] = 0;
  }
 
- public int getLocationOfCurrentPlayer(int[] places, int currentPlayer) {
+ public int getLocationOfCurrentPlayer(int[] places,
+  int currentPlayer) {
   return places[currentPlayer];
  }
 
- public void setLocationOfCurrentPlayer(int[] places, int currentPlayer, int location) {
+ public void setLocationOfCurrentPlayer(int[] places,
+  int currentPlayer, int location) {
   places[currentPlayer] = location;
  }
 
- public void updateLocationOfCurrentPlayer(int roll, int[] places, int currentPlayer) {
+ public void updateLocationOfCurrentPlayer(int roll, int[] places,
+  int currentPlayer) {
   setLocationOfCurrentPlayer(places, currentPlayer,
    getLocationOfCurrentPlayer(places, currentPlayer) + roll);
   if (getLocationOfCurrentPlayer(places,
