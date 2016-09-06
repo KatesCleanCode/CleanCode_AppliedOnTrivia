@@ -54,7 +54,6 @@ public class PlayersOld {
  }
 
  public void setLeavePenaltyBox(boolean leavePenaltyBox) {
-  isGettingOutOfPenaltyBox = leavePenaltyBox;
   players.getCurrentPlayer().setLeavingPenaltyBox(leavePenaltyBox);
  }
 
