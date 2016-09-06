@@ -1,7 +1,6 @@
 package com.adaptionsoft.games.trivia.news;
 
 import com.adaptionsoft.games.trivia.printer.ConsolePrinter;
-import com.adaptionsoft.games.uglytrivia.Game;
 
 public class News {
  private ConsolePrinter printer = new ConsolePrinter();
@@ -30,7 +29,7 @@ public class News {
   printer.printMessage(playersName + " is the current player");
  }
 
- public void printDieRoll(Game game, int dieRoll) {
-  game.printer.printMessage("They have rolled a " + dieRoll);
+ public void printDieRoll(int dieRoll) {
+  printer.printMessage("They have rolled a " + dieRoll);
  }
 }
