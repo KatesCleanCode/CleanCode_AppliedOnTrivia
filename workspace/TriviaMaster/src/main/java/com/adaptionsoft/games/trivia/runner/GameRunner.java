@@ -27,6 +27,7 @@ public final class GameRunner {
   aGame.addPlayer("Chet");
   aGame.addPlayer("Pat");
   aGame.addPlayer("Sue");
+  aGame.play(rand);
 
   do {
    aGame.roll(rand.nextInt(MAX_DIE_ROLL) + MIN_DIE_ROLL);
