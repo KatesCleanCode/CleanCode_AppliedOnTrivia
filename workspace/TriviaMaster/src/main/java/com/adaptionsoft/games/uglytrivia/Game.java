@@ -174,7 +174,7 @@ public class Game {
 
  private void increasePursusOfCurrentPlayer() {
   purses[currentPlayer]++;
-  news.printPurses(players.get(currentPlayer), purses[currentPlayer]);
+  news.playersPurses(players.get(currentPlayer), purses[currentPlayer]);
  }
 
  private void switchToNextPlayer() {

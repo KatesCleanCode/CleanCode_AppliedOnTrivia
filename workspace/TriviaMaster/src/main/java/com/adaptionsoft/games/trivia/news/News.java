@@ -56,7 +56,7 @@ public class News {
    .printMessage(playersName + "'s new location is " + location);
  }
 
- public void printPurses(String playersName, int purses) {
+ public void playersPurses(String playersName, int purses) {
   printer
    .printMessage(playersName + " now has " + purses + " Gold Coins.");
  }
