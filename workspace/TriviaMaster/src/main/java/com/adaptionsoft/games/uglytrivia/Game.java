@@ -58,7 +58,7 @@ public class Game {
  }
 
  public void roll(int roll) {
-  news.currentPlayer(players.get(currentPlayer));
+  news.currentPlayer(getNameOfCurrentPlayer());
   news.rolledDieRoll(roll);
   if (currentPlayerIsInPenaltyBox()) {
    if (isEven(roll)) {
@@ -89,11 +89,15 @@ public class Game {
 
  private void leavePenaltyBox() {
   isGettingOutOfPenaltyBox = true;
-  news.playerIsLeavingPenaltyBox(players.get(currentPlayer));
+  news.playerIsLeavingPenaltyBox(getNameOfCurrentPlayer());
+ }
+
+ private String getNameOfCurrentPlayer() {
+  return players.get(currentPlayer);
  }
 
  private void stayInPenaltyBox() {
-  news.playerIsStayingInPenaltyBox(players.get(currentPlayer));
+  news.playerIsStayingInPenaltyBox(getNameOfCurrentPlayer());
   isGettingOutOfPenaltyBox = false;
  }
 
@@ -103,7 +107,7 @@ public class Game {
    places[currentPlayer] =
     getLocationOfCurrentPlayer() - MAX_DIE_ROLL_OF_TWO_DICES;
   }
-  news.playersNewLocation(players.get(currentPlayer),
+  news.playersNewLocation(getNameOfCurrentPlayer(),
    getLocationOfCurrentPlayer());
  }
 
@@ -127,7 +131,7 @@ public class Game {
 
  private void increasePursusOfCurrentPlayer() {
   purses[currentPlayer]++;
-  news.playersPurses(players.get(currentPlayer),
+  news.playersPurses(getNameOfCurrentPlayer(),
    purses[currentPlayer]);
  }
 
@@ -140,7 +144,7 @@ public class Game {
 
  public void wrongAnswer() {
   news.answerWasIncorrect();
-  news.playerSentToPenaltyBox(players.get(currentPlayer));
+  news.playerSentToPenaltyBox(getNameOfCurrentPlayer());
   sendCurrentPlayerToPenaltyBox();
   switchToNextPlayer();
  }
