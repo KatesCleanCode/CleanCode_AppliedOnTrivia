@@ -1,5 +1,7 @@
 package com.adaptionsoft.games.trivia.player;
 
+import static com.adaptionsoft.games.trivia.player.Player.MAX_LOCATION;
+
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
@@ -43,7 +45,7 @@ public class PlayerTest {
 
  @Test
  void whenDicesAreRolledThenLocationIsIncreasedByDieRoll() {
-  player.updateLocation(11);
-  assertThat(player.getLocation(), equalTo(11));
+  player.updateLocation(MAX_LOCATION);
+  assertThat(player.getLocation(), equalTo(MAX_LOCATION));
  }
 }

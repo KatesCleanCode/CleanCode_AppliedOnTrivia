@@ -6,7 +6,6 @@ import java.util.ArrayList;
 public class PlayersOld {
 
  private static final int MAX_DIE_ROLL_OF_TWO_DICES = 12;
- private static final int MAX_LOCATION = 11;
  private static final int MAX_NUMBER_OF_PLAYERS = 6;
 
  private ArrayList<String> players = new ArrayList<>();
@@ -70,7 +69,7 @@ public class PlayersOld {
 
  public void updateLocationOfCurrentPlayer(int roll) {
   setLocationOfCurrentPlayer(getLocationOfCurrentPlayer() + roll);
-  if (getLocationOfCurrentPlayer() > MAX_LOCATION) {
+  if (getLocationOfCurrentPlayer() > Player.MAX_LOCATION) {
    setLocationOfCurrentPlayer(
     getLocationOfCurrentPlayer() - MAX_DIE_ROLL_OF_TWO_DICES);
   }
