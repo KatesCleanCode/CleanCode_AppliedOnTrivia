@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.Random;
 
 import com.adaptionsoft.games.trivia.news.News;
+import com.adaptionsoft.games.trivia.questions.Questions;
 
 public class Game {
 
