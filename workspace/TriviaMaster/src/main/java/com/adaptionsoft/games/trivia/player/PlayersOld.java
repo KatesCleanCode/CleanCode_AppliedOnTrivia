@@ -18,10 +18,6 @@ public class PlayersOld {
  private int currentPlayer = 0;
 
  public void add(String playerName) {
-  playersOld.add(playerName);
-  places[getNumberOfPlayers()] = 0;
-  purses[getNumberOfPlayers()] = 0;
-  inPenaltyBox[getNumberOfPlayers()] = false;
   players.add(playerName);
  }
 
