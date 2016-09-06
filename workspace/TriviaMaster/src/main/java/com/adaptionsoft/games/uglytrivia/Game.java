@@ -2,6 +2,7 @@ package com.adaptionsoft.games.uglytrivia;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Random;
 
 public class Game {
  private static final String QUESTION_CATEGORY_ROCK = "Rock";
@@ -233,5 +234,10 @@ public class Game {
 
  private boolean didPlayerWin() {
   return !(purses[currentPlayer] == WINNING_PURSES);
+ }
+
+ public void play(Random rand) {
+  // TODO Auto-generated method stub
+
  }
 }
