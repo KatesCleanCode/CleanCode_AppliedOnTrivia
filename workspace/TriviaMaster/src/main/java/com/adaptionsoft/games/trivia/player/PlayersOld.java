@@ -70,7 +70,7 @@ public class PlayersOld {
  }
 
  public boolean isCurrentPlayerStayingInPenaltyBox() {
-  return !isGettingOutOfPenaltyBox;
+  return !players.getCurrentPlayer().isLeavingPenaltyBox();
  }
 
  public void switchToNextPlayer() {
