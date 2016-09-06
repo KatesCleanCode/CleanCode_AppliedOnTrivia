@@ -9,6 +9,7 @@ public class Players {
  private static final int MAX_NUMBER_OF_PLAYERS = 6;
 
  private ArrayList<String> players = new ArrayList<>();
+
  private boolean[] inPenaltyBox = new boolean[MAX_NUMBER_OF_PLAYERS];
  private int[] purses = new int[MAX_NUMBER_OF_PLAYERS];
  private int[] places = new int[MAX_NUMBER_OF_PLAYERS];
