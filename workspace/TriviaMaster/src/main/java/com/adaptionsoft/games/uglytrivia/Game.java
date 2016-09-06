@@ -57,7 +57,7 @@ public class Game {
  }
 
  private void leavePenaltyBox() {
-  player.setLeavePenaltyBox(this, true);
+  player.setLeavePenaltyBox(true);
   news.playerIsLeavingPenaltyBox(
    player.getNameOfCurrentPlayer(currentPlayer));
  }
@@ -65,12 +65,12 @@ public class Game {
  private void stayInPenaltyBox() {
   news.playerIsStayingInPenaltyBox(
    player.getNameOfCurrentPlayer(currentPlayer));
-  player.setLeavePenaltyBox(this, false);
+  player.setLeavePenaltyBox(false);
  }
 
  public boolean wasCorrectlyAnswered() {
   if (player.currentPlayerIsInPenaltyBox(currentPlayer)) {
-   if (player.currentPlayerIsNotLeavingPenaltyBox(this)) {
+   if (player.currentPlayerIsNotLeavingPenaltyBox()) {
     switchToNextPlayer();
     return true;
    }
