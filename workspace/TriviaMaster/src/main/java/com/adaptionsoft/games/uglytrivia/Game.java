@@ -130,13 +130,13 @@ public class Game {
    news.question(popQuestions.removeFirst());
   }
   if (currentCategory() == QUESTION_CATEGORY_SCIENCE) {
-   printer.printMessage(scienceQuestions.removeFirst());
+   news.question(scienceQuestions.removeFirst());
   }
   if (currentCategory() == QUESTION_CATEGORY_SPORTS) {
-   printer.printMessage(sportsQuestions.removeFirst());
+   news.question(sportsQuestions.removeFirst());
   }
   if (currentCategory() == QUESTION_CATEGORY_ROCK) {
-   printer.printMessage(rockQuestions.removeFirst());
+   news.question(rockQuestions.removeFirst());
   }
  }
 
