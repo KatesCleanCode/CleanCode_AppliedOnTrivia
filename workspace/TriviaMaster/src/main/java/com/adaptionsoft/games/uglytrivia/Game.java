@@ -52,7 +52,7 @@ public class Game {
  }
 
  public void roll(int roll) {
-  news.currentPlayer(getNameOfCurrentPlayer());
+  news.currentPlayer(getNameOfCurrentPlayer(players, currentPlayer));
   news.rolledDieRoll(roll);
   if (currentPlayerIsInPenaltyBox()) {
    if (isEven(roll)) {
@@ -62,7 +62,7 @@ public class Game {
    leavePenaltyBox();
   }
   updateLocationOfCurrentPlayer(roll);
-  news.playersNewLocation(getNameOfCurrentPlayer(),
+  news.playersNewLocation(getNameOfCurrentPlayer(players, currentPlayer),
    getLocationOfCurrentPlayer());
   news
    .category(questions.currentCategory(getLocationOfCurrentPlayer()));
@@ -85,15 +85,15 @@ public class Game {
 
  private void leavePenaltyBox() {
   isGettingOutOfPenaltyBox = true;
-  news.playerIsLeavingPenaltyBox(getNameOfCurrentPlayer());
+  news.playerIsLeavingPenaltyBox(getNameOfCurrentPlayer(players, currentPlayer));
  }
 
- private String getNameOfCurrentPlayer() {
+ private String getNameOfCurrentPlayer(ArrayList<String> players, int currentPlayer) {
   return players.get(currentPlayer);
  }
 
  private void stayInPenaltyBox() {
-  news.playerIsStayingInPenaltyBox(getNameOfCurrentPlayer());
+  news.playerIsStayingInPenaltyBox(getNameOfCurrentPlayer(players, currentPlayer));
   isGettingOutOfPenaltyBox = false;
  }
 
@@ -114,7 +114,7 @@ public class Game {
   }
   news.answerWasCorrect();
   increasePursusOfCurrentPlayer();
-  news.playersPurses(getNameOfCurrentPlayer(),
+  news.playersPurses(getNameOfCurrentPlayer(players, currentPlayer),
    getPursesOfCurrentPlayer());
   boolean winner = didPlayerWin();
   switchToNextPlayer();
@@ -138,7 +138,7 @@ public class Game {
 
  public void wrongAnswer() {
   news.answerWasIncorrect();
-  news.playerSentToPenaltyBox(getNameOfCurrentPlayer());
+  news.playerSentToPenaltyBox(getNameOfCurrentPlayer(players, currentPlayer));
   sendCurrentPlayerToPenaltyBox();
   switchToNextPlayer();
  }
