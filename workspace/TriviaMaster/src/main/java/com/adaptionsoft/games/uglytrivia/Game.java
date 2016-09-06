@@ -4,7 +4,7 @@ import java.util.Random;
 
 import com.adaptionsoft.games.trivia.news.News;
 import com.adaptionsoft.games.trivia.news.Printer;
-import com.adaptionsoft.games.trivia.player.Players;
+import com.adaptionsoft.games.trivia.player.PlayersOld;
 import com.adaptionsoft.games.trivia.questions.Questions;
 
 public class Game {
@@ -17,7 +17,7 @@ public class Game {
  private static final int WINNING_PURSES = 6;
 
  private News news;
- private Players player = new Players();
+ private PlayersOld player = new PlayersOld();
  private Questions questions = new Questions();
 
  public Game(Printer printer) {
