@@ -40,4 +40,10 @@ public class PlayerTest {
   player.sendToPenaltyBox();
   assertTrue(player.isInPenaltyBox());
  }
+
+ @Test
+ void whenDicesAreRolledThenLocationIsIncreasedByDieRoll() {
+  player.updateLocation(11);
+  assertThat(player.getLocation(), equalTo(11));
+ }
 }
