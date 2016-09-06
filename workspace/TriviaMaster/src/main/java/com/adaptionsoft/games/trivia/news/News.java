@@ -1,7 +1,5 @@
 package com.adaptionsoft.games.trivia.news;
 
-import com.adaptionsoft.games.trivia.printer.Printer;
-
 public class News {
 
  private Printer printer;

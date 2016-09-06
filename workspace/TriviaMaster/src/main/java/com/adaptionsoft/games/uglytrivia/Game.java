@@ -3,8 +3,8 @@ package com.adaptionsoft.games.uglytrivia;
 import java.util.Random;
 
 import com.adaptionsoft.games.trivia.news.News;
+import com.adaptionsoft.games.trivia.news.Printer;
 import com.adaptionsoft.games.trivia.player.Players;
-import com.adaptionsoft.games.trivia.printer.Printer;
 import com.adaptionsoft.games.trivia.questions.Questions;
 
 public class Game {

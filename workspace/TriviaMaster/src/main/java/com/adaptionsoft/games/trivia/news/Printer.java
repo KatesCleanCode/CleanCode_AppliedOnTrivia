@@ -1,4 +1,4 @@
-package com.adaptionsoft.games.trivia.printer;
+package com.adaptionsoft.games.trivia.news;
 
 public interface Printer {
 
