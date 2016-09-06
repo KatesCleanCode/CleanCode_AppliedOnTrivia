@@ -36,19 +36,19 @@ public class Game {
   initializePurses();
   initializePenaltyBox();
   news.playerAdded(playerName);
-  news.playersNumber(player.howManyPlayers(players));
+  news.playersNumber(player.getNumberOfPlayers(players));
  }
 
  private void initializePenaltyBox() {
-  inPenaltyBox[player.howManyPlayers(players)] = false;
+  inPenaltyBox[player.getNumberOfPlayers(players)] = false;
  }
 
  private void initializePurses() {
-  purses[player.howManyPlayers(players)] = 0;
+  purses[player.getNumberOfPlayers(players)] = 0;
  }
 
  private void initializeLocation() {
-  places[player.howManyPlayers(players)] = 0;
+  places[player.getNumberOfPlayers(players)] = 0;
  }
 
  public void roll(int roll) {
