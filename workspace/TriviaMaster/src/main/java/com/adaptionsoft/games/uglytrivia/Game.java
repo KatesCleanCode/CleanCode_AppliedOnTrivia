@@ -64,7 +64,7 @@ public class Game {
 
  public boolean wasCorrectlyAnswered() {
   if (player.isCurrentPlayerInPenaltyBox()) {
-   if (player.currentPlayerIsNotLeavingPenaltyBox()) {
+   if (player.isCurrentPlayerStayingInPenaltyBox()) {
     player.switchToNextPlayer();
     return true;
    }

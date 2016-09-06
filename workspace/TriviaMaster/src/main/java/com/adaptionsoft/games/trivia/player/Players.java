@@ -75,7 +75,7 @@ public class Players {
   isGettingOutOfPenaltyBox = leavePenaltyBox;
  }
 
- public boolean currentPlayerIsNotLeavingPenaltyBox() {
+ public boolean isCurrentPlayerStayingInPenaltyBox() {
   return !isGettingOutOfPenaltyBox;
  }
 
