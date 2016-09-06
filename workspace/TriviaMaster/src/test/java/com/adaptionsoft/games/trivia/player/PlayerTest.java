@@ -28,4 +28,9 @@ public class PlayerTest {
  void whenPlayerIsCreatedThenHeIsNotInPenaltyBox() {
   assertFalse(player.isInPenaltyBox());
  }
+
+ @Test
+ void whenPlayerIsCreatedThenHeIsNotLeavingPenaltyBox() {
+  assertFalse(player.isLeavingPenaltyBox());
+ }
 }

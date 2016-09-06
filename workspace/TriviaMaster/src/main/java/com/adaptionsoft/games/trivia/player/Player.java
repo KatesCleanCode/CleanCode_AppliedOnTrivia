@@ -26,4 +26,5 @@ public class Player {
  public boolean isInPenaltyBox() {
   return isInPenaltyBox;
  }
+
 }
