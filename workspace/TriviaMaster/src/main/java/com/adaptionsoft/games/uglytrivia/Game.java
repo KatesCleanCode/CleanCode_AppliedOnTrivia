@@ -32,12 +32,12 @@ public class Game {
   player.addPlayerNameToPlayers(playerName);
   initializeLocation();
   initializePurses();
-  initializePenaltyBox();
+  initializePenaltyBox(inPenaltyBox);
   news.playerAdded(playerName);
   news.playersNumber(player.getNumberOfPlayers());
  }
 
- private void initializePenaltyBox() {
+ private void initializePenaltyBox(boolean[] inPenaltyBox) {
   inPenaltyBox[player.getNumberOfPlayers()] = false;
  }
 
