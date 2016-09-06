@@ -21,4 +21,9 @@ public class Players {
   }
   return player.get(0);
  }
+
+ public void switchToNextPlayer() {
+  // TODO Auto-generated method stub
+
+ }
 }
