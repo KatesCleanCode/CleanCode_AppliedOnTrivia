@@ -51,8 +51,8 @@ public class Game {
    player.getLocationOfCurrentPlayer(places, currentPlayer));
   news.category(questions.currentCategory(
    player.getLocationOfCurrentPlayer(places, currentPlayer)));
-  String askedQuestion = questions
-   .askQuestion(player.getLocationOfCurrentPlayer(places, currentPlayer));
+  String askedQuestion = questions.askQuestion(
+   player.getLocationOfCurrentPlayer(places, currentPlayer));
   news.question(askedQuestion);
  }
 
@@ -73,14 +73,18 @@ public class Game {
  }
 
  private void updateLocationOfCurrentPlayer(int roll) {
-  places[currentPlayer] =
-   player.getLocationOfCurrentPlayer(places, currentPlayer) + roll;
+  setLocationOfCurrentPlayer(
+   player.getLocationOfCurrentPlayer(places, currentPlayer) + roll);
   if (player.getLocationOfCurrentPlayer(places,
    currentPlayer) > MAX_LOCATION) {
-   places[currentPlayer] =
+   setLocationOfCurrentPlayer(
     player.getLocationOfCurrentPlayer(places, currentPlayer)
-     - MAX_DIE_ROLL_OF_TWO_DICES;
+     - MAX_DIE_ROLL_OF_TWO_DICES);
   }
+ }
+
+ private void setLocationOfCurrentPlayer(int location) {
+  places[currentPlayer] = location;
  }
 
  public boolean wasCorrectlyAnswered() {
