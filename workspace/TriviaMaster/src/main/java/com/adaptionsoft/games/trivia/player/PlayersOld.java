@@ -30,7 +30,7 @@ public class PlayersOld {
  }
 
  public String getNameOfCurrentPlayer() {
-  return playersOld.get(currentPlayer);
+  return players.getCurrentPlayer().getName();
  }
 
  public void sendCurrentPlayerToPenaltyBox() {
