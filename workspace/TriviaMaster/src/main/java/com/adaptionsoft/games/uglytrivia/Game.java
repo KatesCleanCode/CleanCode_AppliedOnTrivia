@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.adaptionsoft.games.trivia.news.News;
 import com.adaptionsoft.games.trivia.news.Printer;
+import com.adaptionsoft.games.trivia.player.Players;
 import com.adaptionsoft.games.trivia.player.PlayersOld;
 import com.adaptionsoft.games.trivia.questions.Questions;
 
@@ -19,6 +20,7 @@ public class Game {
  private News news;
  private PlayersOld playersOld = new PlayersOld();
  private Questions questions = new Questions();
+ private Players players = new Players();
 
  public Game(Printer printer) {
   news = new News(printer);
@@ -41,12 +43,13 @@ public class Game {
    leavePenaltyBox();
   }
   playersOld.players.getCurrentPlayer().updateLocation(roll);
-  news.playersNewLocation(playersOld.players.getCurrentPlayer().getName(),
+  news.playersNewLocation(
+   playersOld.players.getCurrentPlayer().getName(),
    playersOld.players.getCurrentPlayer().getLocation());
-  news.category(
-   questions.currentCategory(playersOld.players.getCurrentPlayer().getLocation()));
-  String askedQuestion =
-   questions.askQuestion(playersOld.players.getCurrentPlayer().getLocation());
+  news.category(questions.currentCategory(
+   playersOld.players.getCurrentPlayer().getLocation()));
+  String askedQuestion = questions
+   .askQuestion(playersOld.players.getCurrentPlayer().getLocation());
   news.question(askedQuestion);
  }
 
@@ -56,11 +59,13 @@ public class Game {
 
  private void leavePenaltyBox() {
   playersOld.players.getCurrentPlayer().setLeavingPenaltyBox(true);
-  news.playerIsLeavingPenaltyBox(playersOld.players.getCurrentPlayer().getName());
+  news.playerIsLeavingPenaltyBox(
+   playersOld.players.getCurrentPlayer().getName());
  }
 
  private void stayInPenaltyBox() {
-  news.playerIsStayingInPenaltyBox(playersOld.players.getCurrentPlayer().getName());
+  news.playerIsStayingInPenaltyBox(
+   playersOld.players.getCurrentPlayer().getName());
   playersOld.players.getCurrentPlayer().setLeavingPenaltyBox(false);
  }
 
@@ -82,13 +87,15 @@ public class Game {
 
  public void wrongAnswer() {
   news.answerWasIncorrect();
-  news.playerSentToPenaltyBox(playersOld.players.getCurrentPlayer().getName());
+  news.playerSentToPenaltyBox(
+   playersOld.players.getCurrentPlayer().getName());
   playersOld.players.getCurrentPlayer().sendToPenaltyBox();
   playersOld.players.switchToNextPlayer();
  }
 
  private boolean didPlayerWin() {
-  return !(playersOld.players.getCurrentPlayer().getPurses() == WINNING_PURSES);
+  return !(playersOld.players.getCurrentPlayer()
+   .getPurses() == WINNING_PURSES);
  }
 
  public void play(Random random) {
