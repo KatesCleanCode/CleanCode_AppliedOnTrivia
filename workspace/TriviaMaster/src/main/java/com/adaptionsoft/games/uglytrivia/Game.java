@@ -5,7 +5,6 @@ import java.util.Random;
 import com.adaptionsoft.games.trivia.news.News;
 import com.adaptionsoft.games.trivia.news.Printer;
 import com.adaptionsoft.games.trivia.player.Players;
-import com.adaptionsoft.games.trivia.player.PlayersOld;
 import com.adaptionsoft.games.trivia.questions.Questions;
 
 public class Game {
@@ -18,7 +17,6 @@ public class Game {
  private static final int WINNING_PURSES = 6;
 
  private News news;
- private PlayersOld playersOld = new PlayersOld();
  private Questions questions = new Questions();
  private Players players = new Players();
 
@@ -47,8 +45,8 @@ public class Game {
    players.getCurrentPlayer().getLocation());
   news.category(questions
    .currentCategory(players.getCurrentPlayer().getLocation()));
-  String askedQuestion = questions
-   .askQuestion(players.getCurrentPlayer().getLocation());
+  String askedQuestion =
+   questions.askQuestion(players.getCurrentPlayer().getLocation());
   news.question(askedQuestion);
  }
 
@@ -58,13 +56,13 @@ public class Game {
 
  private void leavePenaltyBox() {
   players.getCurrentPlayer().setLeavingPenaltyBox(true);
-  news.playerIsLeavingPenaltyBox(
-   players.getCurrentPlayer().getName());
+  news
+   .playerIsLeavingPenaltyBox(players.getCurrentPlayer().getName());
  }
 
  private void stayInPenaltyBox() {
-  news.playerIsStayingInPenaltyBox(
-   players.getCurrentPlayer().getName());
+  news
+   .playerIsStayingInPenaltyBox(players.getCurrentPlayer().getName());
   players.getCurrentPlayer().setLeavingPenaltyBox(false);
  }
 
@@ -86,15 +84,13 @@ public class Game {
 
  public void wrongAnswer() {
   news.answerWasIncorrect();
-  news
-   .playerSentToPenaltyBox(players.getCurrentPlayer().getName());
+  news.playerSentToPenaltyBox(players.getCurrentPlayer().getName());
   players.getCurrentPlayer().sendToPenaltyBox();
   players.switchToNextPlayer();
  }
 
  private boolean didPlayerWin() {
-  return !(players.getCurrentPlayer()
-   .getPurses() == WINNING_PURSES);
+  return !(players.getCurrentPlayer().getPurses() == WINNING_PURSES);
  }
 
  public void play(Random random) {
