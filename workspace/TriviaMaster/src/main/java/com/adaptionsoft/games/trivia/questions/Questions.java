@@ -16,6 +16,10 @@ public class Questions {
  private LinkedList<String> sportsQuestions = new LinkedList<>();
  private LinkedList<String> rockQuestions = new LinkedList<>();
 
+ public Questions() {
+  initializeQuestions();
+ }
+
  public String currentCategory(int location) {
   int questionOrder = location % NUMBER_OF_QUESTION_CATEGORIES;
   if (questionOrder == 0) {
