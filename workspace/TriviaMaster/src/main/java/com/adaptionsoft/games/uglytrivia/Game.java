@@ -209,7 +209,7 @@ public class Game {
  }
 
  public void wrongAnswer() {
-  printAnswerWasIncorrect();
+  news.printAnswerWasIncorrect(this);
   printPlayerWasSentToPenaltyBox();
   sendCurrentPlayerToPenaltyBox();
   switchToNextPlayer();
@@ -222,10 +222,6 @@ public class Game {
  private void printPlayerWasSentToPenaltyBox() {
   printer.printMessage(
    players.get(currentPlayer) + " was sent to the penalty box");
- }
-
- private void printAnswerWasIncorrect() {
-  printer.printMessage("Question was incorrectly answered");
  }
 
  private boolean didPlayerWin() {
