@@ -9,7 +9,7 @@ public class News {
   printer.printMessage("He/She is player number " + playersNumber);
  }
 
- public void printPlayerWasAdded(String playerName) {
+ public void playerAdded(String playerName) {
   printer.printMessage(playerName + " was added");
  }
 }
