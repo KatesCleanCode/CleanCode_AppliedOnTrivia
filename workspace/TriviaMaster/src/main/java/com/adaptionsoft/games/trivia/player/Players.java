@@ -19,7 +19,7 @@ public class Players {
 
  public void add(String playerName) {
   if (getNumberOfPlayers() >= MAX_NUMBER_OF_PLAYERS) {
-   throw new TooManyPlayersException();
+   throw new TooManyPlayersException(MAX_NUMBER_OF_PLAYERS);
   }
   player.add(new Player(playerName));
  }
