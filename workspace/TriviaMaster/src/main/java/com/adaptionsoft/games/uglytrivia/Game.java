@@ -93,7 +93,7 @@ public class Game {
    leavePenaltyBox();
   }
   updateLocationOfCurrentPlayer(roll);
-  printCurrentCategory();
+  printCurrentCategory(currentCategory());
   askQuestion();
  }
 
@@ -134,8 +134,8 @@ public class Game {
    + " is not getting out of the penalty box");
  }
 
- private void printCurrentCategory() {
-  printer.printMessage("The category is " + currentCategory());
+ private void printCurrentCategory(String category) {
+  printer.printMessage("The category is " + category);
  }
 
  private void updateLocationOfCurrentPlayer(int roll) {
