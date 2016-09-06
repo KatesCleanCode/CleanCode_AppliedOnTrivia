@@ -15,7 +15,7 @@ public class Game {
  private static final int WRONG_ANSWER = 7;
  private static final int MAX_LOCATION = 11;
  private static final int MAX_DIE_ROLL_OF_TWO_DICES = 12;
- private static final int MAX_NUMBER_OF_PLAYERS = 6;
+ public static final int MAX_NUMBER_OF_PLAYERS = 6;
  private static final int WINNING_PURSES = 6;
 
  private int[] places = new int[MAX_NUMBER_OF_PLAYERS];
@@ -48,7 +48,8 @@ public class Game {
  public void roll(int roll) {
   news.currentPlayer(player.getNameOfCurrentPlayer(currentPlayer));
   news.rolledDieRoll(roll);
-  if (player.currentPlayerIsInPenaltyBox(inPenaltyBox, currentPlayer)) {
+  if (player.currentPlayerIsInPenaltyBox(inPenaltyBox,
+   currentPlayer)) {
    if (isEven(roll)) {
     stayInPenaltyBox();
     return;
@@ -95,7 +96,8 @@ public class Game {
  }
 
  public boolean wasCorrectlyAnswered() {
-  if (player.currentPlayerIsInPenaltyBox(inPenaltyBox, currentPlayer)) {
+  if (player.currentPlayerIsInPenaltyBox(inPenaltyBox,
+   currentPlayer)) {
    if (currentPlayerIsNotLeavingPenaltyBox()) {
     switchToNextPlayer();
     return true;

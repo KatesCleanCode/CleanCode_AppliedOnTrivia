@@ -2,8 +2,12 @@ package com.adaptionsoft.games.trivia.player;
 
 import java.util.ArrayList;
 
+import com.adaptionsoft.games.uglytrivia.Game;
+
 public class Players {
  private ArrayList<String> players = new ArrayList<>();
+ private boolean[] inPenaltyBox =
+  new boolean[Game.MAX_NUMBER_OF_PLAYERS];
 
  public void addPlayerNameToPlayers(String playerName) {
   players.add(playerName);
@@ -21,11 +25,13 @@ public class Players {
   inPenaltyBox[getNumberOfPlayers()] = false;
  }
 
- public void sendCurrentPlayerToPenaltyBox(boolean[] inPenaltyBox, int currentPlayer) {
+ public void sendCurrentPlayerToPenaltyBox(boolean[] inPenaltyBox,
+  int currentPlayer) {
   inPenaltyBox[currentPlayer] = true;
  }
 
- public boolean currentPlayerIsInPenaltyBox(boolean[] inPenaltyBox, int currentPlayer) {
+ public boolean currentPlayerIsInPenaltyBox(boolean[] inPenaltyBox,
+  int currentPlayer) {
   return inPenaltyBox[currentPlayer];
  }
 }
