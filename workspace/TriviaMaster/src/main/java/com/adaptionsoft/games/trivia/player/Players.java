@@ -3,17 +3,17 @@ package com.adaptionsoft.games.trivia.player;
 import java.util.ArrayList;
 
 public class Players {
+ private ArrayList<String> players = new ArrayList<>();
 
- public void addPlayerNameToPlayers(String playerName, ArrayList<String> players) {
+ public void addPlayerNameToPlayers(String playerName) {
   players.add(playerName);
  }
 
- public int getNumberOfPlayers(ArrayList<String> players) {
+ public int getNumberOfPlayers() {
   return players.size();
  }
 
- public String getNameOfCurrentPlayer(ArrayList<String> players, int currentPlayer) {
+ public String getNameOfCurrentPlayer(int currentPlayer) {
   return players.get(currentPlayer);
  }
-
 }
