@@ -244,11 +244,10 @@ public class Game {
  }
 
  public void play(Random random) {
-  boolean notAWinner;
+  boolean notAWinner = true;
   do {
    roll(random.nextInt(MAX_DIE_ROLL) + MIN_DIE_ROLL);
    if (random.nextInt(BOUND_FOR_WRONG_ANSWER) == WRONG_ANSWER) {
-    notAWinner = true;
     wrongAnswer();
    } else {
     notAWinner = wasCorrectlyAnswered();
