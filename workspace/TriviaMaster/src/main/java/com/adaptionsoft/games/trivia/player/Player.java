@@ -3,6 +3,7 @@ package com.adaptionsoft.games.trivia.player;
 public class Player {
 
  private String playerName;
+ private int location = 0;
 
  public Player(String playerName) {
   this.playerName = playerName;
@@ -12,7 +13,7 @@ public class Player {
   return playerName;
  }
 
- public Object getLocation() {
-  return 0;
+ public int getLocation() {
+  return location;
  }
 }
