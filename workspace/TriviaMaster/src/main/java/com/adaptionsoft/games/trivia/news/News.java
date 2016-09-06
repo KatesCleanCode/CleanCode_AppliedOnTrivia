@@ -1,7 +1,6 @@
 package com.adaptionsoft.games.trivia.news;
 
 import com.adaptionsoft.games.trivia.printer.ConsolePrinter;
-import com.adaptionsoft.games.uglytrivia.Game;
 
 public class News {
  private ConsolePrinter printer = new ConsolePrinter();
@@ -22,10 +21,8 @@ public class News {
   printer.printMessage("Question was incorrectly answered");
  }
 
- public void printPlayerWasSentToPenaltyBox(Game game,
-  String playersName) {
-  game.printer
-   .printMessage(playersName + " was sent to the penalty box");
+ public void printPlayerWasSentToPenaltyBox(String playersName) {
+  printer.printMessage(playersName + " was sent to the penalty box");
  }
 
  public void category(String category) {

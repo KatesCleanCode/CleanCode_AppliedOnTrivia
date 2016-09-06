@@ -187,7 +187,7 @@ public class Game {
 
  public void wrongAnswer() {
   news.answerWasIncorrect();
-  news.printPlayerWasSentToPenaltyBox(this, players.get(currentPlayer));
+  news.printPlayerWasSentToPenaltyBox(players.get(currentPlayer));
   sendCurrentPlayerToPenaltyBox();
   switchToNextPlayer();
  }
