@@ -32,4 +32,8 @@ public class Players {
  public boolean currentPlayerIsInPenaltyBox(int currentPlayer) {
   return inPenaltyBox[currentPlayer];
  }
+
+ public int getPursesOfCurrentPlayer(int[] purses, int currentPlayer) {
+  return purses[currentPlayer];
+ }
 }
