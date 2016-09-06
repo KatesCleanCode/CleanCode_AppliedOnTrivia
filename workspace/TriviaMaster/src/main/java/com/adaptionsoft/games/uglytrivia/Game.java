@@ -84,7 +84,7 @@ public class Game {
 
  public void roll(int roll) {
   news.currentPlayer(players.get(currentPlayer));
-  printDieRoll(roll);
+  news.printDieRoll(this, roll);
   if (currentPlayerIsInPenaltyBox()) {
    if (isEven(roll)) {
     stayInPenaltyBox();
@@ -103,10 +103,6 @@ public class Game {
 
  private boolean currentPlayerIsInPenaltyBox() {
   return inPenaltyBox[currentPlayer];
- }
-
- private void printDieRoll(int dieRoll) {
-  printer.printMessage("They have rolled a " + dieRoll);
  }
 
  private void leavePenaltyBox() {
