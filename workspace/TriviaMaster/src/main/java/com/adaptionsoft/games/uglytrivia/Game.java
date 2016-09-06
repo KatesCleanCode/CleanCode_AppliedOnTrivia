@@ -37,7 +37,7 @@ public class Game {
 
  private int currentPlayer = 0;
  private boolean isGettingOutOfPenaltyBox;
- private ConsolePrinter printer = new ConsolePrinter();
+ public ConsolePrinter printer = new ConsolePrinter();
  private News news = new News();
 
  public Game() {
@@ -59,15 +59,11 @@ public class Game {
   initializePurses();
   initializePenaltyBox();
   printPlayerWasAdded(playerName);
-  printPlayersNumber(players.size());
+  news.printPlayersNumber(this, players.size());
  }
 
  private void addPlayerNameToPlayers(String playerName) {
   players.add(playerName);
- }
-
- private void printPlayersNumber(int playersNumber) {
-  printer.printMessage("He/She is player number " + playersNumber);
  }
 
  private void printPlayerWasAdded(String playerName) {
