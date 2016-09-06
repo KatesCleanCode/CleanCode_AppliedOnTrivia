@@ -29,7 +29,7 @@ public class News {
   printer.printMessage(playersName + " is the current player");
  }
 
- public void printDieRoll(int dieRoll) {
+ public void rolledDieRoll(int dieRoll) {
   printer.printMessage("They have rolled a " + dieRoll);
  }
 }
