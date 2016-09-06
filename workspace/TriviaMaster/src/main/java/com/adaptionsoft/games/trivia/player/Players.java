@@ -15,7 +15,7 @@ public class Players {
  private boolean isGettingOutOfPenaltyBox;
  private int currentPlayer = 0;
 
- public void addPlayerNameToPlayers(String playerName) {
+ public void add(String playerName) {
   players.add(playerName);
   initializeLocation();
   initializePurses();

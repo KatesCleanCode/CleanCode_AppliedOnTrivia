@@ -20,7 +20,7 @@ public class Game {
  private Players player = new Players();
 
  public void addPlayer(String playerName) {
-  player.addPlayerNameToPlayers(playerName);
+  player.add(playerName);
   news.playerAdded(playerName);
   news.playersNumber(player.getNumberOfPlayers());
  }
