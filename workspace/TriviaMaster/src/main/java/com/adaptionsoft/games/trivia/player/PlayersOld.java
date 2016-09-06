@@ -30,7 +30,6 @@ public class PlayersOld {
  }
 
  public void sendCurrentPlayerToPenaltyBox() {
-  inPenaltyBox[currentPlayer] = true;
   players.getCurrentPlayer().sendToPenaltyBox();
  }
 
