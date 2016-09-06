@@ -5,6 +5,13 @@ import java.util.LinkedList;
 import java.util.Random;
 
 public class Game {
+
+ /** The player has the probability 1/(bound-1) for a wrong answer. */
+ private static final int BOUND_FOR_WRONG_ANSWER = 9;
+ private static final int MAX_DIE_ROLL = 5;
+ private static final int MIN_DIE_ROLL = 1;
+ private static final int WRONG_ANSWER = 7;
+
  private static final String QUESTION_CATEGORY_ROCK = "Rock";
  private static final String QUESTION_CATEGORY_SPORTS = "Sports";
  private static final String QUESTION_CATEGORY_SCIENCE = "Science";
@@ -237,7 +244,16 @@ public class Game {
  }
 
  public void play(Random rand) {
-  // TODO Auto-generated method stub
+  boolean notAWinner;
+  do {
+   roll(rand.nextInt(MAX_DIE_ROLL) + MIN_DIE_ROLL);
+   if (rand.nextInt(BOUND_FOR_WRONG_ANSWER) == WRONG_ANSWER) {
+    notAWinner = true;
+    wrongAnswer();
+   } else {
+    notAWinner = wasCorrectlyAnswered();
+   }
+  } while (notAWinner);
 
  }
 }
