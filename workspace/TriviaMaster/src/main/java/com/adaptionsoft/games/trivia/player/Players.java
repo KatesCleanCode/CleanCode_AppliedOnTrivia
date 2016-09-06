@@ -20,4 +20,8 @@ public class Players {
  public void initializePenaltyBox(boolean[] inPenaltyBox) {
   inPenaltyBox[getNumberOfPlayers()] = false;
  }
+
+ public void sendCurrentPlayerToPenaltyBox(boolean[] inPenaltyBox, int currentPlayer) {
+  inPenaltyBox[currentPlayer] = true;
+ }
 }

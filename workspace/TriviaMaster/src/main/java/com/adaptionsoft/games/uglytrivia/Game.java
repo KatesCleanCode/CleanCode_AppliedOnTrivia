@@ -133,13 +133,8 @@ public class Game {
   news.answerWasIncorrect();
   news.playerSentToPenaltyBox(
    player.getNameOfCurrentPlayer(currentPlayer));
-  sendCurrentPlayerToPenaltyBox(inPenaltyBox, currentPlayer);
+  player.sendCurrentPlayerToPenaltyBox(inPenaltyBox, currentPlayer);
   switchToNextPlayer();
- }
-
- private void sendCurrentPlayerToPenaltyBox(boolean[] inPenaltyBox,
-  int currentPlayer) {
-  inPenaltyBox[currentPlayer] = true;
  }
 
  private boolean didPlayerWin() {
