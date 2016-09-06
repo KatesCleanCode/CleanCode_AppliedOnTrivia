@@ -11,7 +11,6 @@ public class Game {
  private static final int MAX_DIE_ROLL = 5;
  private static final int MIN_DIE_ROLL = 1;
  private static final int WRONG_ANSWER = 7;
-
  private static final String QUESTION_CATEGORY_ROCK = "Rock";
  private static final String QUESTION_CATEGORY_SPORTS = "Sports";
  private static final String QUESTION_CATEGORY_SCIENCE = "Science";
