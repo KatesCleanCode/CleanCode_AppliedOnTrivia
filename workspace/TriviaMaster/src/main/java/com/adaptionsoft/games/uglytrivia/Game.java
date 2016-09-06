@@ -130,20 +130,17 @@ public class Game {
   String askedQuestion = "";
   if (currentCategory == QUESTION_CATEGORY_POP) {
    askedQuestion = popQuestions.removeFirst();
-   news.question(askedQuestion);
   }
   if (currentCategory == QUESTION_CATEGORY_SCIENCE) {
    askedQuestion = scienceQuestions.removeFirst();
-   news.question(askedQuestion);
   }
   if (currentCategory == QUESTION_CATEGORY_SPORTS) {
    askedQuestion = sportsQuestions.removeFirst();
-   news.question(askedQuestion);
   }
   if (currentCategory == QUESTION_CATEGORY_ROCK) {
    askedQuestion = rockQuestions.removeFirst();
-   news.question(askedQuestion);
   }
+  news.question(askedQuestion);
  }
 
  public boolean wasCorrectlyAnswered() {
