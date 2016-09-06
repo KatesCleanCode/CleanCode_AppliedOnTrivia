@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Players {
 
- private List<String> playerNames = new ArrayList<>();
  private List<Player> player = new ArrayList<>();
 
  public int getNumberOfPlayers() {
