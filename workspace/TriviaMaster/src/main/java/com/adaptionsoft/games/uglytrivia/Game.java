@@ -32,7 +32,7 @@ public class Game {
   player.addPlayerNameToPlayers(playerName);
   initializeLocation();
   initializePurses();
-  player.initializePenaltyBox(inPenaltyBox);
+  player.initializePenaltyBox();
   news.playerAdded(playerName);
   news.playersNumber(player.getNumberOfPlayers());
  }
@@ -48,8 +48,7 @@ public class Game {
  public void roll(int roll) {
   news.currentPlayer(player.getNameOfCurrentPlayer(currentPlayer));
   news.rolledDieRoll(roll);
-  if (player.currentPlayerIsInPenaltyBox(inPenaltyBox,
-   currentPlayer)) {
+  if (player.currentPlayerIsInPenaltyBox(currentPlayer)) {
    if (isEven(roll)) {
     stayInPenaltyBox();
     return;
@@ -96,8 +95,7 @@ public class Game {
  }
 
  public boolean wasCorrectlyAnswered() {
-  if (player.currentPlayerIsInPenaltyBox(inPenaltyBox,
-   currentPlayer)) {
+  if (player.currentPlayerIsInPenaltyBox(currentPlayer)) {
    if (currentPlayerIsNotLeavingPenaltyBox()) {
     switchToNextPlayer();
     return true;
@@ -131,7 +129,7 @@ public class Game {
   news.answerWasIncorrect();
   news.playerSentToPenaltyBox(
    player.getNameOfCurrentPlayer(currentPlayer));
-  player.sendCurrentPlayerToPenaltyBox(inPenaltyBox, currentPlayer);
+  player.sendCurrentPlayerToPenaltyBox(currentPlayer);
   switchToNextPlayer();
  }
 

@@ -21,17 +21,15 @@ public class Players {
   return players.get(currentPlayer);
  }
 
- public void initializePenaltyBox(boolean[] inPenaltyBox) {
+ public void initializePenaltyBox() {
   inPenaltyBox[getNumberOfPlayers()] = false;
  }
 
- public void sendCurrentPlayerToPenaltyBox(boolean[] inPenaltyBox,
-  int currentPlayer) {
+ public void sendCurrentPlayerToPenaltyBox(int currentPlayer) {
   inPenaltyBox[currentPlayer] = true;
  }
 
- public boolean currentPlayerIsInPenaltyBox(boolean[] inPenaltyBox,
-  int currentPlayer) {
+ public boolean currentPlayerIsInPenaltyBox(int currentPlayer) {
   return inPenaltyBox[currentPlayer];
  }
 }
