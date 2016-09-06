@@ -30,13 +30,13 @@ public class Game {
  public void addPlayer(String playerName) {
   player.addPlayerNameToPlayers(playerName);
   initializeLocation();
-  initializePurses();
+  initializePurses(purses);
   player.initializePenaltyBox();
   news.playerAdded(playerName);
   news.playersNumber(player.getNumberOfPlayers());
  }
 
- private void initializePurses() {
+ private void initializePurses(int[] purses) {
   purses[player.getNumberOfPlayers()] = 0;
  }
 
