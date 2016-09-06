@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
 
+import com.adaptionsoft.games.trivia.printer.ConsolePrinter;
+
 public class Game {
 
  /** The player has the probability 1/(bound-1) for a wrong answer. */
@@ -34,6 +36,7 @@ public class Game {
 
  private int currentPlayer = 0;
  private boolean isGettingOutOfPenaltyBox;
+ private ConsolePrinter printer = new ConsolePrinter();
 
  public Game() {
   initializeQuestions();
