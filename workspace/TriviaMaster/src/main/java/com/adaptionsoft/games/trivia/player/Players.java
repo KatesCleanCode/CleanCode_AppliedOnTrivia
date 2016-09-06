@@ -14,4 +14,8 @@ public class Players {
  public void add(String playerName) {
   playerNames.add(playerName);
  }
+
+ public Player getCurrentPlayer() {
+  return null;
+ }
 }

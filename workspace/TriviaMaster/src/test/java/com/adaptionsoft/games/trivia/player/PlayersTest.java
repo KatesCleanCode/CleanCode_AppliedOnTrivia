@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 
 @RunWith(JUnitPlatform.class)
@@ -23,6 +24,7 @@ public class PlayersTest {
 
   assertThat(players.getNumberOfPlayers(), equalTo(1));
  }
+
  @Test
  void whenPlayersIsInitializedThenCurrentPlayerIsNullPlayer() {
   Player currentPlayer = players.getCurrentPlayer();
