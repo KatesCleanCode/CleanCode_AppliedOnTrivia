@@ -1,13 +1,12 @@
 package com.adaptionsoft.games.trivia.player;
 
-import static com.adaptionsoft.games.uglytrivia.Game.MAX_NUMBER_OF_PLAYERS;
-
 import java.util.ArrayList;
 
 public class Players {
 
  private static final int MAX_DIE_ROLL_OF_TWO_DICES = 12;
  private static final int MAX_LOCATION = 11;
+ private static final int MAX_NUMBER_OF_PLAYERS = 6;
 
  private ArrayList<String> players = new ArrayList<>();
  private boolean[] inPenaltyBox = new boolean[MAX_NUMBER_OF_PLAYERS];
