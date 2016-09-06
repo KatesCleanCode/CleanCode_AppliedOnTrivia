@@ -49,4 +49,8 @@ public class Players {
  public void initializeLocation(int[] places) {
   places[getNumberOfPlayers()] = 0;
  }
+
+ public int getLocationOfCurrentPlayer(int[] places, int currentPlayer) {
+  return places[currentPlayer];
+ }
 }

@@ -48,17 +48,12 @@ public class Game {
   updateLocationOfCurrentPlayer(roll);
   news.playersNewLocation(
    player.getNameOfCurrentPlayer(currentPlayer),
-   getLocationOfCurrentPlayer(places, currentPlayer));
+   player.getLocationOfCurrentPlayer(places, currentPlayer));
   news.category(questions.currentCategory(
-   getLocationOfCurrentPlayer(places, currentPlayer)));
+   player.getLocationOfCurrentPlayer(places, currentPlayer)));
   String askedQuestion = questions
-   .askQuestion(getLocationOfCurrentPlayer(places, currentPlayer));
+   .askQuestion(player.getLocationOfCurrentPlayer(places, currentPlayer));
   news.question(askedQuestion);
- }
-
- private int getLocationOfCurrentPlayer(int[] places,
-  int currentPlayer) {
-  return places[currentPlayer];
  }
 
  private boolean isEven(int dieRoll) {
@@ -79,11 +74,11 @@ public class Game {
 
  private void updateLocationOfCurrentPlayer(int roll) {
   places[currentPlayer] =
-   getLocationOfCurrentPlayer(places, currentPlayer) + roll;
-  if (getLocationOfCurrentPlayer(places,
+   player.getLocationOfCurrentPlayer(places, currentPlayer) + roll;
+  if (player.getLocationOfCurrentPlayer(places,
    currentPlayer) > MAX_LOCATION) {
    places[currentPlayer] =
-    getLocationOfCurrentPlayer(places, currentPlayer)
+    player.getLocationOfCurrentPlayer(places, currentPlayer)
      - MAX_DIE_ROLL_OF_TWO_DICES;
   }
  }
