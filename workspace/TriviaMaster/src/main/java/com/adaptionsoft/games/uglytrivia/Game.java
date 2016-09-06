@@ -173,6 +173,10 @@ public class Game {
 
  private void increasePursusOfCurrentPlayer() {
   purses[currentPlayer]++;
+  printPurses();
+ }
+
+ private void printPurses() {
   printer.printMessage(players.get(currentPlayer) + " now has "
    + purses[currentPlayer] + " Gold Coins.");
  }
