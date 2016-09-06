@@ -12,6 +12,7 @@ import static org.junit.Assert.assertThat;
 @RunWith(JUnitPlatform.class)
 public class PlayersTest {
 
+ private static final String SECOND_PLAYER = "Brown";
  private static final String FIRST_PLAYER = "Sue";
 
  private Players players = new Players();
@@ -46,18 +47,18 @@ public class PlayersTest {
  void
   givenTwoPlayerWhenSwitchToNextPlayerThenCurrentPlayerIsSecondPlayer() {
   players.add(FIRST_PLAYER);
-  players.add("Brown");
+  players.add(SECOND_PLAYER);
 
   players.switchToNextPlayer();
   Player currentPlayer = players.getCurrentPlayer();
-  assertThat(currentPlayer.getName(), equalTo("Brown"));
+  assertThat(currentPlayer.getName(), equalTo(SECOND_PLAYER));
  }
 
  @Test
  void
   givenTwoPlayerWhenTwoTimesSwitchToNextPlayerThenCurrentPlayerIsFirstPlayer() {
   players.add(FIRST_PLAYER);
-  players.add("Brown");
+  players.add(SECOND_PLAYER);
 
   players.switchToNextPlayer();
   players.switchToNextPlayer();
