@@ -7,6 +7,8 @@ import com.adaptionsoft.games.trivia.exceptions.TooManyPlayersException;
 
 public class Players {
 
+ public static final int MAX_NUMBER_OF_PLAYERS = 5;
+
  private List<Player> player = new ArrayList<>();
  private int currentPlayer = 0;
 
@@ -15,7 +17,7 @@ public class Players {
  }
 
  public void add(String playerName) {
-  if (getNumberOfPlayers() >= 5) {
+  if (getNumberOfPlayers() >= MAX_NUMBER_OF_PLAYERS) {
    throw new TooManyPlayersException();
   }
   player.add(new Player(playerName));
