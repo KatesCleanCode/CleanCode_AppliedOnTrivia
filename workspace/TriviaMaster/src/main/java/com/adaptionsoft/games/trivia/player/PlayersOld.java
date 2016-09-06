@@ -42,7 +42,6 @@ public class PlayersOld {
  }
 
  public void increasePursesOfCurrentPlayer() {
-  purses[currentPlayer]++;
   players.getCurrentPlayer().increasePursus();
  }
 
