@@ -78,4 +78,8 @@ public class Players {
  public void setLeavePenaltyBox(Game game, boolean leavePenaltyBox) {
   game.isGettingOutOfPenaltyBox = leavePenaltyBox;
  }
+
+ public boolean currentPlayerIsNotLeavingPenaltyBox(Game game) {
+  return !game.isGettingOutOfPenaltyBox;
+ }
 }
