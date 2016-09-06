@@ -17,7 +17,7 @@ public class Game {
  private static final int WINNING_PURSES = 6;
 
  private News news;
- private PlayersOld player = new PlayersOld();
+ private PlayersOld playersOld = new PlayersOld();
  private Questions questions = new Questions();
 
  public Game(Printer printer) {
@@ -25,28 +25,28 @@ public class Game {
  }
 
  public void addPlayer(String playerName) {
-  player.add(playerName);
+  playersOld.add(playerName);
   news.playerAdded(playerName);
-  news.playersNumber(player.getNumberOfPlayers());
+  news.playersNumber(playersOld.getNumberOfPlayers());
  }
 
  public void roll(int roll) {
-  news.currentPlayer(player.getNameOfCurrentPlayer());
+  news.currentPlayer(playersOld.getNameOfCurrentPlayer());
   news.rolledDieRoll(roll);
-  if (player.isCurrentPlayerInPenaltyBox()) {
+  if (playersOld.isCurrentPlayerInPenaltyBox()) {
    if (isEven(roll)) {
     stayInPenaltyBox();
     return;
    }
    leavePenaltyBox();
   }
-  player.updateLocationOfCurrentPlayer(roll);
-  news.playersNewLocation(player.getNameOfCurrentPlayer(),
-   player.getLocationOfCurrentPlayer());
+  playersOld.updateLocationOfCurrentPlayer(roll);
+  news.playersNewLocation(playersOld.getNameOfCurrentPlayer(),
+   playersOld.getLocationOfCurrentPlayer());
   news.category(
-   questions.currentCategory(player.getLocationOfCurrentPlayer()));
+   questions.currentCategory(playersOld.getLocationOfCurrentPlayer()));
   String askedQuestion =
-   questions.askQuestion(player.getLocationOfCurrentPlayer());
+   questions.askQuestion(playersOld.getLocationOfCurrentPlayer());
   news.question(askedQuestion);
  }
 
@@ -55,40 +55,40 @@ public class Game {
  }
 
  private void leavePenaltyBox() {
-  player.setLeavePenaltyBox(true);
-  news.playerIsLeavingPenaltyBox(player.getNameOfCurrentPlayer());
+  playersOld.setLeavePenaltyBox(true);
+  news.playerIsLeavingPenaltyBox(playersOld.getNameOfCurrentPlayer());
  }
 
  private void stayInPenaltyBox() {
-  news.playerIsStayingInPenaltyBox(player.getNameOfCurrentPlayer());
-  player.setLeavePenaltyBox(false);
+  news.playerIsStayingInPenaltyBox(playersOld.getNameOfCurrentPlayer());
+  playersOld.setLeavePenaltyBox(false);
  }
 
  public boolean wasCorrectlyAnswered() {
-  if (player.isCurrentPlayerInPenaltyBox()) {
-   if (player.isCurrentPlayerStayingInPenaltyBox()) {
-    player.switchToNextPlayer();
+  if (playersOld.isCurrentPlayerInPenaltyBox()) {
+   if (playersOld.isCurrentPlayerStayingInPenaltyBox()) {
+    playersOld.switchToNextPlayer();
     return true;
    }
   }
   news.answerWasCorrect();
-  player.increasePursesOfCurrentPlayer();
-  news.playersPurses(player.getNameOfCurrentPlayer(),
-   player.getPursesOfCurrentPlayer());
+  playersOld.increasePursesOfCurrentPlayer();
+  news.playersPurses(playersOld.getNameOfCurrentPlayer(),
+   playersOld.getPursesOfCurrentPlayer());
   boolean winner = didPlayerWin();
-  player.switchToNextPlayer();
+  playersOld.switchToNextPlayer();
   return winner;
  }
 
  public void wrongAnswer() {
   news.answerWasIncorrect();
-  news.playerSentToPenaltyBox(player.getNameOfCurrentPlayer());
-  player.sendCurrentPlayerToPenaltyBox();
-  player.switchToNextPlayer();
+  news.playerSentToPenaltyBox(playersOld.getNameOfCurrentPlayer());
+  playersOld.sendCurrentPlayerToPenaltyBox();
+  playersOld.switchToNextPlayer();
  }
 
  private boolean didPlayerWin() {
-  return !(player.getPursesOfCurrentPlayer() == WINNING_PURSES);
+  return !(playersOld.getPursesOfCurrentPlayer() == WINNING_PURSES);
  }
 
  public void play(Random random) {
