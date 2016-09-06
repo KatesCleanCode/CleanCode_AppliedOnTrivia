@@ -73,19 +73,14 @@ public class Game {
  }
 
  private void updateLocationOfCurrentPlayer(int roll) {
-  setLocationOfCurrentPlayer(places, currentPlayer,
+  player.setLocationOfCurrentPlayer(places, currentPlayer,
    player.getLocationOfCurrentPlayer(places, currentPlayer) + roll);
   if (player.getLocationOfCurrentPlayer(places,
    currentPlayer) > MAX_LOCATION) {
-   setLocationOfCurrentPlayer(places, currentPlayer,
+   player.setLocationOfCurrentPlayer(places, currentPlayer,
     player.getLocationOfCurrentPlayer(places, currentPlayer)
      - MAX_DIE_ROLL_OF_TWO_DICES);
   }
- }
-
- private void setLocationOfCurrentPlayer(int[] places,
-  int currentPlayer, int location) {
-  places[currentPlayer] = location;
  }
 
  public boolean wasCorrectlyAnswered() {
