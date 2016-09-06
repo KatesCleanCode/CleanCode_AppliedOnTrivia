@@ -1,7 +1,6 @@
 package com.adaptionsoft.games.trivia.news;
 
 import com.adaptionsoft.games.trivia.printer.ConsolePrinter;
-import com.adaptionsoft.games.uglytrivia.Game;
 
 public class News {
  private ConsolePrinter printer = new ConsolePrinter();
@@ -52,8 +51,8 @@ public class News {
   printer.printMessage(question);
  }
 
- public void printNewLocation(Game game, String playersName, int location) {
-  game.printer
+ public void printNewLocation(String playersName, int location) {
+  printer
    .printMessage(playersName + "'s new location is " + location);
  }
 }

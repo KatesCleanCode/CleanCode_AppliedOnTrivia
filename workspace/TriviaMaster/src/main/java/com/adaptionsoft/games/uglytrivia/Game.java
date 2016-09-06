@@ -121,7 +121,7 @@ public class Game {
    places[currentPlayer] =
     places[currentPlayer] - MAX_DIE_ROLL_OF_TWO_DICES;
   }
-  news.printNewLocation(this, players.get(currentPlayer), places[currentPlayer]);
+  news.printNewLocation(players.get(currentPlayer), places[currentPlayer]);
  }
 
  private void askQuestion() {
