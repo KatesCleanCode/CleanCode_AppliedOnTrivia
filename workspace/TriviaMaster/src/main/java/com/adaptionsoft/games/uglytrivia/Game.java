@@ -65,7 +65,11 @@ public class Game {
  private void stayInPenaltyBox() {
   news.playerIsStayingInPenaltyBox(
    player.getNameOfCurrentPlayer(currentPlayer));
-  isGettingOutOfPenaltyBox = false;
+  setLeavePenaltyBox(false);
+ }
+
+ private void setLeavePenaltyBox(boolean leavePenaltyBox) {
+  isGettingOutOfPenaltyBox = leavePenaltyBox;
  }
 
  public boolean wasCorrectlyAnswered() {
