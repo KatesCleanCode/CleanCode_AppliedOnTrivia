@@ -187,17 +187,13 @@ public class Game {
 
  public void wrongAnswer() {
   news.answerWasIncorrect();
-  printPlayerWasSentToPenaltyBox(players.get(currentPlayer));
+  news.printPlayerWasSentToPenaltyBox(this, players.get(currentPlayer));
   sendCurrentPlayerToPenaltyBox();
   switchToNextPlayer();
  }
 
  private void sendCurrentPlayerToPenaltyBox() {
   inPenaltyBox[currentPlayer] = true;
- }
-
- private void printPlayerWasSentToPenaltyBox(String playersName) {
-  printer.printMessage(playersName + " was sent to the penalty box");
  }
 
  private boolean didPlayerWin() {
