@@ -7,6 +7,7 @@ import com.adaptionsoft.games.trivia.exceptions.TooManyPlayersException;
 
 public class Players {
 
+ /** Maximum 5 players can attend a game. */
  public static final int MAX_NUMBER_OF_PLAYERS = 5;
 
  private List<Player> player = new ArrayList<>();
