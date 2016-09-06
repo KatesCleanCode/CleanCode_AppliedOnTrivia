@@ -52,7 +52,7 @@ public class PlayersOld {
  }
 
  public int getLocationOfCurrentPlayer() {
-  return places[currentPlayer];
+  return players.getCurrentPlayer().getLocation();
  }
 
  public void updateLocationOfCurrentPlayer(int roll) {
