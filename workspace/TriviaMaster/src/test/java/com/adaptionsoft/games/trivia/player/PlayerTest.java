@@ -22,4 +22,9 @@ public class PlayerTest {
  void whenPlayerIsCreatedThenPursusIsZero() {
   assertThat(player.getPursus(), equalTo(0));
  }
+
+ @Test
+ void whenPlayerIsCreatedThenHeIsNotInPenaltyBox() {
+  assertFalse(player.isInPenaltyBox());
+ }
 }
