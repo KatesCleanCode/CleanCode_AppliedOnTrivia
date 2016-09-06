@@ -48,4 +48,13 @@ public class PlayerTest {
   player.updateLocation(MAX_LOCATION);
   assertThat(player.getLocation(), equalTo(MAX_LOCATION));
  }
+
+ @Test
+ @SuppressWarnings("checkstyle:magicnumber")
+ void locationIsMaximumEleven() {
+  player.updateLocation(5);
+  int location = player.updateLocation(MAX_LOCATION);
+
+  assertThat(location, equalTo(4));
+ }
 }
