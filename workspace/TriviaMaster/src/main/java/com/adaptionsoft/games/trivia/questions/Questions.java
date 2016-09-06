@@ -1,5 +1,7 @@
 package com.adaptionsoft.games.trivia.questions;
 
+import java.util.LinkedList;
+
 import com.adaptionsoft.games.uglytrivia.Game;
 
 public class Questions {
@@ -16,6 +18,24 @@ public class Questions {
    return Game.QUESTION_CATEGORY_SPORTS;
   }
   return Game.QUESTION_CATEGORY_ROCK;
+ }
+
+ public String askQuestion(int location, LinkedList<String> rockQuestions, LinkedList<String> sportsQuestions, LinkedList<String> scienceQuestions, LinkedList<String> popQuestions) {
+  String currentCategory = currentCategory(location);
+  String askedQuestion = "";
+  if (currentCategory == Game.QUESTION_CATEGORY_POP) {
+   askedQuestion = popQuestions.removeFirst();
+  }
+  if (currentCategory == Game.QUESTION_CATEGORY_SCIENCE) {
+   askedQuestion = scienceQuestions.removeFirst();
+  }
+  if (currentCategory == Game.QUESTION_CATEGORY_SPORTS) {
+   askedQuestion = sportsQuestions.removeFirst();
+  }
+  if (currentCategory == Game.QUESTION_CATEGORY_ROCK) {
+   askedQuestion = rockQuestions.removeFirst();
+  }
+  return askedQuestion;
  }
 
 }

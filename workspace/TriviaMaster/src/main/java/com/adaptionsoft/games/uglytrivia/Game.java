@@ -94,7 +94,7 @@ public class Game {
   }
   updateLocationOfCurrentPlayer(roll);
   news.category(questions.currentCategory(places[currentPlayer]));
-  String askedQuestion = askQuestion(places[currentPlayer],
+  String askedQuestion = questions.askQuestion(places[currentPlayer],
    rockQuestions, sportsQuestions, scienceQuestions, popQuestions);
   news.question(askedQuestion);
  }
@@ -125,28 +125,6 @@ public class Game {
   }
   news.playersNewLocation(players.get(currentPlayer),
    places[currentPlayer]);
- }
-
- private String askQuestion(int location,
-  LinkedList<String> rockQuestions,
-  LinkedList<String> sportsQuestions,
-  LinkedList<String> scienceQuestions,
-  LinkedList<String> popQuestions) {
-  String currentCategory = questions.currentCategory(location);
-  String askedQuestion = "";
-  if (currentCategory == QUESTION_CATEGORY_POP) {
-   askedQuestion = popQuestions.removeFirst();
-  }
-  if (currentCategory == QUESTION_CATEGORY_SCIENCE) {
-   askedQuestion = scienceQuestions.removeFirst();
-  }
-  if (currentCategory == QUESTION_CATEGORY_SPORTS) {
-   askedQuestion = sportsQuestions.removeFirst();
-  }
-  if (currentCategory == QUESTION_CATEGORY_ROCK) {
-   askedQuestion = rockQuestions.removeFirst();
-  }
-  return askedQuestion;
  }
 
  public boolean wasCorrectlyAnswered() {
