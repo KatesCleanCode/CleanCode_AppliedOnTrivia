@@ -25,7 +25,7 @@ public class News {
   printer.printMessage("The category is " + category);
  }
 
- public void printCurrentPlayer(String currentPlayer) {
-  printer.printMessage(currentPlayer + " is the current player");
+ public void currentPlayer(String playersName) {
+  printer.printMessage(playersName + " is the current player");
  }
 }

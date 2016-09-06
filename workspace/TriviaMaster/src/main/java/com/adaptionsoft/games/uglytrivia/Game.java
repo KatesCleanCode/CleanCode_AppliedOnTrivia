@@ -83,7 +83,7 @@ public class Game {
  }
 
  public void roll(int roll) {
-  news.printCurrentPlayer(players.get(currentPlayer));
+  news.currentPlayer(players.get(currentPlayer));
   printDieRoll(roll);
   if (currentPlayerIsInPenaltyBox()) {
    if (isEven(roll)) {
