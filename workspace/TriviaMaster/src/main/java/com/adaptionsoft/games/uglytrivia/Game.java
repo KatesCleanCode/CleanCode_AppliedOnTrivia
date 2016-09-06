@@ -31,23 +31,22 @@ public class Game {
  }
 
  public void roll(int roll) {
-  news.currentPlayer(player.getNameOfCurrentPlayer(currentPlayer));
+  news.currentPlayer(player.getNameOfCurrentPlayer());
   news.rolledDieRoll(roll);
-  if (player.currentPlayerIsInPenaltyBox(currentPlayer)) {
+  if (player.currentPlayerIsInPenaltyBox()) {
    if (isEven(roll)) {
     stayInPenaltyBox();
     return;
    }
    leavePenaltyBox();
   }
-  player.updateLocationOfCurrentPlayer(roll, currentPlayer);
-  news.playersNewLocation(
-   player.getNameOfCurrentPlayer(currentPlayer),
-   player.getLocationOfCurrentPlayer(currentPlayer));
-  news.category(questions.currentCategory(
-   player.getLocationOfCurrentPlayer(currentPlayer)));
-  String askedQuestion = questions
-   .askQuestion(player.getLocationOfCurrentPlayer(currentPlayer));
+  player.updateLocationOfCurrentPlayer(roll);
+  news.playersNewLocation(player.getNameOfCurrentPlayer(),
+   player.getLocationOfCurrentPlayer());
+  news.category(
+   questions.currentCategory(player.getLocationOfCurrentPlayer()));
+  String askedQuestion =
+   questions.askQuestion(player.getLocationOfCurrentPlayer());
   news.question(askedQuestion);
  }
 
@@ -57,43 +56,39 @@ public class Game {
 
  private void leavePenaltyBox() {
   player.setLeavePenaltyBox(true);
-  news.playerIsLeavingPenaltyBox(
-   player.getNameOfCurrentPlayer(currentPlayer));
+  news.playerIsLeavingPenaltyBox(player.getNameOfCurrentPlayer());
  }
 
  private void stayInPenaltyBox() {
-  news.playerIsStayingInPenaltyBox(
-   player.getNameOfCurrentPlayer(currentPlayer));
+  news.playerIsStayingInPenaltyBox(player.getNameOfCurrentPlayer());
   player.setLeavePenaltyBox(false);
  }
 
  public boolean wasCorrectlyAnswered() {
-  if (player.currentPlayerIsInPenaltyBox(currentPlayer)) {
+  if (player.currentPlayerIsInPenaltyBox()) {
    if (player.currentPlayerIsNotLeavingPenaltyBox()) {
-    player.switchToNextPlayer(this);
+    player.switchToNextPlayer();
     return true;
    }
   }
   news.answerWasCorrect();
-  player.increasePursesOfCurrentPlayer(currentPlayer);
-  news.playersPurses(player.getNameOfCurrentPlayer(currentPlayer),
-   player.getPursesOfCurrentPlayer(currentPlayer));
+  player.increasePursesOfCurrentPlayer();
+  news.playersPurses(player.getNameOfCurrentPlayer(),
+   player.getPursesOfCurrentPlayer());
   boolean winner = didPlayerWin();
-  player.switchToNextPlayer(this);
+  player.switchToNextPlayer();
   return winner;
  }
 
  public void wrongAnswer() {
   news.answerWasIncorrect();
-  news.playerSentToPenaltyBox(
-   player.getNameOfCurrentPlayer(currentPlayer));
-  player.sendCurrentPlayerToPenaltyBox(currentPlayer);
-  player.switchToNextPlayer(this);
+  news.playerSentToPenaltyBox(player.getNameOfCurrentPlayer());
+  player.sendCurrentPlayerToPenaltyBox();
+  player.switchToNextPlayer();
  }
 
  private boolean didPlayerWin() {
-  return !(player
-   .getPursesOfCurrentPlayer(currentPlayer) == WINNING_PURSES);
+  return !(player.getPursesOfCurrentPlayer() == WINNING_PURSES);
  }
 
  public void play(Random random) {

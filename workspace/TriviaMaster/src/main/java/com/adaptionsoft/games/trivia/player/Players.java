@@ -2,8 +2,6 @@ package com.adaptionsoft.games.trivia.player;
 
 import java.util.ArrayList;
 
-import com.adaptionsoft.games.uglytrivia.Game;
-
 public class Players {
 
  private static final int MAX_DIE_ROLL_OF_TWO_DICES = 12;
@@ -25,7 +23,7 @@ public class Players {
   return players.size();
  }
 
- public String getNameOfCurrentPlayer(int currentPlayer) {
+ public String getNameOfCurrentPlayer() {
   return players.get(currentPlayer);
  }
 
@@ -33,15 +31,15 @@ public class Players {
   inPenaltyBox[getNumberOfPlayers()] = false;
  }
 
- public void sendCurrentPlayerToPenaltyBox(int currentPlayer) {
+ public void sendCurrentPlayerToPenaltyBox() {
   inPenaltyBox[currentPlayer] = true;
  }
 
- public boolean currentPlayerIsInPenaltyBox(int currentPlayer) {
+ public boolean currentPlayerIsInPenaltyBox() {
   return inPenaltyBox[currentPlayer];
  }
 
- public int getPursesOfCurrentPlayer(int currentPlayer) {
+ public int getPursesOfCurrentPlayer() {
   return purses[currentPlayer];
  }
 
@@ -49,7 +47,7 @@ public class Players {
   purses[getNumberOfPlayers()] = 0;
  }
 
- public void increasePursesOfCurrentPlayer(int currentPlayer) {
+ public void increasePursesOfCurrentPlayer() {
   purses[currentPlayer]++;
  }
 
@@ -57,23 +55,19 @@ public class Players {
   places[getNumberOfPlayers()] = 0;
  }
 
- public int getLocationOfCurrentPlayer(int currentPlayer) {
+ public int getLocationOfCurrentPlayer() {
   return places[currentPlayer];
  }
 
- public void setLocationOfCurrentPlayer(int currentPlayer,
-  int location) {
+ public void setLocationOfCurrentPlayer(int location) {
   places[currentPlayer] = location;
  }
 
- public void updateLocationOfCurrentPlayer(int roll,
-  int currentPlayer) {
-  setLocationOfCurrentPlayer(currentPlayer,
-   getLocationOfCurrentPlayer(currentPlayer) + roll);
-  if (getLocationOfCurrentPlayer(currentPlayer) > MAX_LOCATION) {
-   setLocationOfCurrentPlayer(currentPlayer,
-    getLocationOfCurrentPlayer(currentPlayer)
-     - MAX_DIE_ROLL_OF_TWO_DICES);
+ public void updateLocationOfCurrentPlayer(int roll) {
+  setLocationOfCurrentPlayer(getLocationOfCurrentPlayer() + roll);
+  if (getLocationOfCurrentPlayer() > MAX_LOCATION) {
+   setLocationOfCurrentPlayer(
+    getLocationOfCurrentPlayer() - MAX_DIE_ROLL_OF_TWO_DICES);
   }
  }
 
@@ -85,10 +79,10 @@ public class Players {
   return !isGettingOutOfPenaltyBox;
  }
 
- public void switchToNextPlayer(Game game) {
-  game.currentPlayer++;
-  if (game.currentPlayer == getNumberOfPlayers()) {
-   game.currentPlayer = 0;
+ public void switchToNextPlayer() {
+  currentPlayer++;
+  if (currentPlayer == getNumberOfPlayers()) {
+   currentPlayer = 0;
   }
  }
 }
