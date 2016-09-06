@@ -24,6 +24,9 @@ public class Players {
  }
 
  public void switchToNextPlayer() {
-  currentPlayer++;
+  if (!player.isEmpty()) {
+   currentPlayer++;
+   currentPlayer = currentPlayer % player.size();
+  }
  }
 }
