@@ -19,7 +19,6 @@ public class Game {
  private static final int WINNING_PURSES = 6;
 
  private ArrayList<String> players = new ArrayList<>();
-
  private int[] places = new int[MAX_NUMBER_OF_PLAYERS];
  private int[] purses = new int[MAX_NUMBER_OF_PLAYERS];
  private boolean[] inPenaltyBox = new boolean[MAX_NUMBER_OF_PLAYERS];
