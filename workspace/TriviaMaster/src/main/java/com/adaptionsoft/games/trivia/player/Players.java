@@ -24,4 +24,8 @@ public class Players {
  public void sendCurrentPlayerToPenaltyBox(boolean[] inPenaltyBox, int currentPlayer) {
   inPenaltyBox[currentPlayer] = true;
  }
+
+ public boolean currentPlayerIsInPenaltyBox(boolean[] inPenaltyBox, int currentPlayer) {
+  return inPenaltyBox[currentPlayer];
+ }
 }
