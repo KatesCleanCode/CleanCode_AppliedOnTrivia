@@ -1,7 +1,6 @@
 package com.adaptionsoft.games.trivia.news;
 
 import com.adaptionsoft.games.trivia.printer.ConsolePrinter;
-import com.adaptionsoft.games.uglytrivia.Game;
 
 public class News {
  private ConsolePrinter printer = new ConsolePrinter();
@@ -26,7 +25,7 @@ public class News {
   printer.printMessage("The category is " + category);
  }
 
- public void printCurrentPlayer(Game game, String currentPlayer) {
-  game.printer.printMessage(currentPlayer + " is the current player");
+ public void printCurrentPlayer(String currentPlayer) {
+  printer.printMessage(currentPlayer + " is the current player");
  }
 }
