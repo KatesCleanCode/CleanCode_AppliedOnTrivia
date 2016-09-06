@@ -120,6 +120,8 @@ public class Game {
   }
   news.answerWasCorrect();
   increasePursusOfCurrentPlayer();
+  news.playersPurses(getNameOfCurrentPlayer(),
+   getPursesOfCurrentPlayer());
   boolean winner = didPlayerWin();
   switchToNextPlayer();
   return winner;
@@ -131,8 +133,6 @@ public class Game {
 
  private void increasePursusOfCurrentPlayer() {
   purses[currentPlayer]++;
-  news.playersPurses(getNameOfCurrentPlayer(),
-   getPursesOfCurrentPlayer());
  }
 
  private void switchToNextPlayer() {
