@@ -18,10 +18,14 @@ public final class GameRunner {
  }
 
  public static void playGame(Random rand, Printer printer) {
-  Game aGame = new Game(printer);
+  Game aGame = createGame(printer);
   aGame.addPlayer("Chet");
   aGame.addPlayer("Pat");
   aGame.addPlayer("Sue");
   aGame.play(rand);
+ }
+
+ private static Game createGame(Printer printer) {
+  return new Game(printer);
  }
 }
