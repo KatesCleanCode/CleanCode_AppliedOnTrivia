@@ -16,6 +16,9 @@ public class Players {
  }
 
  public Player getCurrentPlayer() {
-  return null;
+  if (playerNames.isEmpty()) {
+   return null;
+  }
+  return new Player();
  }
 }
