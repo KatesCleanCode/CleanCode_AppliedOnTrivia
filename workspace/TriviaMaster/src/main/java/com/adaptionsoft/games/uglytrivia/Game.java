@@ -16,7 +16,6 @@ public class Game {
  private static final int WINNING_PURSES = 6;
 
  private int currentPlayer = 0;
- public boolean isGettingOutOfPenaltyBox;
 
  private News news = new News();
  private Questions questions = new Questions();
