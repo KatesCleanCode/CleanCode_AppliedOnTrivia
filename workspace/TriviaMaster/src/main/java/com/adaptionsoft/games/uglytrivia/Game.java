@@ -31,16 +31,12 @@ public class Game {
  private Players player = new Players();
 
  public void addPlayer(String playerName) {
-  addPlayerNameToPlayers(playerName, players);
+  player.addPlayerNameToPlayers(playerName, players);
   initializeLocation();
   initializePurses();
   initializePenaltyBox();
   news.playerAdded(playerName);
   news.playersNumber(howManyPlayers());
- }
-
- private void addPlayerNameToPlayers(String playerName, ArrayList<String> players) {
-  players.add(playerName);
  }
 
  private void initializePenaltyBox() {
