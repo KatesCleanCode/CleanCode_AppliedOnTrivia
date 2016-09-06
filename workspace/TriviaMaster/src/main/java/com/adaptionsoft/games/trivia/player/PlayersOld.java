@@ -35,6 +35,7 @@ public class PlayersOld {
 
  public void sendCurrentPlayerToPenaltyBox() {
   inPenaltyBox[currentPlayer] = true;
+  players.getCurrentPlayer().sendToPenaltyBox();
  }
 
  public boolean isCurrentPlayerInPenaltyBox() {
@@ -47,6 +48,7 @@ public class PlayersOld {
 
  public void increasePursesOfCurrentPlayer() {
   purses[currentPlayer]++;
+  players.getCurrentPlayer().increasePursus();
  }
 
  public int getLocationOfCurrentPlayer() {
@@ -59,10 +61,12 @@ public class PlayersOld {
    places[currentPlayer] =
     getLocationOfCurrentPlayer() - MAX_DIE_ROLL_OF_TWO_DICES;
   }
+  players.getCurrentPlayer().updateLocation(roll);
  }
 
  public void setLeavePenaltyBox(boolean leavePenaltyBox) {
   isGettingOutOfPenaltyBox = leavePenaltyBox;
+  players.getCurrentPlayer().setLeavingPenaltyBox(leavePenaltyBox);
  }
 
  public boolean isCurrentPlayerStayingInPenaltyBox() {
@@ -74,5 +78,6 @@ public class PlayersOld {
   if (currentPlayer == getNumberOfPlayers()) {
    currentPlayer = 0;
   }
+  players.switchToNextPlayer();
  }
 }

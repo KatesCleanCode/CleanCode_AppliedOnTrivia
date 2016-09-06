@@ -48,4 +48,7 @@ public class Player {
   return leavingPenaltyBox;
  }
 
+ public void setLeavingPenaltyBox(boolean leavingPenaltyBox) {
+  this.leavingPenaltyBox = leavingPenaltyBox;
+ }
 }
