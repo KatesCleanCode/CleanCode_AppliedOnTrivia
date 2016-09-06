@@ -27,6 +27,7 @@ public class Game {
 
  private News news = new News();
  private Questions questions = new Questions();
+ private Players player = new Players();
 
  public void addPlayer(String playerName) {
   addPlayerNameToPlayers(playerName);
