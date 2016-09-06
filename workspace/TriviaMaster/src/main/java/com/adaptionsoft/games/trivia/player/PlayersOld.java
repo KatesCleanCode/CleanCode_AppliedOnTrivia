@@ -8,7 +8,7 @@ public class PlayersOld {
  private static final int MAX_DIE_ROLL_OF_TWO_DICES = 12;
  private static final int MAX_NUMBER_OF_PLAYERS = 6;
 
- private ArrayList<String> players = new ArrayList<>();
+ private ArrayList<String> playersOld = new ArrayList<>();
 
  private boolean[] inPenaltyBox = new boolean[MAX_NUMBER_OF_PLAYERS];
  private int[] purses = new int[MAX_NUMBER_OF_PLAYERS];
@@ -17,18 +17,18 @@ public class PlayersOld {
  private int currentPlayer = 0;
 
  public void add(String playerName) {
-  players.add(playerName);
+  playersOld.add(playerName);
   initializeLocation();
   initializePurses();
   initializePenaltyBox();
  }
 
  public int getNumberOfPlayers() {
-  return players.size();
+  return playersOld.size();
  }
 
  public String getNameOfCurrentPlayer() {
-  return players.get(currentPlayer);
+  return playersOld.get(currentPlayer);
  }
 
  private void initializePenaltyBox() {
