@@ -30,4 +30,12 @@ public class PlayersTest {
   Player currentPlayer = players.getCurrentPlayer();
   assertNull(currentPlayer);
  }
+
+ @Test
+ void whenOnePlayerIsAddedThenCurrentPlayerIsFirstPlayer() {
+  players.add("Sue");
+
+  Player currentPlayer = players.getCurrentPlayer();
+  assertThat(currentPlayer.getName(), equalTo("Sue"));
+ }
 }
