@@ -3,11 +3,7 @@ package com.adaptionsoft.games.trivia.player;
 @Deprecated
 public class PlayersOld {
 
- private Players players = new Players();
-
- public void add(String playerName) {
-  players.add(playerName);
- }
+ public Players players = new Players();
 
  public int getNumberOfPlayers() {
   return players.getNumberOfPlayers();

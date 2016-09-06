@@ -25,7 +25,7 @@ public class Game {
  }
 
  public void addPlayer(String playerName) {
-  playersOld.add(playerName);
+  playersOld.players.add(playerName);
   news.playerAdded(playerName);
   news.playersNumber(playersOld.getNumberOfPlayers());
  }
