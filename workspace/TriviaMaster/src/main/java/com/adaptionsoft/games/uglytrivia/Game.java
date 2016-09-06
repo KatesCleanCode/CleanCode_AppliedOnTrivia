@@ -247,13 +247,17 @@ public class Game {
   boolean notAWinner = true;
   do {
    roll(rollDice(random));
-   if (random.nextInt(BOUND_FOR_WRONG_ANSWER) == WRONG_ANSWER) {
+   if (playerAnsweredWrong(random)) {
     wrongAnswer();
    } else {
     notAWinner = wasCorrectlyAnswered();
    }
   } while (notAWinner);
 
+ }
+
+ private boolean playerAnsweredWrong(Random random) {
+  return random.nextInt(BOUND_FOR_WRONG_ANSWER) == WRONG_ANSWER;
  }
 
  private int rollDice(Random random) {
