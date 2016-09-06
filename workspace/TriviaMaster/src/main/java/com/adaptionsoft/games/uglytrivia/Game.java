@@ -27,29 +27,33 @@ public class Game {
  }
 
  public void addPlayer(String playerName) {
-  playersOld.players.add(playerName);
+  getPlayers().add(playerName);
   news.playerAdded(playerName);
-  news.playersNumber(playersOld.players.getNumberOfPlayers());
+  news.playersNumber(getPlayers().getNumberOfPlayers());
+ }
+
+ private Players getPlayers() {
+  return playersOld.players;
  }
 
  public void roll(int roll) {
-  news.currentPlayer(playersOld.players.getCurrentPlayer().getName());
+  news.currentPlayer(getPlayers().getCurrentPlayer().getName());
   news.rolledDieRoll(roll);
-  if (playersOld.players.getCurrentPlayer().isInPenaltyBox()) {
+  if (getPlayers().getCurrentPlayer().isInPenaltyBox()) {
    if (isEven(roll)) {
     stayInPenaltyBox();
     return;
    }
    leavePenaltyBox();
   }
-  playersOld.players.getCurrentPlayer().updateLocation(roll);
+  getPlayers().getCurrentPlayer().updateLocation(roll);
   news.playersNewLocation(
-   playersOld.players.getCurrentPlayer().getName(),
-   playersOld.players.getCurrentPlayer().getLocation());
+   getPlayers().getCurrentPlayer().getName(),
+   getPlayers().getCurrentPlayer().getLocation());
   news.category(questions.currentCategory(
-   playersOld.players.getCurrentPlayer().getLocation()));
+   getPlayers().getCurrentPlayer().getLocation()));
   String askedQuestion = questions
-   .askQuestion(playersOld.players.getCurrentPlayer().getLocation());
+   .askQuestion(getPlayers().getCurrentPlayer().getLocation());
   news.question(askedQuestion);
  }
 
@@ -58,43 +62,43 @@ public class Game {
  }
 
  private void leavePenaltyBox() {
-  playersOld.players.getCurrentPlayer().setLeavingPenaltyBox(true);
+  getPlayers().getCurrentPlayer().setLeavingPenaltyBox(true);
   news.playerIsLeavingPenaltyBox(
-   playersOld.players.getCurrentPlayer().getName());
+   getPlayers().getCurrentPlayer().getName());
  }
 
  private void stayInPenaltyBox() {
   news.playerIsStayingInPenaltyBox(
-   playersOld.players.getCurrentPlayer().getName());
-  playersOld.players.getCurrentPlayer().setLeavingPenaltyBox(false);
+   getPlayers().getCurrentPlayer().getName());
+  getPlayers().getCurrentPlayer().setLeavingPenaltyBox(false);
  }
 
  public boolean wasCorrectlyAnswered() {
-  if (playersOld.players.getCurrentPlayer().isInPenaltyBox()) {
-   if (!playersOld.players.getCurrentPlayer().isLeavingPenaltyBox()) {
-    playersOld.players.switchToNextPlayer();
+  if (getPlayers().getCurrentPlayer().isInPenaltyBox()) {
+   if (!getPlayers().getCurrentPlayer().isLeavingPenaltyBox()) {
+    getPlayers().switchToNextPlayer();
     return true;
    }
   }
   news.answerWasCorrect();
-  playersOld.players.getCurrentPlayer().increasePursus();
-  news.playersPurses(playersOld.players.getCurrentPlayer().getName(),
-   playersOld.players.getCurrentPlayer().getPurses());
+  getPlayers().getCurrentPlayer().increasePursus();
+  news.playersPurses(getPlayers().getCurrentPlayer().getName(),
+   getPlayers().getCurrentPlayer().getPurses());
   boolean winner = didPlayerWin();
-  playersOld.players.switchToNextPlayer();
+  getPlayers().switchToNextPlayer();
   return winner;
  }
 
  public void wrongAnswer() {
   news.answerWasIncorrect();
   news.playerSentToPenaltyBox(
-   playersOld.players.getCurrentPlayer().getName());
-  playersOld.players.getCurrentPlayer().sendToPenaltyBox();
-  playersOld.players.switchToNextPlayer();
+   getPlayers().getCurrentPlayer().getName());
+  getPlayers().getCurrentPlayer().sendToPenaltyBox();
+  getPlayers().switchToNextPlayer();
  }
 
  private boolean didPlayerWin() {
-  return !(playersOld.players.getCurrentPlayer()
+  return !(getPlayers().getCurrentPlayer()
    .getPurses() == WINNING_PURSES);
  }
 
