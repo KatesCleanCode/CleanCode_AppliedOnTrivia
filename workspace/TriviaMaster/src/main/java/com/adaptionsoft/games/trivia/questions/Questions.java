@@ -11,6 +11,11 @@ public class Questions {
  private static final int NUMBER_OF_QUESTION_CATEGORIES = 4;
  private static final int MAX_NUMBER_OF_QUESTIONS = 50;
 
+ private LinkedList<String> popQuestions = new LinkedList<>();
+ private LinkedList<String> scienceQuestions = new LinkedList<>();
+ private LinkedList<String> sportsQuestions = new LinkedList<>();
+ private LinkedList<String> rockQuestions = new LinkedList<>();
+
  public String currentCategory(int location) {
   int questionOrder = location % NUMBER_OF_QUESTION_CATEGORIES;
   if (questionOrder == 0) {
@@ -47,10 +52,7 @@ public class Questions {
   return askedQuestion;
  }
 
- public void initializeQuestions(LinkedList<String> popQuestions,
-  LinkedList<String> scienceQuestions,
-  LinkedList<String> sportsQuestions,
-  LinkedList<String> rockQuestions) {
+ public void initializeQuestions() {
   for (int i = 0; i < MAX_NUMBER_OF_QUESTIONS; i++) {
    popQuestions.addLast("Pop Question " + i);
    scienceQuestions.addLast("Science Question " + i);

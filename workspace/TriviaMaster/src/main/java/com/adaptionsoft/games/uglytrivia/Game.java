@@ -35,8 +35,7 @@ public class Game {
  private Questions questions = new Questions();
 
  public Game() {
-  questions.initializeQuestions(popQuestions, scienceQuestions,
-   sportsQuestions, rockQuestions);
+  questions.initializeQuestions();
  }
 
  public void addPlayer(String playerName) {
