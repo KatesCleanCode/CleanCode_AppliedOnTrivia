@@ -132,13 +132,16 @@ public class Game {
    news.question(askedQuestion);
   }
   if (currentCategory == QUESTION_CATEGORY_SCIENCE) {
-   news.question(scienceQuestions.removeFirst());
+   String askedQuestion = scienceQuestions.removeFirst();
+   news.question(askedQuestion);
   }
   if (currentCategory == QUESTION_CATEGORY_SPORTS) {
-   news.question(sportsQuestions.removeFirst());
+   String askedQuestion = sportsQuestions.removeFirst();
+   news.question(askedQuestion);
   }
   if (currentCategory == QUESTION_CATEGORY_ROCK) {
-   news.question(rockQuestions.removeFirst());
+   String askedQuestion = rockQuestions.removeFirst();
+   news.question(askedQuestion);
   }
  }
 
