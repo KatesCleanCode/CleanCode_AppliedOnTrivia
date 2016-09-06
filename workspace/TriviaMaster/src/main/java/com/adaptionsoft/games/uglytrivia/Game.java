@@ -184,7 +184,7 @@ public class Game {
     return true;
    }
   }
-  news.printAnswerWasCorrect();
+  news.answerWasCorrect();
   increasePursusOfCurrentPlayer();
   boolean winner = didPlayerWin();
   switchToNextPlayer();

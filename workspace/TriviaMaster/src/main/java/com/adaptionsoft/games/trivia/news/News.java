@@ -13,7 +13,7 @@ public class News {
   printer.printMessage(playerName + " was added");
  }
 
- public void printAnswerWasCorrect() {
+ public void answerWasCorrect() {
   printer.printMessage("Answer was correct!!!!");
  }
 }
