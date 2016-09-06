@@ -93,7 +93,7 @@ public class Game {
    leavePenaltyBox();
   }
   updateLocationOfCurrentPlayer(roll);
-  news.category(currentCategory());
+  news.category(currentCategory(places[currentPlayer]));
   askQuestion();
  }
 
@@ -126,22 +126,22 @@ public class Game {
  }
 
  private void askQuestion() {
-  if (currentCategory() == QUESTION_CATEGORY_POP) {
+  if (currentCategory(places[currentPlayer]) == QUESTION_CATEGORY_POP) {
    news.question(popQuestions.removeFirst());
   }
-  if (currentCategory() == QUESTION_CATEGORY_SCIENCE) {
+  if (currentCategory(places[currentPlayer]) == QUESTION_CATEGORY_SCIENCE) {
    news.question(scienceQuestions.removeFirst());
   }
-  if (currentCategory() == QUESTION_CATEGORY_SPORTS) {
+  if (currentCategory(places[currentPlayer]) == QUESTION_CATEGORY_SPORTS) {
    news.question(sportsQuestions.removeFirst());
   }
-  if (currentCategory() == QUESTION_CATEGORY_ROCK) {
+  if (currentCategory(places[currentPlayer]) == QUESTION_CATEGORY_ROCK) {
    news.question(rockQuestions.removeFirst());
   }
  }
 
- private String currentCategory() {
-  int questionOrder = places[currentPlayer] % NUMBER_OF_QUESTION_CATEGORIES;
+ private String currentCategory(int location) {
+  int questionOrder = location % NUMBER_OF_QUESTION_CATEGORIES;
   if (questionOrder == 0) {
    return QUESTION_CATEGORY_POP;
   }
