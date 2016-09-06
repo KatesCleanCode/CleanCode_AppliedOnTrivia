@@ -6,7 +6,6 @@ import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 
 import com.adaptionsoft.games.testdoubles.PrinterStub;
-import com.adaptionsoft.games.trivia.game.Game;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 
@@ -24,7 +23,7 @@ public class GameCharacterizationTest {
  @BeforeEach
  void setUp() {
   printer = new PrinterStub();
-  game = new Game(printer);
+  game = GameFactory.createGame(printer);
  }
 
  @Test
