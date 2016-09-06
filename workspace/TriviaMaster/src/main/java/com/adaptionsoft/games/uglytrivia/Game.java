@@ -15,8 +15,6 @@ public class Game {
  private static final int WRONG_ANSWER = 7;
  private static final int WINNING_PURSES = 6;
 
- public int currentPlayer = 0;
-
  private News news = new News();
  private Questions questions = new Questions();
  private Players player = new Players();
