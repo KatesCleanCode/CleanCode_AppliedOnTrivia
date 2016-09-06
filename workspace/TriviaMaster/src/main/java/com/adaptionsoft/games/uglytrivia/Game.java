@@ -31,7 +31,7 @@ public class Game {
  public void roll(int roll) {
   news.currentPlayer(player.getNameOfCurrentPlayer());
   news.rolledDieRoll(roll);
-  if (player.currentPlayerIsInPenaltyBox()) {
+  if (player.isCurrentPlayerInPenaltyBox()) {
    if (isEven(roll)) {
     stayInPenaltyBox();
     return;
@@ -63,7 +63,7 @@ public class Game {
  }
 
  public boolean wasCorrectlyAnswered() {
-  if (player.currentPlayerIsInPenaltyBox()) {
+  if (player.isCurrentPlayerInPenaltyBox()) {
    if (player.currentPlayerIsNotLeavingPenaltyBox()) {
     player.switchToNextPlayer();
     return true;

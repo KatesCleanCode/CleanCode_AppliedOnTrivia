@@ -35,7 +35,7 @@ public class Players {
   inPenaltyBox[currentPlayer] = true;
  }
 
- public boolean currentPlayerIsInPenaltyBox() {
+ public boolean isCurrentPlayerInPenaltyBox() {
   return inPenaltyBox[currentPlayer];
  }
 
