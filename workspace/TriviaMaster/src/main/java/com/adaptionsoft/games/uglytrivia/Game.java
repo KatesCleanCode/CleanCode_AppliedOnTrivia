@@ -28,7 +28,6 @@ public class Game {
  private int[] places = new int[MAX_NUMBER_OF_PLAYERS];
  private int[] purses = new int[MAX_NUMBER_OF_PLAYERS];
  private boolean[] inPenaltyBox = new boolean[MAX_NUMBER_OF_PLAYERS];
-
  private LinkedList<String> popQuestions = new LinkedList<>();
  private LinkedList<String> scienceQuestions = new LinkedList<>();
  private LinkedList<String> sportsQuestions = new LinkedList<>();
