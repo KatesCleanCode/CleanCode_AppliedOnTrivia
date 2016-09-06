@@ -47,8 +47,7 @@ public class News {
    playersName + " is not getting out of the penalty box");
  }
 
- public void printQuestion(String question) {
+ public void question(String question) {
   printer.printMessage(question);
  }
-
 }
