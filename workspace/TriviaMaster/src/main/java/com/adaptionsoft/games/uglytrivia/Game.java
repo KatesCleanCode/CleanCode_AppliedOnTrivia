@@ -31,7 +31,7 @@ public class Game {
  private Players player = new Players();
 
  public void addPlayer(String playerName) {
-  addPlayerNameToPlayers(playerName);
+  addPlayerNameToPlayers(playerName, players);
   initializeLocation();
   initializePurses();
   initializePenaltyBox();
@@ -39,7 +39,7 @@ public class Game {
   news.playersNumber(howManyPlayers());
  }
 
- private void addPlayerNameToPlayers(String playerName) {
+ private void addPlayerNameToPlayers(String playerName, ArrayList<String> players) {
   players.add(playerName);
  }
 
