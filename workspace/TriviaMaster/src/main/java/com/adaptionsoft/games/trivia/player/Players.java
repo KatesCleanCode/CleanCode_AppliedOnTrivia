@@ -8,4 +8,8 @@ public class Players {
   players.add(playerName);
  }
 
+ public int howManyPlayers(ArrayList<String> players) {
+  return players.size();
+ }
+
 }
