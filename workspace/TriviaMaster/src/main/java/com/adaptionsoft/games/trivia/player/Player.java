@@ -32,6 +32,11 @@ public class Player {
   isInPenaltyBox = true;
  }
 
+ public int updateLocation(int dieRoll) {
+  location = (location + dieRoll) % 12;
+  return location;
+ }
+
  public boolean isLeavingPenaltyBox() {
   return leavingPenaltyBox;
  }
