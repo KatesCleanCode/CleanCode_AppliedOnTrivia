@@ -132,7 +132,7 @@ public class Game {
 
  private void switchToNextPlayer() {
   currentPlayer++;
-  if (currentPlayer == players.size()) {
+  if (currentPlayer == player.getNumberOfPlayers(players)) {
    currentPlayer = 0;
   }
  }
