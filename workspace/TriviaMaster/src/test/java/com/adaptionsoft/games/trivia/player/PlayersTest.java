@@ -23,4 +23,9 @@ public class PlayersTest {
 
   assertThat(players.getNumberOfPlayers(), equalTo(1));
  }
+ @Test
+ void whenPlayersIsInitializedThenCurrentPlayerIsNullPlayer() {
+  Player currentPlayer = players.getCurrentPlayer();
+  assertNull(currentPlayer);
+ }
 }
