@@ -6,6 +6,7 @@ public class Player {
  private int location = 0;
  private int pursus = 0;
  private boolean isInPenaltyBox = false;
+ private boolean leavingPenaltyBox = false;
 
  public Player(String playerName) {
   this.playerName = playerName;
@@ -25,6 +26,10 @@ public class Player {
 
  public boolean isInPenaltyBox() {
   return isInPenaltyBox;
+ }
+
+ public boolean isLeavingPenaltyBox() {
+  return leavingPenaltyBox;
  }
 
 }
