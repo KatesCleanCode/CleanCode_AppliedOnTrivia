@@ -38,7 +38,7 @@ public class News {
    .printMessage(playersName + " is getting out of the penalty box");
  }
 
- public void printIsNotLeavingPenaltyBox(String playersName) {
+ public void playerIsStayingInPenaltyBox(String playersName) {
   printer.printMessage(
    playersName + " is not getting out of the penalty box");
  }
