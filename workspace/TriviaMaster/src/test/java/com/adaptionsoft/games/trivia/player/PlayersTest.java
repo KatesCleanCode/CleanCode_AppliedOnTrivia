@@ -16,4 +16,12 @@ public class PlayersTest {
   Players players = new Players();
   assertThat(players.getNumberOfPlayers(), equalTo(0));
  }
+
+ @Test
+ void whenOnePlayerIsAddedThenNumberOfPlayersIncreaseByOne() {
+  Players players = new Players();
+  players.add("Sue");
+
+  assertThat(players.getNumberOfPlayers(), equalTo(1));
+ }
 }
