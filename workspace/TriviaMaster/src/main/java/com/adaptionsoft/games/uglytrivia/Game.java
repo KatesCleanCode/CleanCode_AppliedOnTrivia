@@ -68,6 +68,8 @@ public class Game {
    leavePenaltyBox();
   }
   updateLocationOfCurrentPlayer(roll);
+  news.playersNewLocation(getNameOfCurrentPlayer(),
+   getLocationOfCurrentPlayer());
   news
    .category(questions.currentCategory(getLocationOfCurrentPlayer()));
   String askedQuestion =
@@ -107,8 +109,6 @@ public class Game {
    places[currentPlayer] =
     getLocationOfCurrentPlayer() - MAX_DIE_ROLL_OF_TWO_DICES;
   }
-  news.playersNewLocation(getNameOfCurrentPlayer(),
-   getLocationOfCurrentPlayer());
  }
 
  public boolean wasCorrectlyAnswered() {
