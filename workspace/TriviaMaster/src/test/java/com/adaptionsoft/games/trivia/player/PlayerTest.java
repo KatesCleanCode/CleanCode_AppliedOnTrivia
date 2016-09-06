@@ -24,7 +24,7 @@ public class PlayerTest {
 
  @Test
  void whenPlayerIsCreatedThenPursusIsZero() {
-  assertThat(player.getPursus(), equalTo(0));
+  assertThat(player.getPurses(), equalTo(0));
  }
 
  @Test
@@ -63,6 +63,6 @@ public class PlayerTest {
  void whenPursusShouldIncreaseThenItIncreasesByOne() {
   player.increasePursus();
 
-  assertThat(player.getPursus(), equalTo(1));
+  assertThat(player.getPurses(), equalTo(1));
  }
 }

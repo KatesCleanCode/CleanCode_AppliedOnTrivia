@@ -7,7 +7,7 @@ public class Player {
 
  private String playerName;
  private int location = 0;
- private int pursus = 0;
+ private int purses = 0;
  private boolean isInPenaltyBox = false;
  private boolean leavingPenaltyBox = false;
 
@@ -23,8 +23,8 @@ public class Player {
   return location;
  }
 
- public int getPursus() {
-  return pursus;
+ public int getPurses() {
+  return purses;
  }
 
  public boolean isInPenaltyBox() {
@@ -41,7 +41,7 @@ public class Player {
  }
 
  public void increasePursus() {
-  pursus++;
+  purses++;
  }
 
  public boolean isLeavingPenaltyBox() {
