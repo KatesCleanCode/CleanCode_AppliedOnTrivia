@@ -57,4 +57,12 @@ public class PlayerTest {
 
   assertThat(location, equalTo(4));
  }
+
+ @Test
+ @SuppressWarnings("checkstyle:magicnumber")
+ void whenPursusShouldIncreaseThenItIncreasesByOne() {
+  player.increasePursus();
+
+  assertThat(player.getPursus(), equalTo(1));
+ }
 }
