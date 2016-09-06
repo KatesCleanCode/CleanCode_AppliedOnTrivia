@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
 
+import com.adaptionsoft.games.trivia.news.News;
 import com.adaptionsoft.games.trivia.printer.ConsolePrinter;
 
 public class Game {
@@ -37,6 +38,7 @@ public class Game {
  private int currentPlayer = 0;
  private boolean isGettingOutOfPenaltyBox;
  private ConsolePrinter printer = new ConsolePrinter();
+ private News news = new News();
 
  public Game() {
   initializeQuestions();
