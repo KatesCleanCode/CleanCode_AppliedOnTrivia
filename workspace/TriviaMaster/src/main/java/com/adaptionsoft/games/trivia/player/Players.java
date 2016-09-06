@@ -30,7 +30,7 @@ public class Players {
   return players.get(currentPlayer);
  }
 
- public void initializePenaltyBox() {
+ private void initializePenaltyBox() {
   inPenaltyBox[getNumberOfPlayers()] = false;
  }
 
@@ -46,7 +46,7 @@ public class Players {
   return purses[currentPlayer];
  }
 
- public void initializePurses() {
+ private void initializePurses() {
   purses[getNumberOfPlayers()] = 0;
  }
 
@@ -54,7 +54,7 @@ public class Players {
   purses[currentPlayer]++;
  }
 
- public void initializeLocation() {
+ private void initializeLocation() {
   places[getNumberOfPlayers()] = 0;
  }
 
