@@ -6,8 +6,10 @@ import org.junit.runners.Suite.SuiteClasses;
 
 import com.adaptionsoft.games.trivia.IntegrationTests;
 import com.adaptionsoft.games.trivia.SystemTests;
+import com.adaptionsoft.games.trivia.UnitTests;
 
 @RunWith(Suite.class)
-@SuiteClasses({ IntegrationTests.class, SystemTests.class })
+@SuiteClasses({ IntegrationTests.class, SystemTests.class,
+ UnitTests.class })
 public class AllTests {
 }
