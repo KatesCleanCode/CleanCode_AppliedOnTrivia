@@ -243,11 +243,11 @@ public class Game {
   return !(purses[currentPlayer] == WINNING_PURSES);
  }
 
- public void play(Random rand) {
+ public void play(Random random) {
   boolean notAWinner;
   do {
-   roll(rand.nextInt(MAX_DIE_ROLL) + MIN_DIE_ROLL);
-   if (rand.nextInt(BOUND_FOR_WRONG_ANSWER) == WRONG_ANSWER) {
+   roll(random.nextInt(MAX_DIE_ROLL) + MIN_DIE_ROLL);
+   if (random.nextInt(BOUND_FOR_WRONG_ANSWER) == WRONG_ANSWER) {
     notAWinner = true;
     wrongAnswer();
    } else {
