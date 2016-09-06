@@ -39,7 +39,7 @@ public class PlayersOld {
  }
 
  public boolean isCurrentPlayerInPenaltyBox() {
-  return inPenaltyBox[currentPlayer];
+  return players.getCurrentPlayer().isInPenaltyBox();
  }
 
  public int getPursesOfCurrentPlayer() {
