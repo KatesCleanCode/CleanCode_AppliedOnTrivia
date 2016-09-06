@@ -58,7 +58,7 @@ public class Game {
   initializeLocation();
   initializePurses();
   initializePenaltyBox();
-  news.printPlayerWasAdded(this, playerName);
+  news.printPlayerWasAdded(playerName);
   news.playersNumber(players.size());
  }
 
