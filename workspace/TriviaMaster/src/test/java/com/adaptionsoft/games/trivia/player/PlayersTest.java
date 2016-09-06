@@ -55,6 +55,18 @@ public class PlayersTest {
 
  @Test
  void
+  givenTwoPlayerWhenTwoTimesSwitchToNextPlayerThenCurrentPlayerIsFirstPlayer() {
+  players.add(FIRST_PLAYER);
+  players.add("Brown");
+
+  players.switchToNextPlayer();
+  players.switchToNextPlayer();
+  Player currentPlayer = players.getCurrentPlayer();
+  assertThat(currentPlayer.getName(), equalTo(FIRST_PLAYER));
+ }
+
+ @Test
+ void
   givenZeroPlayerWhenSwitchToNextPlayerThenCurrentPlayerIsNullPlayer() {
   players.switchToNextPlayer();
   Player currentPlayer = players.getCurrentPlayer();
