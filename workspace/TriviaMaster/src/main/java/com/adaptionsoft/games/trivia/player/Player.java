@@ -5,6 +5,7 @@ public class Player {
  private String playerName;
  private int location = 0;
  private int pursus = 0;
+ private boolean isInPenaltyBox = false;
 
  public Player(String playerName) {
   this.playerName = playerName;
@@ -20,5 +21,9 @@ public class Player {
 
  public int getPursus() {
   return pursus;
+ }
+
+ public boolean isInPenaltyBox() {
+  return isInPenaltyBox;
  }
 }
