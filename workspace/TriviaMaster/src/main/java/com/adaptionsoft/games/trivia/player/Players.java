@@ -14,6 +14,7 @@ public class Players {
  private boolean[] inPenaltyBox = new boolean[MAX_NUMBER_OF_PLAYERS];
  private int[] purses = new int[MAX_NUMBER_OF_PLAYERS];
  private int[] places = new int[MAX_NUMBER_OF_PLAYERS];
+ private boolean isGettingOutOfPenaltyBox;
 
  public void addPlayerNameToPlayers(String playerName) {
   players.add(playerName);
