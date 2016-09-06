@@ -8,6 +8,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 @RunWith(JUnitPlatform.class)
 public class PlayerTest {
@@ -32,5 +33,11 @@ public class PlayerTest {
  @Test
  void whenPlayerIsCreatedThenHeIsNotLeavingPenaltyBox() {
   assertFalse(player.isLeavingPenaltyBox());
+ }
+
+ @Test
+ void whenPlayerIsSentToPenaltyBoxThenHeIsInPenaltyBox() {
+  player.sendToPenaltyBox();
+  assertTrue(player.isInPenaltyBox());
  }
 }
