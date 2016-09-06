@@ -30,11 +30,7 @@ public class Questions {
   return QUESTION_CATEGORY_ROCK;
  }
 
- public String askQuestion(int location,
-  LinkedList<String> rockQuestions,
-  LinkedList<String> sportsQuestions,
-  LinkedList<String> scienceQuestions,
-  LinkedList<String> popQuestions) {
+ public String askQuestion(int location) {
   String currentCategory = currentCategory(location);
   String askedQuestion = "";
   if (currentCategory == QUESTION_CATEGORY_POP) {

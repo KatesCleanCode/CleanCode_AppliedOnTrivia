@@ -79,8 +79,7 @@ public class Game {
   }
   updateLocationOfCurrentPlayer(roll);
   news.category(questions.currentCategory(places[currentPlayer]));
-  String askedQuestion = questions.askQuestion(places[currentPlayer],
-   rockQuestions, sportsQuestions, scienceQuestions, popQuestions);
+  String askedQuestion = questions.askQuestion(places[currentPlayer]);
   news.question(askedQuestion);
  }
 
