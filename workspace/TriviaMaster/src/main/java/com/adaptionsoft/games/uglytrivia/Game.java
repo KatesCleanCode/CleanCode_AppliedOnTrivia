@@ -16,7 +16,7 @@ public class Game {
  private static final int WINNING_PURSES = 6;
 
  private int currentPlayer = 0;
- private boolean isGettingOutOfPenaltyBox;
+ public boolean isGettingOutOfPenaltyBox;
 
  private News news = new News();
  private Questions questions = new Questions();
@@ -57,7 +57,7 @@ public class Game {
  }
 
  private void leavePenaltyBox() {
-  setLeavePenaltyBox(true);
+  player.setLeavePenaltyBox(this, true);
   news.playerIsLeavingPenaltyBox(
    player.getNameOfCurrentPlayer(currentPlayer));
  }
@@ -65,11 +65,7 @@ public class Game {
  private void stayInPenaltyBox() {
   news.playerIsStayingInPenaltyBox(
    player.getNameOfCurrentPlayer(currentPlayer));
-  setLeavePenaltyBox(false);
- }
-
- private void setLeavePenaltyBox(boolean leavePenaltyBox) {
-  isGettingOutOfPenaltyBox = leavePenaltyBox;
+  player.setLeavePenaltyBox(this, false);
  }
 
  public boolean wasCorrectlyAnswered() {
