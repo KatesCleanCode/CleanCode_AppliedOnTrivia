@@ -7,7 +7,7 @@ import com.adaptionsoft.games.trivia.news.Printer;
 import com.adaptionsoft.games.trivia.player.Players;
 import com.adaptionsoft.games.trivia.questions.Questions;
 
-public class Game {
+public class TriviaGame {
 
  /** The player has the probability 1/(bound-1) for a wrong answer. */
  private static final int BOUND_FOR_WRONG_ANSWER = 9;
@@ -20,7 +20,7 @@ public class Game {
  private Questions questions = new Questions();
  private Players players = new Players();
 
- protected Game(Printer printer) {
+ protected TriviaGame(Printer printer) {
   news = new News(printer);
  }
 

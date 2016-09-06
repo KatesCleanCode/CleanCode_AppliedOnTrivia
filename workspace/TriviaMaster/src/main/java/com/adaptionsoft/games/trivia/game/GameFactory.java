@@ -13,9 +13,9 @@ public final class GameFactory {
   *
   * @param printer
   *         {@link Printer} to print {@link News}
-  * @return instance of a {@link Game}
+  * @return instance of a {@link TriviaGame}
   */
- public static Game createGame(Printer printer) {
-  return new Game(printer);
+ public static TriviaGame createGame(Printer printer) {
+  return new TriviaGame(printer);
  }
 }

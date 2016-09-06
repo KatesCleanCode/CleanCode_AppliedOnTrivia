@@ -17,7 +17,7 @@ public class GameCharacterizationTest {
  private static final int SCIENCE_QUESTION_DIE_ROLL = 5;
  private static final String FIRST_PLAYER = "John";
 
- private Game game;
+ private TriviaGame game;
  private PrinterStub printer;
 
  @BeforeEach
