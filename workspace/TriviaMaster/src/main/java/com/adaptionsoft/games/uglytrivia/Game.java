@@ -133,11 +133,12 @@ public class Game {
   news.answerWasIncorrect();
   news.playerSentToPenaltyBox(
    player.getNameOfCurrentPlayer(currentPlayer));
-  sendCurrentPlayerToPenaltyBox();
+  sendCurrentPlayerToPenaltyBox(inPenaltyBox, currentPlayer);
   switchToNextPlayer();
  }
 
- private void sendCurrentPlayerToPenaltyBox() {
+ private void sendCurrentPlayerToPenaltyBox(boolean[] inPenaltyBox,
+  int currentPlayer) {
   inPenaltyBox[currentPlayer] = true;
  }
 
