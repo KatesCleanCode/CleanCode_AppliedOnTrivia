@@ -65,11 +65,11 @@ public class Game {
  }
 
  private void printPlayersNumber() {
-  printMessage("He/She is player number " + players.size());
+  printer.printMessage("He/She is player number " + players.size());
  }
 
  private void printPlayerWasAdded(String playerName) {
-  printMessage(playerName + " was added");
+  printer.printMessage(playerName + " was added");
  }
 
  private void initializePenaltyBox() {
@@ -112,11 +112,12 @@ public class Game {
  }
 
  private void printDieRoll(int dieRoll) {
-  printMessage("They have rolled a " + dieRoll);
+  printer.printMessage("They have rolled a " + dieRoll);
  }
 
  private void printCurrentPlayer() {
-  printMessage(players.get(currentPlayer) + " is the current player");
+  printer.printMessage(
+   players.get(currentPlayer) + " is the current player");
  }
 
  private void leavePenaltyBox() {
@@ -130,17 +131,17 @@ public class Game {
  }
 
  private void printIsLeavingPenaltyBox() {
-  printMessage(
+  printer.printMessage(
    players.get(currentPlayer) + " is getting out of the penalty box");
  }
 
  private void printIsNotLeavingPenaltyBox() {
-  printMessage(players.get(currentPlayer)
+  printer.printMessage(players.get(currentPlayer)
    + " is not getting out of the penalty box");
  }
 
  private void printCurrentCategory() {
-  printMessage("The category is " + currentCategory());
+  printer.printMessage("The category is " + currentCategory());
  }
 
  private void updateLocationOfCurrentPlayer(int roll) {
@@ -149,22 +150,22 @@ public class Game {
    places[currentPlayer] =
     places[currentPlayer] - MAX_DIE_ROLL_OF_TWO_DICES;
   }
-  printMessage(players.get(currentPlayer) + "'s new location is "
-   + places[currentPlayer]);
+  printer.printMessage(players.get(currentPlayer)
+   + "'s new location is " + places[currentPlayer]);
  }
 
  private void askQuestion() {
   if (currentCategory() == QUESTION_CATEGORY_POP) {
-   printMessage(popQuestions.removeFirst());
+   printer.printMessage(popQuestions.removeFirst());
   }
   if (currentCategory() == QUESTION_CATEGORY_SCIENCE) {
-   printMessage(scienceQuestions.removeFirst());
+   printer.printMessage(scienceQuestions.removeFirst());
   }
   if (currentCategory() == QUESTION_CATEGORY_SPORTS) {
-   printMessage(sportsQuestions.removeFirst());
+   printer.printMessage(sportsQuestions.removeFirst());
   }
   if (currentCategory() == QUESTION_CATEGORY_ROCK) {
-   printMessage(rockQuestions.removeFirst());
+   printer.printMessage(rockQuestions.removeFirst());
   }
  }
 
@@ -201,12 +202,12 @@ public class Game {
  }
 
  private void printAnswerWasCorrect() {
-  printMessage("Answer was correct!!!!");
+  printer.printMessage("Answer was correct!!!!");
  }
 
  private void increasePursusOfCurrentPlayer() {
   purses[currentPlayer]++;
-  printMessage(players.get(currentPlayer) + " now has "
+  printer.printMessage(players.get(currentPlayer) + " now has "
    + purses[currentPlayer] + " Gold Coins.");
  }
 
@@ -215,10 +216,6 @@ public class Game {
   if (currentPlayer == players.size()) {
    currentPlayer = 0;
   }
- }
-
- private void printMessage(String message) {
-  System.out.println(message);
  }
 
  public void wrongAnswer() {
@@ -233,12 +230,12 @@ public class Game {
  }
 
  private void printPlayerWasSentToPenaltyBox() {
-  printMessage(
+  printer.printMessage(
    players.get(currentPlayer) + " was sent to the penalty box");
  }
 
  private void printAnswerWasIncorrect() {
-  printMessage("Question was incorrectly answered");
+  printer.printMessage("Question was incorrectly answered");
  }
 
  private boolean didPlayerWin() {
