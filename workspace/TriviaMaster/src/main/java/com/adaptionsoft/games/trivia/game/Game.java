@@ -20,7 +20,7 @@ public class Game {
  private Questions questions = new Questions();
  private Players players = new Players();
 
- public Game(Printer printer) {
+ protected Game(Printer printer) {
   news = new News(printer);
  }
 
