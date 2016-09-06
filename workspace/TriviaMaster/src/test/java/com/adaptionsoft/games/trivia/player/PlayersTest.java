@@ -6,6 +6,8 @@ import org.junit.runner.RunWith;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 
+import static org.junit.Assert.assertThat;
+
 @RunWith(JUnitPlatform.class)
 public class PlayersTest {
 
