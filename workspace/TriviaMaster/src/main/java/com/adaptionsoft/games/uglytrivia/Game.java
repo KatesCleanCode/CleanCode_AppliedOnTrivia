@@ -30,6 +30,18 @@ public class Game {
   news.playersNumber(players.getNumberOfPlayers());
  }
 
+ public void play(Random random) {
+  boolean notAWinner = true;
+  do {
+   roll(rollDice(random));
+   if (playerAnsweredWrong(random)) {
+    wrongAnswer();
+   } else {
+    notAWinner = wasCorrectlyAnswered();
+   }
+  } while (notAWinner);
+ }
+
  public void roll(int roll) {
   news.currentPlayer(players.getCurrentPlayer().getName());
   news.rolledDieRoll(roll);
@@ -91,18 +103,6 @@ public class Game {
 
  private boolean didPlayerWin() {
   return !(players.getCurrentPlayer().getPurses() == WINNING_PURSES);
- }
-
- public void play(Random random) {
-  boolean notAWinner = true;
-  do {
-   roll(rollDice(random));
-   if (playerAnsweredWrong(random)) {
-    wrongAnswer();
-   } else {
-    notAWinner = wasCorrectlyAnswered();
-   }
-  } while (notAWinner);
  }
 
  private boolean playerAnsweredWrong(Random random) {
