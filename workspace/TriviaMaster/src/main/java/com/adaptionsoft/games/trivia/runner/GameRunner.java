@@ -2,6 +2,7 @@ package com.adaptionsoft.games.trivia.runner;
 
 import java.util.Random;
 
+import com.adaptionsoft.games.trivia.game.GameFactory;
 import com.adaptionsoft.games.trivia.news.Printer;
 import com.adaptionsoft.games.trivia.printer.ConsolePrinter;
 import com.adaptionsoft.games.uglytrivia.Game;
@@ -18,14 +19,10 @@ public final class GameRunner {
  }
 
  public static void playGame(Random rand, Printer printer) {
-  Game aGame = createGame(printer);
+  Game aGame = GameFactory.createGame(printer);
   aGame.addPlayer("Chet");
   aGame.addPlayer("Pat");
   aGame.addPlayer("Sue");
   aGame.play(rand);
- }
-
- private static Game createGame(Printer printer) {
-  return new Game(printer);
  }
 }
