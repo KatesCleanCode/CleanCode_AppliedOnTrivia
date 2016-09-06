@@ -52,7 +52,7 @@ public class Questions {
   return askedQuestion;
  }
 
- public void initializeQuestions() {
+ private void initializeQuestions() {
   for (int i = 0; i < MAX_NUMBER_OF_QUESTIONS; i++) {
    popQuestions.addLast("Pop Question " + i);
    scienceQuestions.addLast("Science Question " + i);
