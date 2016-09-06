@@ -23,6 +23,7 @@ public final class GameRunner {
   aGame.addPlayer("Chet");
   aGame.addPlayer("Pat");
   aGame.addPlayer("Sue");
+
   aGame.play(rand);
  }
 }
