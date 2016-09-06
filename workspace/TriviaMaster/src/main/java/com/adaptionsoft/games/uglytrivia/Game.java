@@ -22,16 +22,11 @@ public class Game {
  private int[] places = new int[MAX_NUMBER_OF_PLAYERS];
  private int[] purses = new int[MAX_NUMBER_OF_PLAYERS];
  private boolean[] inPenaltyBox = new boolean[MAX_NUMBER_OF_PLAYERS];
-
  private int currentPlayer = 0;
  private boolean isGettingOutOfPenaltyBox;
 
  private News news = new News();
  private Questions questions = new Questions();
-
- public Game() {
-  questions.initializeQuestions();
- }
 
  public void addPlayer(String playerName) {
   addPlayerNameToPlayers(playerName);
