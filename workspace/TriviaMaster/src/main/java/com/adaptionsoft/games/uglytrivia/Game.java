@@ -45,7 +45,7 @@ public class Game {
    }
    leavePenaltyBox();
   }
-  updateLocationOfCurrentPlayer(roll);
+  updateLocationOfCurrentPlayer(roll, places, currentPlayer);
   news.playersNewLocation(
    player.getNameOfCurrentPlayer(currentPlayer),
    player.getLocationOfCurrentPlayer(places, currentPlayer));
@@ -72,7 +72,8 @@ public class Game {
   isGettingOutOfPenaltyBox = false;
  }
 
- private void updateLocationOfCurrentPlayer(int roll) {
+ private void updateLocationOfCurrentPlayer(int roll, int[] places,
+  int currentPlayer) {
   player.setLocationOfCurrentPlayer(places, currentPlayer,
    player.getLocationOfCurrentPlayer(places, currentPlayer) + roll);
   if (player.getLocationOfCurrentPlayer(places,
