@@ -26,7 +26,7 @@ public class PlayersOld {
  }
 
  public int getNumberOfPlayers() {
-  return playersOld.size();
+  return players.getNumberOfPlayers();
  }
 
  public String getNameOfCurrentPlayer() {
