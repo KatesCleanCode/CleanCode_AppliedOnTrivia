@@ -4,15 +4,15 @@ import static com.adaptionsoft.games.uglytrivia.Game.MAX_NUMBER_OF_PLAYERS;
 
 import java.util.ArrayList;
 
-import com.adaptionsoft.games.uglytrivia.Game;
-
 public class Players {
+
+ private static final int MAX_DIE_ROLL_OF_TWO_DICES = 12;
+ private static final int MAX_LOCATION = 11;
 
  private ArrayList<String> players = new ArrayList<>();
  private boolean[] inPenaltyBox = new boolean[MAX_NUMBER_OF_PLAYERS];
  private int[] purses = new int[MAX_NUMBER_OF_PLAYERS];
  private int[] places = new int[MAX_NUMBER_OF_PLAYERS];
- private static final int MAX_LOCATION = 11;
 
  public void addPlayerNameToPlayers(String playerName) {
   players.add(playerName);
@@ -70,7 +70,7 @@ public class Players {
   if (getLocationOfCurrentPlayer(currentPlayer) > MAX_LOCATION) {
    setLocationOfCurrentPlayer(currentPlayer,
     getLocationOfCurrentPlayer(currentPlayer)
-     - Game.MAX_DIE_ROLL_OF_TWO_DICES);
+     - MAX_DIE_ROLL_OF_TWO_DICES);
   }
  }
 }
