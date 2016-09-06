@@ -93,7 +93,7 @@ public class Game {
    leavePenaltyBox();
   }
   updateLocationOfCurrentPlayer(roll);
-  news.printCurrentCategory(this, currentCategory());
+  news.printCurrentCategory(currentCategory());
   askQuestion();
  }
 

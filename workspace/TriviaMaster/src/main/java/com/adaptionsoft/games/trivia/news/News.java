@@ -1,7 +1,6 @@
 package com.adaptionsoft.games.trivia.news;
 
 import com.adaptionsoft.games.trivia.printer.ConsolePrinter;
-import com.adaptionsoft.games.uglytrivia.Game;
 
 public class News {
  private ConsolePrinter printer = new ConsolePrinter();
@@ -22,7 +21,7 @@ public class News {
   printer.printMessage("Question was incorrectly answered");
  }
 
- public void printCurrentCategory(Game game, String category) {
-  game.printer.printMessage("The category is " + category);
+ public void printCurrentCategory(String category) {
+  printer.printMessage("The category is " + category);
  }
 }
