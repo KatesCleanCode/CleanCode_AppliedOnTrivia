@@ -2,8 +2,7 @@ package com.adaptionsoft.games.trivia.player;
 
 public class Player {
 
- public Object getName() {
+ public String getName() {
   return "Sue";
  }
-
 }
