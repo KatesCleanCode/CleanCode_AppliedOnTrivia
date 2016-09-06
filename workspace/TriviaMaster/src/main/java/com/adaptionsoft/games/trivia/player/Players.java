@@ -19,6 +19,6 @@ public class Players {
   if (player.isEmpty()) {
    return null;
   }
-  return new Player("Sue");
+  return player.get(0);
  }
 }
