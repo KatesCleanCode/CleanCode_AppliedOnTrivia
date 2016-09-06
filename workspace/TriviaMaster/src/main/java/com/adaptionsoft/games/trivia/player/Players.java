@@ -4,6 +4,8 @@ import static com.adaptionsoft.games.uglytrivia.Game.MAX_NUMBER_OF_PLAYERS;
 
 import java.util.ArrayList;
 
+import com.adaptionsoft.games.uglytrivia.Game;
+
 public class Players {
 
  private ArrayList<String> players = new ArrayList<>();
@@ -56,5 +58,16 @@ public class Players {
 
  public void setLocationOfCurrentPlayer(int[] places, int currentPlayer, int location) {
   places[currentPlayer] = location;
+ }
+
+ public void updateLocationOfCurrentPlayer(int roll, int[] places, int currentPlayer) {
+  setLocationOfCurrentPlayer(places, currentPlayer,
+   getLocationOfCurrentPlayer(places, currentPlayer) + roll);
+  if (getLocationOfCurrentPlayer(places,
+   currentPlayer) > Game.MAX_LOCATION) {
+   setLocationOfCurrentPlayer(places, currentPlayer,
+    getLocationOfCurrentPlayer(places, currentPlayer)
+     - Game.MAX_DIE_ROLL_OF_TWO_DICES);
+  }
  }
 }

@@ -13,8 +13,8 @@ public class Game {
  private static final int MAX_DIE_ROLL = 5;
  private static final int MIN_DIE_ROLL = 1;
  private static final int WRONG_ANSWER = 7;
- private static final int MAX_LOCATION = 11;
- private static final int MAX_DIE_ROLL_OF_TWO_DICES = 12;
+ public static final int MAX_LOCATION = 11;
+ public static final int MAX_DIE_ROLL_OF_TWO_DICES = 12;
  public static final int MAX_NUMBER_OF_PLAYERS = 6;
  private static final int WINNING_PURSES = 6;
 
@@ -45,7 +45,7 @@ public class Game {
    }
    leavePenaltyBox();
   }
-  updateLocationOfCurrentPlayer(roll, places, currentPlayer);
+  player.updateLocationOfCurrentPlayer(roll, places, currentPlayer);
   news.playersNewLocation(
    player.getNameOfCurrentPlayer(currentPlayer),
    player.getLocationOfCurrentPlayer(places, currentPlayer));
@@ -70,18 +70,6 @@ public class Game {
   news.playerIsStayingInPenaltyBox(
    player.getNameOfCurrentPlayer(currentPlayer));
   isGettingOutOfPenaltyBox = false;
- }
-
- private void updateLocationOfCurrentPlayer(int roll, int[] places,
-  int currentPlayer) {
-  player.setLocationOfCurrentPlayer(places, currentPlayer,
-   player.getLocationOfCurrentPlayer(places, currentPlayer) + roll);
-  if (player.getLocationOfCurrentPlayer(places,
-   currentPlayer) > MAX_LOCATION) {
-   player.setLocationOfCurrentPlayer(places, currentPlayer,
-    player.getLocationOfCurrentPlayer(places, currentPlayer)
-     - MAX_DIE_ROLL_OF_TWO_DICES);
-  }
  }
 
  public boolean wasCorrectlyAnswered() {
