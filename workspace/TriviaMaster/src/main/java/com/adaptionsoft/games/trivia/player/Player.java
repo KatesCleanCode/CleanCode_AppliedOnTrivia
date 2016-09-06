@@ -11,4 +11,8 @@ public class Player {
  public String getName() {
   return playerName;
  }
+
+ public Object getLocation() {
+  return 0;
+ }
 }
