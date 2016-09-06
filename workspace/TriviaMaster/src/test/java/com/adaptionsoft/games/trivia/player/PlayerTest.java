@@ -11,15 +11,15 @@ import static org.junit.Assert.assertThat;
 @RunWith(JUnitPlatform.class)
 public class PlayerTest {
 
+ private Player player = new Player("Martin");
+
  @Test
  void whenPlayerIsCreatedThenLocationIsZero() {
-  Player player = new Player("Martin");
   assertThat(player.getLocation(), equalTo(0));
  }
 
  @Test
  void whenPlayerIsCreatedThenPursusIsZero() {
-  Player player = new Player("Martin");
   assertThat(player.getPursus(), equalTo(0));
  }
 }
