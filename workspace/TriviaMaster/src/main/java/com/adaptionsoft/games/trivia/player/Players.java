@@ -1,13 +1,14 @@
 package com.adaptionsoft.games.trivia.player;
 
+import static com.adaptionsoft.games.uglytrivia.Game.MAX_NUMBER_OF_PLAYERS;
+
 import java.util.ArrayList;
 
-import com.adaptionsoft.games.uglytrivia.Game;
-
 public class Players {
+
  private ArrayList<String> players = new ArrayList<>();
- private boolean[] inPenaltyBox =
-  new boolean[Game.MAX_NUMBER_OF_PLAYERS];
+ private boolean[] inPenaltyBox = new boolean[MAX_NUMBER_OF_PLAYERS];
+ private int[] purses = new int[MAX_NUMBER_OF_PLAYERS];
 
  public void addPlayerNameToPlayers(String playerName) {
   players.add(playerName);
@@ -33,7 +34,8 @@ public class Players {
   return inPenaltyBox[currentPlayer];
  }
 
- public int getPursesOfCurrentPlayer(int[] purses, int currentPlayer) {
+ public int getPursesOfCurrentPlayer(int[] purses,
+  int currentPlayer) {
   return purses[currentPlayer];
  }
 
@@ -41,7 +43,8 @@ public class Players {
   purses[getNumberOfPlayers()] = 0;
  }
 
- public void increasePursusOfCurrentPlayer(int[] purses, int currentPlayer) {
+ public void increasePursesOfCurrentPlayer(int[] purses,
+  int currentPlayer) {
   purses[currentPlayer]++;
  }
 }

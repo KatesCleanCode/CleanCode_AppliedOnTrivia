@@ -97,7 +97,7 @@ public class Game {
    }
   }
   news.answerWasCorrect();
-  player.increasePursusOfCurrentPlayer(purses, currentPlayer);
+  player.increasePursesOfCurrentPlayer(purses, currentPlayer);
   news.playersPurses(player.getNameOfCurrentPlayer(currentPlayer),
    player.getPursesOfCurrentPlayer(purses, currentPlayer));
   boolean winner = didPlayerWin();
