@@ -14,7 +14,6 @@ public class Game {
  private static final int MIN_DIE_ROLL = 1;
  private static final int WRONG_ANSWER = 7;
  private static final int WINNING_PURSES = 6;
-
  private News news = new News();
  private Players player = new Players();
  private Questions questions = new Questions();
