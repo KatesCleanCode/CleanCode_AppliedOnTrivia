@@ -97,7 +97,7 @@ public class Game {
    }
   }
   news.answerWasCorrect();
-  increasePursusOfCurrentPlayer(purses, currentPlayer);
+  player.increasePursusOfCurrentPlayer(purses, currentPlayer);
   news.playersPurses(player.getNameOfCurrentPlayer(currentPlayer),
    player.getPursesOfCurrentPlayer(purses, currentPlayer));
   boolean winner = didPlayerWin();
@@ -107,11 +107,6 @@ public class Game {
 
  private boolean currentPlayerIsNotLeavingPenaltyBox() {
   return !isGettingOutOfPenaltyBox;
- }
-
- private void increasePursusOfCurrentPlayer(int[] purses,
-  int currentPlayer) {
-  purses[currentPlayer]++;
  }
 
  private void switchToNextPlayer() {

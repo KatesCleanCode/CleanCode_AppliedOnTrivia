@@ -40,4 +40,8 @@ public class Players {
  public void initializePurses(int[] purses) {
   purses[getNumberOfPlayers()] = 0;
  }
+
+ public void increasePursusOfCurrentPlayer(int[] purses, int currentPlayer) {
+  purses[currentPlayer]++;
+ }
 }
