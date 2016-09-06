@@ -28,7 +28,7 @@ public class Game {
 
  public void addPlayer(String playerName) {
   player.addPlayerNameToPlayers(playerName);
-  player.initializeLocation(places);
+  player.initializeLocation();
   player.initializePurses();
   player.initializePenaltyBox();
   news.playerAdded(playerName);
@@ -45,14 +45,14 @@ public class Game {
    }
    leavePenaltyBox();
   }
-  player.updateLocationOfCurrentPlayer(roll, places, currentPlayer);
+  player.updateLocationOfCurrentPlayer(roll, currentPlayer);
   news.playersNewLocation(
    player.getNameOfCurrentPlayer(currentPlayer),
-   player.getLocationOfCurrentPlayer(places, currentPlayer));
+   player.getLocationOfCurrentPlayer(currentPlayer));
   news.category(questions.currentCategory(
-   player.getLocationOfCurrentPlayer(places, currentPlayer)));
+   player.getLocationOfCurrentPlayer(currentPlayer)));
   String askedQuestion = questions.askQuestion(
-   player.getLocationOfCurrentPlayer(places, currentPlayer));
+   player.getLocationOfCurrentPlayer(currentPlayer));
   news.question(askedQuestion);
  }
 

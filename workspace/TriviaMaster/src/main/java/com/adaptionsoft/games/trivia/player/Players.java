@@ -49,28 +49,26 @@ public class Players {
   purses[currentPlayer]++;
  }
 
- public void initializeLocation(int[] places) {
+ public void initializeLocation() {
   places[getNumberOfPlayers()] = 0;
  }
 
- public int getLocationOfCurrentPlayer(int[] places,
-  int currentPlayer) {
+ public int getLocationOfCurrentPlayer(int currentPlayer) {
   return places[currentPlayer];
  }
 
- public void setLocationOfCurrentPlayer(int[] places,
-  int currentPlayer, int location) {
+ public void setLocationOfCurrentPlayer(int currentPlayer,
+  int location) {
   places[currentPlayer] = location;
  }
 
- public void updateLocationOfCurrentPlayer(int roll, int[] places,
+ public void updateLocationOfCurrentPlayer(int roll,
   int currentPlayer) {
-  setLocationOfCurrentPlayer(places, currentPlayer,
-   getLocationOfCurrentPlayer(places, currentPlayer) + roll);
-  if (getLocationOfCurrentPlayer(places,
-   currentPlayer) > Game.MAX_LOCATION) {
-   setLocationOfCurrentPlayer(places, currentPlayer,
-    getLocationOfCurrentPlayer(places, currentPlayer)
+  setLocationOfCurrentPlayer(currentPlayer,
+   getLocationOfCurrentPlayer(currentPlayer) + roll);
+  if (getLocationOfCurrentPlayer(currentPlayer) > Game.MAX_LOCATION) {
+   setLocationOfCurrentPlayer(currentPlayer,
+    getLocationOfCurrentPlayer(currentPlayer)
      - Game.MAX_DIE_ROLL_OF_TWO_DICES);
   }
  }
