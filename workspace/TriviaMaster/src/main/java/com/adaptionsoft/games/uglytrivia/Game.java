@@ -132,7 +132,7 @@ public class Game {
  private void increasePursusOfCurrentPlayer() {
   purses[currentPlayer]++;
   news.playersPurses(getNameOfCurrentPlayer(),
-   purses[currentPlayer]);
+   getPursesOfCurrentPlayer());
  }
 
  private void switchToNextPlayer() {
@@ -154,7 +154,11 @@ public class Game {
  }
 
  private boolean didPlayerWin() {
-  return !(purses[currentPlayer] == WINNING_PURSES);
+  return !(getPursesOfCurrentPlayer() == WINNING_PURSES);
+ }
+
+ private int getPursesOfCurrentPlayer() {
+  return purses[currentPlayer];
  }
 
  public void play(Random random) {
