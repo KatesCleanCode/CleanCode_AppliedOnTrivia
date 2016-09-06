@@ -1,14 +1,11 @@
 package com.adaptionsoft.games.uglytrivia;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 
-import com.adaptionsoft.games.trivia.printer.ConsolePrinter;
+import com.adaptionsoft.games.testdoubles.PrinterStub;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 
@@ -20,13 +17,13 @@ public class GameCharacterizationTest {
  private static final int SCIENCE_QUESTION_DIE_ROLL = 5;
  private static final String FIRST_PLAYER = "John";
 
- private ByteArrayOutputStream output;
  private Game game;
+ private PrinterStub printer;
 
  @BeforeEach
  void setUp() {
-  initializeOutput();
-  game = new Game(new ConsolePrinter());
+  printer = new PrinterStub();
+  game = new Game(printer);
  }
 
  @Test
@@ -89,11 +86,10 @@ public class GameCharacterizationTest {
  }
 
  private String getCurrentOutput() {
-  return output.toString();
+  return printer.getMessages();
  }
 
  private void initializeOutput() {
-  output = new ByteArrayOutputStream();
-  System.setOut(new PrintStream(output));
+  printer.reset();
  }
 }
