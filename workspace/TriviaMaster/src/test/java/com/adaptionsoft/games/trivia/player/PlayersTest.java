@@ -8,6 +8,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 
 @RunWith(JUnitPlatform.class)
 public class PlayersTest {
@@ -27,6 +28,21 @@ public class PlayersTest {
   players.add(FIRST_PLAYER);
 
   assertThat(players.getNumberOfPlayers(), equalTo(1));
+ }
+
+ @Test
+ void numberOfPlayersIsLimitedToFive() {
+  players.add(FIRST_PLAYER);
+  players.add(SECOND_PLAYER);
+  players.add("Third");
+  players.add("Fourth");
+  players.add("Fifth");
+
+  try {
+   players.add("Sixth");
+   fail("There must be maximum 5 players");
+  } catch (TooManyPlayersException ex) {
+  }
  }
 
  @Test
