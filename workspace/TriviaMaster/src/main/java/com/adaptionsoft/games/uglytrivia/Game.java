@@ -94,7 +94,8 @@ public class Game {
   }
   updateLocationOfCurrentPlayer(roll);
   news.category(questions.currentCategory(places[currentPlayer]));
-  String askedQuestion = askQuestion(places[currentPlayer]);
+  String askedQuestion = askQuestion(places[currentPlayer],
+   rockQuestions, sportsQuestions, scienceQuestions, popQuestions);
   news.question(askedQuestion);
  }
 
@@ -126,7 +127,11 @@ public class Game {
    places[currentPlayer]);
  }
 
- private String askQuestion(int location) {
+ private String askQuestion(int location,
+  LinkedList<String> rockQuestions,
+  LinkedList<String> sportsQuestions,
+  LinkedList<String> scienceQuestions,
+  LinkedList<String> popQuestions) {
   String currentCategory = questions.currentCategory(location);
   String askedQuestion = "";
   if (currentCategory == QUESTION_CATEGORY_POP) {
