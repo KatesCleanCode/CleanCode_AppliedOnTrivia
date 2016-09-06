@@ -70,10 +70,6 @@ public class PlayersOld {
  }
 
  public void switchToNextPlayer() {
-  currentPlayer++;
-  if (currentPlayer == getNumberOfPlayers()) {
-   currentPlayer = 0;
-  }
   players.switchToNextPlayer();
  }
 }
