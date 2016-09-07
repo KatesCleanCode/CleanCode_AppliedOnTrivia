@@ -52,10 +52,9 @@ public class TriviaGame implements Game {
  public void askQuestion(int dieRoll) {
   if (shouldAskQuestion(dieRoll)) {
    getCurrentPlayer().updateLocation(dieRoll);
-   news.playersNewLocation(getCurrentPlayer().getName(),
-    getCurrentPlayer().getLocation());
-   Question askedQuestion =
-    questions.askQuestion(getCurrentPlayer().getLocation());
+   int location = getCurrentPlayer().getLocation();
+   news.playersNewLocation(getCurrentPlayer().getName(), location);
+   Question askedQuestion = questions.askQuestion(location);
    news.askedQuestion(askedQuestion);
   }
  }
