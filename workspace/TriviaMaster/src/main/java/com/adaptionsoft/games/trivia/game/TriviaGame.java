@@ -39,7 +39,7 @@ public class TriviaGame implements Game {
    if (playerAnsweredWrong(random)) {
     processWrongAnswer();
    } else {
-    notAWinner = wasCorrectlyAnswered();
+    notAWinner = processCorrectAnswer();
    }
   } while (notAWinner);
  }
@@ -78,7 +78,7 @@ public class TriviaGame implements Game {
   players.getCurrentPlayer().setLeavingPenaltyBox(false);
  }
 
- public boolean wasCorrectlyAnswered() {
+ public boolean processCorrectAnswer() {
   if (players.getCurrentPlayer().isInPenaltyBox()) {
    if (!players.getCurrentPlayer().isLeavingPenaltyBox()) {
     players.switchToNextPlayer();

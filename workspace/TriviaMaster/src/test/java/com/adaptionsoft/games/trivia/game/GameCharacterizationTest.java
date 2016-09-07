@@ -68,7 +68,7 @@ public class GameCharacterizationTest {
  void whenAnswerIsCorrectThenCoinsAreGivenToPlayer() {
   game.addPlayer(FIRST_PLAYER);
   initializeOutput();
-  game.wasCorrectlyAnswered();
+  game.processCorrectAnswer();
 
   assertThat(getCurrentOutput(), equalTo("Answer was correct!!!!\r\n"
    + FIRST_PLAYER + " now has 1 Gold Coins.\r\n"));
