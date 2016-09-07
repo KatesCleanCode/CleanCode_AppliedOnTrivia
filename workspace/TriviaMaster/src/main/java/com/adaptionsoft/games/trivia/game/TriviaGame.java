@@ -41,6 +41,7 @@ public class TriviaGame implements Game {
     processWrongAnswer();
    } else {
     notAWinner = processCorrectAnswer();
+    notAWinner = didPlayerWin();
    }
    players.switchToNextPlayer();
   } while (notAWinner);
@@ -81,6 +82,7 @@ public class TriviaGame implements Game {
  }
 
  public boolean processCorrectAnswer() {
+  // TODO, kknaus Sep 7, 2016: Delete return type
   if (players.getCurrentPlayer().isInPenaltyBox()) {
    if (!players.getCurrentPlayer().isLeavingPenaltyBox()) {
     return true;
@@ -90,9 +92,7 @@ public class TriviaGame implements Game {
   players.getCurrentPlayer().increasePursus();
   news.playersPurses(players.getCurrentPlayer().getName(),
    players.getCurrentPlayer().getPurses());
-  boolean winner = didPlayerWin();
-
-  return winner;
+  return true;
  }
 
  public void processWrongAnswer() {
