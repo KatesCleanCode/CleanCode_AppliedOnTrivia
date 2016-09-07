@@ -4,10 +4,10 @@ import org.junit.platform.runner.JUnitPlatform;
 import org.junit.platform.runner.SelectClasses;
 import org.junit.runner.RunWith;
 
-import com.adaptionsoft.games.trivia.game.GameCharacterizationTest;
+import com.adaptionsoft.games.trivia.game.TriviaGameCharacterizationTest;
 
 @RunWith(JUnitPlatform.class)
-@SelectClasses(GameCharacterizationTest.class)
+@SelectClasses(TriviaGameCharacterizationTest.class)
 public class IntegrationTests {
 // executes all integration tests
 }

@@ -12,7 +12,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
 
 @RunWith(JUnitPlatform.class)
-public class GameCharacterizationTest {
+public class TriviaGameCharacterizationTest {
 
  private static final int SCIENCE_QUESTION_DIE_ROLL = 5;
  private static final String FIRST_PLAYER = "John";
