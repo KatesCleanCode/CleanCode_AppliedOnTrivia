@@ -1,5 +1,7 @@
 package com.adaptionsoft.games.trivia.game;
 
+import static com.adaptionsoft.games.trivia.utils.NumberUtils.isEven;
+
 import java.util.Random;
 
 import com.adaptionsoft.games.trivia.news.News;
@@ -64,10 +66,6 @@ public class TriviaGame implements Game {
   Question askedQuestion =
    questions.askQuestion(getCurrentPlayer().getLocation());
   news.askedQuestion(askedQuestion);
- }
-
- private boolean isEven(int dieRoll) {
-  return dieRoll % 2 == 0;
  }
 
  private void leavePenaltyBox() {
