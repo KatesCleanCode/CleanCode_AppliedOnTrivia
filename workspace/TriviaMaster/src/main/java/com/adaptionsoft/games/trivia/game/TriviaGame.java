@@ -33,7 +33,7 @@ public class TriviaGame implements Game {
 
  @Override
  public void play(Random random) {
-  boolean notAWinner = true;
+  boolean isNotGameOver = true;
   do {
    int dieRoll = rollDice(random);
    askQuestion(dieRoll);
@@ -41,10 +41,10 @@ public class TriviaGame implements Game {
     processWrongAnswer();
    } else {
     processCorrectAnswer();
-    notAWinner = isNotGameOver();
+    isNotGameOver = isNotGameOver();
    }
    players.switchToNextPlayer();
-  } while (notAWinner);
+  } while (isNotGameOver);
  }
 
  public void askQuestion(int roll) {
