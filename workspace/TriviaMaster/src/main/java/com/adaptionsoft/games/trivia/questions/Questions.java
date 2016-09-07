@@ -23,22 +23,22 @@ public class Questions {
  }
 
  public String askQuestion(int location) {
-  Question currentCategory = Question.getQuestion(location);
+  Question question = Question.getQuestion(location);
   String askedQuestion = "";
-  if (currentCategory == Question.POP) {
+  if (question == Question.POP) {
 // askedQuestion = popQuestions.removeFirst();
-   int questionNumber = lastNumbers.get(currentCategory);
-   lastNumbers.put(currentCategory, questionNumber + 1);
+   int questionNumber = lastNumbers.get(question);
+   lastNumbers.put(question, questionNumber + 1);
    askedQuestion =
-    currentCategory.getCategory() + " Question " + questionNumber;
+    question.getCategory() + " Question " + questionNumber;
   }
-  if (currentCategory == Question.SCIENCE) {
+  if (question == Question.SCIENCE) {
    askedQuestion = scienceQuestions.removeFirst();
   }
-  if (currentCategory == Question.SPORTS) {
+  if (question == Question.SPORTS) {
    askedQuestion = sportsQuestions.removeFirst();
   }
-  if (currentCategory == Question.ROCK) {
+  if (question == Question.ROCK) {
    askedQuestion = rockQuestions.removeFirst();
   }
   return askedQuestion;
