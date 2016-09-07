@@ -3,7 +3,6 @@ package com.adaptionsoft.games.trivia.game;
 import java.util.Random;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
@@ -46,7 +45,7 @@ public class TriviaGameCharacterizationTest {
  @Test
  void whenSecondPlayerIsAddedThenHisNameAndNumberIsPublished() {
   game.addPlayer(FIRST_PLAYER);
-  initializeOutput();
+  resetOutput();
   game.addPlayer("Harry");
 
   assertThat(getCurrentOutput(),
@@ -56,7 +55,7 @@ public class TriviaGameCharacterizationTest {
  @Test
  void whenDicesAreRolledThenCurrentPlayerDataArePublished() {
   game.addPlayer(FIRST_PLAYER);
-  printer.reset();
+  resetOutput();
   game.rollDice(new Random(SEED_FOR_SCIENCE_QUESTION));
 
   assertThat(getCurrentOutput(), equalTo(FIRST_PLAYER
@@ -64,20 +63,22 @@ public class TriviaGameCharacterizationTest {
  }
 
  @Test
- void whenQuestionIsAskedThenLocationAndQuestionCategoryArePublished() {
+ void
+  whenQuestionIsAskedThenLocationAndQuestionCategoryArePublished() {
   game.addPlayer(FIRST_PLAYER);
-  initializeOutput();
+  resetOutput();
   game.askQuestion(SCIENCE_QUESTION_DIE_ROLL);
 
   assertThat(getCurrentOutput(),
-   equalTo(FIRST_PLAYER + "'s new location is 5\r\nThe category is Science"
-    + "\r\nScience Question 0\r\n"));
+   equalTo(
+    FIRST_PLAYER + "'s new location is 5\r\nThe category is Science"
+     + "\r\nScience Question 0\r\n"));
  }
 
  @Test
  void whenAnswerIsCorrectThenCoinsAreGivenToPlayer() {
   game.addPlayer(FIRST_PLAYER);
-  initializeOutput();
+  resetOutput();
   game.processCorrectAnswer();
 
   assertThat(getCurrentOutput(), equalTo("Answer was correct!!!!\r\n"
@@ -87,7 +88,7 @@ public class TriviaGameCharacterizationTest {
  @Test
  void whenAnswerIsIncorrectThenPlayerIsSentToPenaltyBox() {
   game.addPlayer(FIRST_PLAYER);
-  initializeOutput();
+  resetOutput();
   game.processWrongAnswer();
 
   assertThat(getCurrentOutput(),
@@ -99,7 +100,7 @@ public class TriviaGameCharacterizationTest {
   return printer.getMessages();
  }
 
- private void initializeOutput() {
+ private void resetOutput() {
   printer.reset();
  }
 }
