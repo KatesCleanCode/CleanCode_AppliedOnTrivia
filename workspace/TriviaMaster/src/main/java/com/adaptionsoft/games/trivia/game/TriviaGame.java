@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.adaptionsoft.games.trivia.news.News;
 import com.adaptionsoft.games.trivia.news.Printer;
+import com.adaptionsoft.games.trivia.player.Player;
 import com.adaptionsoft.games.trivia.player.Players;
 import com.adaptionsoft.games.trivia.questions.Question;
 import com.adaptionsoft.games.trivia.questions.Questions;
@@ -48,20 +49,20 @@ public class TriviaGame implements Game {
  }
 
  public void askQuestion(int roll) {
-  news.currentPlayer(players.getCurrentPlayer().getName());
+  news.currentPlayer(getCurrentPlayer().getName());
   news.rolledDieRoll(roll);
-  if (players.getCurrentPlayer().isInPenaltyBox()) {
+  if (getCurrentPlayer().isInPenaltyBox()) {
    if (isEven(roll)) {
     stayInPenaltyBox();
     return;
    }
    leavePenaltyBox();
   }
-  players.getCurrentPlayer().updateLocation(roll);
-  news.playersNewLocation(players.getCurrentPlayer().getName(),
-   players.getCurrentPlayer().getLocation());
+  getCurrentPlayer().updateLocation(roll);
+  news.playersNewLocation(getCurrentPlayer().getName(),
+   getCurrentPlayer().getLocation());
   Question askedQuestion =
-   questions.askQuestion(players.getCurrentPlayer().getLocation());
+   questions.askQuestion(getCurrentPlayer().getLocation());
   news.askedQuestion(askedQuestion);
  }
 
@@ -70,36 +71,38 @@ public class TriviaGame implements Game {
  }
 
  private void leavePenaltyBox() {
-  players.getCurrentPlayer().setLeavingPenaltyBox(true);
-  news
-   .playerIsLeavingPenaltyBox(players.getCurrentPlayer().getName());
+  getCurrentPlayer().setLeavingPenaltyBox(true);
+  news.playerIsLeavingPenaltyBox(getCurrentPlayer().getName());
  }
 
  private void stayInPenaltyBox() {
-  news
-   .playerIsStayingInPenaltyBox(players.getCurrentPlayer().getName());
-  players.getCurrentPlayer().setLeavingPenaltyBox(false);
+  news.playerIsStayingInPenaltyBox(getCurrentPlayer().getName());
+  getCurrentPlayer().setLeavingPenaltyBox(false);
  }
 
  public void processCorrectAnswer() {
-  if (!players.getCurrentPlayer().isInPenaltyBox()
-   || players.getCurrentPlayer().isLeavingPenaltyBox()) {
+  if (!getCurrentPlayer().isInPenaltyBox()
+   || getCurrentPlayer().isLeavingPenaltyBox()) {
    news.answerWasCorrect();
-   players.getCurrentPlayer().increasePursus();
-   news.playersPurses(players.getCurrentPlayer().getName(),
-    players.getCurrentPlayer().getPurses());
+   getCurrentPlayer().increasePursus();
+   news.playersPurses(getCurrentPlayer().getName(),
+    getCurrentPlayer().getPurses());
   }
+ }
+
+ private Player getCurrentPlayer() {
+  return players.getCurrentPlayer();
  }
 
  public void processWrongAnswer() {
   news.answerWasIncorrect();
-  news.playerSentToPenaltyBox(players.getCurrentPlayer().getName());
-  players.getCurrentPlayer().sendToPenaltyBox();
+  news.playerSentToPenaltyBox(getCurrentPlayer().getName());
+  getCurrentPlayer().sendToPenaltyBox();
 
  }
 
  private boolean isNotGameOver() {
-  return !(players.getCurrentPlayer().getPurses() == WINNING_PURSES);
+  return !(getCurrentPlayer().getPurses() == WINNING_PURSES);
  }
 
  private boolean playerAnsweredWrong(Random random) {
