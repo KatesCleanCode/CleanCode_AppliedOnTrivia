@@ -18,16 +18,18 @@ public enum Question {
   return category;
  }
 
+ private int getOrder() {
+  return order;
+ }
+
  public static Question getQuestion(int location) {
-  int questionOrder = location % Question.values().length;
-  if (questionOrder == 0) {
-   return POP;
-  }
-  if (questionOrder == 1) {
-   return SCIENCE;
-  }
-  if (questionOrder == 2) {
-   return SPORTS;
+  Question[] questions = Question.values();
+  int order = location % questions.length;
+
+  for (Question question : questions) {
+   if (question.getOrder() == order) {
+    return question;
+   }
   }
   return ROCK;
  }
