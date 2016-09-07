@@ -17,7 +17,7 @@ public class Questions {
  }
 
  public String askQuestion(int location) {
-  Question currentCategory = Question.currentCategory(location);
+  Question currentCategory = Question.getQuestion(location);
   String askedQuestion = "";
   if (currentCategory == Question.POP) {
    askedQuestion = popQuestions.removeFirst();
