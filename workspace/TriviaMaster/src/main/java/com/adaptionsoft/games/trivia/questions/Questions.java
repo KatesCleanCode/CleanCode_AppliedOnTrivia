@@ -4,7 +4,6 @@ import java.util.LinkedList;
 
 public class Questions {
 
- static final int NUMBER_OF_QUESTION_CATEGORIES = 4;
  private static final int MAX_NUMBER_OF_QUESTIONS = 50;
 
  private LinkedList<String> popQuestions = new LinkedList<>();
