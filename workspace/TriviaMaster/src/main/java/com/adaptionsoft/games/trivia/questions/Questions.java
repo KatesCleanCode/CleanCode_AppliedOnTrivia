@@ -8,7 +8,8 @@ public class Questions {
   Question.ROCK.getCategory();
  private static final String QUESTION_CATEGORY_SPORTS =
   Question.SPORTS.getCategory();
- private static final String QUESTION_CATEGORY_SCIENCE = "Science";
+ private static final String QUESTION_CATEGORY_SCIENCE =
+  Question.SCIENCE.getCategory();
  private static final String QUESTION_CATEGORY_POP = "Pop";
 
  private static final int NUMBER_OF_QUESTION_CATEGORIES = 4;
