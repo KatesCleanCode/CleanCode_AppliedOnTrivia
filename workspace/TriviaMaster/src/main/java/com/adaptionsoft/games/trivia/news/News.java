@@ -1,5 +1,7 @@
 package com.adaptionsoft.games.trivia.news;
 
+import com.adaptionsoft.games.trivia.questions.Question;
+
 public class News {
 
  private Printer printer;
@@ -50,8 +52,8 @@ public class News {
    playersName + " is not getting out of the penalty box");
  }
 
- public void question(String question) {
-  printer.printMessage(question);
+ public void question(Question askedQuestion) {
+  printer.printMessage(askedQuestion.getName());
  }
 
  public void playersNewLocation(String playersName, int location) {

@@ -61,7 +61,7 @@ public class TriviaGame implements Game {
   news.category(
    Question.getQuestion(players.getCurrentPlayer().getLocation())
     .getCategory());
-  String askedQuestion =
+  Question askedQuestion =
    questions.askQuestion(players.getCurrentPlayer().getLocation());
   news.question(askedQuestion);
  }

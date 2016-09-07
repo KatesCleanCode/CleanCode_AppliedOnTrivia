@@ -13,12 +13,12 @@ public class Questions {
   }
  }
 
- public String askQuestion(int location) {
+ public Question askQuestion(int location) {
   Question question = Question.getQuestion(location);
   int questionNumber = lastNumbers.get(question);
   question.setNumber(questionNumber);
   questionNumber++;
   lastNumbers.put(question, questionNumber);
-  return question.getName();
+  return question;
  }
 }
