@@ -14,8 +14,7 @@ public final class GameRunner {
  }
 
  public static void main(String[] args) {
-  Random rand = new Random();
-  playGame(rand, new ConsolePrinter());
+  playGame(new Random(), new ConsolePrinter());
  }
 
  public static void playGame(Random rand, Printer printer) {
