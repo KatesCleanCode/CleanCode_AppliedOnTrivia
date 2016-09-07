@@ -78,7 +78,7 @@ public class GameCharacterizationTest {
  void whenAnswerIsIncorrectThenPlayerIsSentToPenaltyBox() {
   game.addPlayer(FIRST_PLAYER);
   initializeOutput();
-  game.wrongAnswer();
+  game.processWrongAnswer();
 
   assertThat(getCurrentOutput(),
    equalTo("Question was incorrectly answered\r\n" + FIRST_PLAYER

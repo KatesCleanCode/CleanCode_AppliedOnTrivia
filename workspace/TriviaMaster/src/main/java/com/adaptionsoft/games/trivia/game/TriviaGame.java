@@ -37,7 +37,7 @@ public class TriviaGame implements Game {
   do {
    roll(rollDice(random));
    if (playerAnsweredWrong(random)) {
-    wrongAnswer();
+    processWrongAnswer();
    } else {
     notAWinner = wasCorrectlyAnswered();
    }
@@ -94,7 +94,7 @@ public class TriviaGame implements Game {
   return winner;
  }
 
- public void wrongAnswer() {
+ public void processWrongAnswer() {
   news.answerWasIncorrect();
   news.playerSentToPenaltyBox(players.getCurrentPlayer().getName());
   players.getCurrentPlayer().sendToPenaltyBox();
