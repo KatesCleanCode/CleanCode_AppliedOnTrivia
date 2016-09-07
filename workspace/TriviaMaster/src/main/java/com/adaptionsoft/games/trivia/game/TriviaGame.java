@@ -39,8 +39,10 @@ public class TriviaGame implements Game {
    askQuestion(dieRoll);
    if (playerAnsweredWrong(random)) {
     processWrongAnswer();
+    players.switchToNextPlayer();
    } else {
     notAWinner = processCorrectAnswer();
+    players.switchToNextPlayer();
    }
   } while (notAWinner);
  }
@@ -82,7 +84,6 @@ public class TriviaGame implements Game {
  public boolean processCorrectAnswer() {
   if (players.getCurrentPlayer().isInPenaltyBox()) {
    if (!players.getCurrentPlayer().isLeavingPenaltyBox()) {
-    players.switchToNextPlayer();
     return true;
    }
   }
@@ -91,7 +92,7 @@ public class TriviaGame implements Game {
   news.playersPurses(players.getCurrentPlayer().getName(),
    players.getCurrentPlayer().getPurses());
   boolean winner = didPlayerWin();
-  players.switchToNextPlayer();
+
   return winner;
  }
 
@@ -99,7 +100,7 @@ public class TriviaGame implements Game {
   news.answerWasIncorrect();
   news.playerSentToPenaltyBox(players.getCurrentPlayer().getName());
   players.getCurrentPlayer().sendToPenaltyBox();
-  players.switchToNextPlayer();
+
  }
 
  private boolean didPlayerWin() {
