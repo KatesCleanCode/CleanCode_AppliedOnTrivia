@@ -14,7 +14,7 @@ public enum Question {
  }
 
  public static Question getQuestion(int location) {
-  int questionOrder = location % Questions.NUMBER_OF_QUESTION_CATEGORIES;
+  int questionOrder = location % Question.values().length;
   if (questionOrder == 0) {
    return POP;
   }
