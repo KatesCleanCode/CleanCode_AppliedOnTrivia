@@ -1,6 +1,8 @@
 package com.adaptionsoft.games.trivia.questions;
 
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 public class Questions {
 
@@ -10,6 +12,8 @@ public class Questions {
  private LinkedList<String> scienceQuestions = new LinkedList<>();
  private LinkedList<String> sportsQuestions = new LinkedList<>();
  private LinkedList<String> rockQuestions = new LinkedList<>();
+
+ private Map<Question, Integer> lastNumbers = new HashMap<>();
 
  public Questions() {
   initializeQuestions();
