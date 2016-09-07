@@ -1,7 +1,5 @@
 package com.adaptionsoft.games.trivia.game;
 
-import static com.adaptionsoft.games.trivia.utils.NumberUtils.isEven;
-
 import java.util.Random;
 
 import com.adaptionsoft.games.trivia.news.News;
@@ -10,6 +8,7 @@ import com.adaptionsoft.games.trivia.player.Player;
 import com.adaptionsoft.games.trivia.player.Players;
 import com.adaptionsoft.games.trivia.questions.Question;
 import com.adaptionsoft.games.trivia.questions.Questions;
+import com.adaptionsoft.games.trivia.utils.NumberUtils;
 
 public class TriviaGame implements Game {
 
@@ -51,20 +50,25 @@ public class TriviaGame implements Game {
  }
 
  public void askQuestion(int dieRoll) {
+  if (shouldAskQuestion(dieRoll)) {
+   getCurrentPlayer().updateLocation(dieRoll);
+   news.playersNewLocation(getCurrentPlayer().getName(),
+    getCurrentPlayer().getLocation());
+   Question askedQuestion =
+    questions.askQuestion(getCurrentPlayer().getLocation());
+   news.askedQuestion(askedQuestion);
+  }
+ }
 
+ private boolean shouldAskQuestion(int dieRoll) {
   if (getCurrentPlayer().isInPenaltyBox()) {
-   if (isEven(dieRoll)) {
+   if (NumberUtils.isEven(dieRoll)) {
     stayInPenaltyBox();
-    return;
+    return false;
    }
    leavePenaltyBox();
   }
-  getCurrentPlayer().updateLocation(dieRoll);
-  news.playersNewLocation(getCurrentPlayer().getName(),
-   getCurrentPlayer().getLocation());
-  Question askedQuestion =
-   questions.askQuestion(getCurrentPlayer().getLocation());
-  news.askedQuestion(askedQuestion);
+  return true;
  }
 
  private void leavePenaltyBox() {
@@ -94,7 +98,6 @@ public class TriviaGame implements Game {
   news.answerWasIncorrect();
   news.playerSentToPenaltyBox(getCurrentPlayer().getName());
   getCurrentPlayer().sendToPenaltyBox();
-
  }
 
  private boolean isNotGameOver() {
