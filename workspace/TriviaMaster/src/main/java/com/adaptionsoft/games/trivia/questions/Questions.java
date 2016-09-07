@@ -16,33 +16,33 @@ public class Questions {
   initializeQuestions();
  }
 
- public String currentCategory(int location) {
+ public Question currentCategory(int location) {
   int questionOrder = location % NUMBER_OF_QUESTION_CATEGORIES;
   if (questionOrder == 0) {
-   return Question.POP.getCategory();
+   return Question.POP;
   }
   if (questionOrder == 1) {
-   return Question.SCIENCE.getCategory();
+   return Question.SCIENCE;
   }
   if (questionOrder == 2) {
-   return Question.SPORTS.getCategory();
+   return Question.SPORTS;
   }
-  return Question.ROCK.getCategory();
+  return Question.ROCK;
  }
 
  public String askQuestion(int location) {
-  String currentCategory = currentCategory(location);
+  Question currentCategory = currentCategory(location);
   String askedQuestion = "";
-  if (currentCategory == Question.POP.getCategory()) {
+  if (currentCategory == Question.POP) {
    askedQuestion = popQuestions.removeFirst();
   }
-  if (currentCategory == Question.SCIENCE.getCategory()) {
+  if (currentCategory == Question.SCIENCE) {
    askedQuestion = scienceQuestions.removeFirst();
   }
-  if (currentCategory == Question.SPORTS.getCategory()) {
+  if (currentCategory == Question.SPORTS) {
    askedQuestion = sportsQuestions.removeFirst();
   }
-  if (currentCategory == Question.ROCK.getCategory()) {
+  if (currentCategory == Question.ROCK) {
    askedQuestion = rockQuestions.removeFirst();
   }
   return askedQuestion;
