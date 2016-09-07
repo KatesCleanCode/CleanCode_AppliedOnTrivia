@@ -2,8 +2,8 @@ package com.adaptionsoft.games.trivia.game;
 
 import java.util.Random;
 
-import org.junit.Ignore;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
@@ -56,14 +56,14 @@ public class TriviaGameCharacterizationTest {
  void whenDicesAreRolledThenCurrentPlayerDataArePublished() {
   game.addPlayer(FIRST_PLAYER);
   printer.reset();
-  game.rollDice(new Random(5));
+  game.rollDice(new Random(3));
 
   assertThat(getCurrentOutput(), equalTo(FIRST_PLAYER
    + " is the current player\r\nThey have rolled a 5\r\n"));
  }
 
  @Test
- @Ignore
+ @Disabled
  void
   whenDicesAreRolledThenCurrentPlayerDataAndQuestionArePublished() {
   game.addPlayer(FIRST_PLAYER);

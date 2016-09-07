@@ -51,8 +51,7 @@ public class TriviaGame implements Game {
  }
 
  public void askQuestion(int dieRoll) {
-  news.currentPlayer(getCurrentPlayer().getName());
-  news.rolledDieRoll(dieRoll);
+
   if (getCurrentPlayer().isInPenaltyBox()) {
    if (isEven(dieRoll)) {
     stayInPenaltyBox();
@@ -107,6 +106,9 @@ public class TriviaGame implements Game {
  }
 
  int rollDice(Random random) {
-  return random.nextInt(MAX_DIE_ROLL) + MIN_DIE_ROLL;
+  int dieRoll = random.nextInt(MAX_DIE_ROLL) + MIN_DIE_ROLL;
+  news.currentPlayer(getCurrentPlayer().getName());
+  news.rolledDieRoll(dieRoll);
+  return dieRoll;
  }
 }
