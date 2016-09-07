@@ -1,7 +1,7 @@
 package com.adaptionsoft.games.trivia.questions;
 
 public enum Question {
- ROCK("Rock");
+ ROCK("Rock"), SPORTS("Sports");
 
  private String category;
 

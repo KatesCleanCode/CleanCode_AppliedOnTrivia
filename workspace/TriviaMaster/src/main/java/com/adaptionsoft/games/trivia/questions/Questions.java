@@ -6,7 +6,8 @@ public class Questions {
 
  private static final String QUESTION_CATEGORY_ROCK =
   Question.ROCK.getCategory();
- private static final String QUESTION_CATEGORY_SPORTS = "Sports";
+ private static final String QUESTION_CATEGORY_SPORTS =
+  Question.SPORTS.getCategory();
  private static final String QUESTION_CATEGORY_SCIENCE = "Science";
  private static final String QUESTION_CATEGORY_POP = "Pop";
 
