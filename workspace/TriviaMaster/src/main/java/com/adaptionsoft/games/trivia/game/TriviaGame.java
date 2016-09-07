@@ -81,18 +81,16 @@ public class TriviaGame implements Game {
   players.getCurrentPlayer().setLeavingPenaltyBox(false);
  }
 
- public boolean processCorrectAnswer() {
-  // TODO, kknaus Sep 7, 2016: Delete return type
+ public void processCorrectAnswer() {
   if (players.getCurrentPlayer().isInPenaltyBox()) {
    if (!players.getCurrentPlayer().isLeavingPenaltyBox()) {
-    return true;
+    return;
    }
   }
   news.answerWasCorrect();
   players.getCurrentPlayer().increasePursus();
   news.playersPurses(players.getCurrentPlayer().getName(),
    players.getCurrentPlayer().getPurses());
-  return true;
  }
 
  public void processWrongAnswer() {
