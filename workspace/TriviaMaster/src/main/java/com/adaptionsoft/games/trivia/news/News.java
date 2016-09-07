@@ -10,12 +10,9 @@ public class News {
   this.printer = printer;
  }
 
- public void playersNumber(int playersNumber) {
-  printer.printMessage("He/She is player number " + playersNumber);
- }
-
- public void playerAdded(String playerName) {
+ public void playerAdded(String playerName, int playersNumber) {
   printer.printMessage(playerName + " was added");
+  printer.printMessage("He/She is player number " + playersNumber);
  }
 
  public void answerWasCorrect() {

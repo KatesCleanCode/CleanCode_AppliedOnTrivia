@@ -28,8 +28,7 @@ public class TriviaGame implements Game {
  @Override
  public void addPlayer(String playerName) {
   players.add(playerName);
-  news.playerAdded(playerName);
-  news.playersNumber(players.getNumberOfPlayers());
+  news.playerAdded(playerName, players.getNumberOfPlayers());
  }
 
  @Override
