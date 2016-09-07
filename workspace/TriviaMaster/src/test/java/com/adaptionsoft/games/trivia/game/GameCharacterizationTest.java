@@ -54,7 +54,7 @@ public class GameCharacterizationTest {
   whenDicesAreRolledThenCurrentPlayerDataAndQuestionArePublished() {
   game.addPlayer(FIRST_PLAYER);
   initializeOutput();
-  game.roll(SCIENCE_QUESTION_DIE_ROLL);
+  game.askQuestion(SCIENCE_QUESTION_DIE_ROLL);
 
   assertThat(getCurrentOutput(),
    equalTo(FIRST_PLAYER

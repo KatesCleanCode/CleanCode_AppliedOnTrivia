@@ -36,7 +36,7 @@ public class TriviaGame implements Game {
   boolean notAWinner = true;
   do {
    int dieRoll = rollDice(random);
-   roll(dieRoll);
+   askQuestion(dieRoll);
    if (playerAnsweredWrong(random)) {
     processWrongAnswer();
    } else {
@@ -45,7 +45,7 @@ public class TriviaGame implements Game {
   } while (notAWinner);
  }
 
- public void roll(int roll) {
+ public void askQuestion(int roll) {
   news.currentPlayer(players.getCurrentPlayer().getName());
   news.rolledDieRoll(roll);
   if (players.getCurrentPlayer().isInPenaltyBox()) {
