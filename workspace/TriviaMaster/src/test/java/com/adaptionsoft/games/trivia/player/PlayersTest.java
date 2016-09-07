@@ -26,6 +26,7 @@ public class PlayersTest {
  }
 
  @Test
+ @SuppressWarnings("checkstyle:magicnumber")
  void whenOnePlayerIsAddedThenNumberOfPlayersIncreaseByOne() {
   players.add(FIRST_PLAYER);
 
