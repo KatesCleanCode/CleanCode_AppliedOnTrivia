@@ -4,15 +4,6 @@ import java.util.LinkedList;
 
 public class Questions {
 
- private static final String QUESTION_CATEGORY_ROCK =
-  Question.ROCK.getCategory();
- private static final String QUESTION_CATEGORY_SPORTS =
-  Question.SPORTS.getCategory();
- private static final String QUESTION_CATEGORY_SCIENCE =
-  Question.SCIENCE.getCategory();
- private static final String QUESTION_CATEGORY_POP =
-  Question.POP.getCategory();
-
  private static final int NUMBER_OF_QUESTION_CATEGORIES = 4;
  private static final int MAX_NUMBER_OF_QUESTIONS = 50;
 
@@ -28,30 +19,30 @@ public class Questions {
  public String currentCategory(int location) {
   int questionOrder = location % NUMBER_OF_QUESTION_CATEGORIES;
   if (questionOrder == 0) {
-   return QUESTION_CATEGORY_POP;
+   return Question.POP.getCategory();
   }
   if (questionOrder == 1) {
-   return QUESTION_CATEGORY_SCIENCE;
+   return Question.SCIENCE.getCategory();
   }
   if (questionOrder == 2) {
-   return QUESTION_CATEGORY_SPORTS;
+   return Question.SPORTS.getCategory();
   }
-  return QUESTION_CATEGORY_ROCK;
+  return Question.ROCK.getCategory();
  }
 
  public String askQuestion(int location) {
   String currentCategory = currentCategory(location);
   String askedQuestion = "";
-  if (currentCategory == QUESTION_CATEGORY_POP) {
+  if (currentCategory == Question.POP.getCategory()) {
    askedQuestion = popQuestions.removeFirst();
   }
-  if (currentCategory == QUESTION_CATEGORY_SCIENCE) {
+  if (currentCategory == Question.SCIENCE.getCategory()) {
    askedQuestion = scienceQuestions.removeFirst();
   }
-  if (currentCategory == QUESTION_CATEGORY_SPORTS) {
+  if (currentCategory == Question.SPORTS.getCategory()) {
    askedQuestion = sportsQuestions.removeFirst();
   }
-  if (currentCategory == QUESTION_CATEGORY_ROCK) {
+  if (currentCategory == Question.ROCK.getCategory()) {
    askedQuestion = rockQuestions.removeFirst();
   }
   return askedQuestion;
