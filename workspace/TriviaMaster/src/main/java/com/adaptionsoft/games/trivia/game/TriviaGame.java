@@ -50,17 +50,17 @@ public class TriviaGame implements Game {
   } while (isNotGameOver);
  }
 
- public void askQuestion(int roll) {
+ public void askQuestion(int dieRoll) {
   news.currentPlayer(getCurrentPlayer().getName());
-  news.rolledDieRoll(roll);
+  news.rolledDieRoll(dieRoll);
   if (getCurrentPlayer().isInPenaltyBox()) {
-   if (isEven(roll)) {
+   if (isEven(dieRoll)) {
     stayInPenaltyBox();
     return;
    }
    leavePenaltyBox();
   }
-  getCurrentPlayer().updateLocation(roll);
+  getCurrentPlayer().updateLocation(dieRoll);
   news.playersNewLocation(getCurrentPlayer().getName(),
    getCurrentPlayer().getLocation());
   Question askedQuestion =
