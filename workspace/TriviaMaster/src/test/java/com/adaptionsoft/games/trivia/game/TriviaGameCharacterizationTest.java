@@ -64,19 +64,14 @@ public class TriviaGameCharacterizationTest {
  }
 
  @Test
- @Disabled
- void
-  whenDicesAreRolledThenCurrentPlayerDataAndQuestionArePublished() {
+ void whenQuestionIsAskedThenLocationAndQuestionCategoryArePublished() {
   game.addPlayer(FIRST_PLAYER);
   initializeOutput();
   game.askQuestion(SCIENCE_QUESTION_DIE_ROLL);
 
   assertThat(getCurrentOutput(),
-   equalTo(FIRST_PLAYER
-    + " is the current player\r\nThey have rolled a 5\r\n"
-    + FIRST_PLAYER
-    + "'s new location is 5\r\nThe category is Science\r\n"
-    + "Science Question 0\r\n"));
+   equalTo(FIRST_PLAYER + "'s new location is 5\r\nThe category is Science"
+    + "\r\nScience Question 0\r\n"));
  }
 
  @Test
