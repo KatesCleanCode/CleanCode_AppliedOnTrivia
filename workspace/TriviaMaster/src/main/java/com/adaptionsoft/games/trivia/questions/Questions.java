@@ -30,8 +30,7 @@ public class Questions {
    int questionNumber = lastNumbers.get(question);
    lastNumbers.put(question, questionNumber + 1);
    question.setNumber(questionNumber);
-   askedQuestion =
-    question.getCategory() + " Question " + questionNumber;
+   askedQuestion = question.getName();
   }
   if (question == Question.SCIENCE) {
    askedQuestion = scienceQuestions.removeFirst();
