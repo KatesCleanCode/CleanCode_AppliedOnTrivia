@@ -82,10 +82,9 @@ public class TriviaGame implements Game {
  }
 
  public void processCorrectAnswer() {
-  if (players.getCurrentPlayer().isInPenaltyBox()) {
-   if (!players.getCurrentPlayer().isLeavingPenaltyBox()) {
-    return;
-   }
+  if (players.getCurrentPlayer().isInPenaltyBox()
+   && !players.getCurrentPlayer().isLeavingPenaltyBox()) {
+   return;
   }
   news.answerWasCorrect();
   players.getCurrentPlayer().increasePursus();
