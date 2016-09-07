@@ -39,11 +39,10 @@ public class TriviaGame implements Game {
    askQuestion(dieRoll);
    if (playerAnsweredWrong(random)) {
     processWrongAnswer();
-    players.switchToNextPlayer();
    } else {
     notAWinner = processCorrectAnswer();
-    players.switchToNextPlayer();
    }
+   players.switchToNextPlayer();
   } while (notAWinner);
  }
 
