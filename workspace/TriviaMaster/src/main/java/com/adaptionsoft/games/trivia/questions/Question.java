@@ -1,12 +1,17 @@
 package com.adaptionsoft.games.trivia.questions;
 
 public enum Question {
- ROCK("Rock"), SPORTS("Sports"), SCIENCE("Science"), POP("Pop");
+ ROCK("Rock", 3),
+ SPORTS("Sports", 2),
+ SCIENCE("Science", 1),
+ POP("Pop", 0);
 
  private String category;
+ private int order;
 
- Question(String category) {
+ Question(String category, int order) {
   this.category = category;
+  this.order = order;
  }
 
  public String getCategory() {
