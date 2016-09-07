@@ -26,7 +26,11 @@ public class Questions {
   Question currentCategory = Question.getQuestion(location);
   String askedQuestion = "";
   if (currentCategory == Question.POP) {
-   askedQuestion = popQuestions.removeFirst();
+// askedQuestion = popQuestions.removeFirst();
+   int questionNumber = lastNumbers.get(currentCategory);
+   lastNumbers.put(currentCategory, questionNumber + 1);
+   askedQuestion =
+    currentCategory.getCategory() + " Question " + questionNumber;
   }
   if (currentCategory == Question.SCIENCE) {
    askedQuestion = scienceQuestions.removeFirst();
