@@ -7,6 +7,7 @@ public enum Question {
  POP("Pop", 0);
 
  private String category;
+ private int number;
  private int order;
 
  Question(String category, int order) {
@@ -32,5 +33,9 @@ public enum Question {
    }
   }
   return ROCK;
+ }
+
+ public void setNumber(int number) {
+  this.number = number;
  }
 }

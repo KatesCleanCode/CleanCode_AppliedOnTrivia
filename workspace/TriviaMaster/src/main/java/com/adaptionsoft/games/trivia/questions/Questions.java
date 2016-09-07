@@ -29,6 +29,7 @@ public class Questions {
 // askedQuestion = popQuestions.removeFirst();
    int questionNumber = lastNumbers.get(question);
    lastNumbers.put(question, questionNumber + 1);
+   question.setNumber(questionNumber);
    askedQuestion =
     question.getCategory() + " Question " + questionNumber;
   }
