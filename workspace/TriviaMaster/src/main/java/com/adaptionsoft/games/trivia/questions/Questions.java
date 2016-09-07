@@ -10,7 +10,8 @@ public class Questions {
   Question.SPORTS.getCategory();
  private static final String QUESTION_CATEGORY_SCIENCE =
   Question.SCIENCE.getCategory();
- private static final String QUESTION_CATEGORY_POP = "Pop";
+ private static final String QUESTION_CATEGORY_POP =
+  Question.POP.getCategory();
 
  private static final int NUMBER_OF_QUESTION_CATEGORIES = 4;
  private static final int MAX_NUMBER_OF_QUESTIONS = 50;
