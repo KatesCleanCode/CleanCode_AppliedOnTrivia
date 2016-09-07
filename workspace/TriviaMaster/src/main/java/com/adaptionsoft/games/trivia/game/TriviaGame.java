@@ -101,7 +101,7 @@ public class TriviaGame implements Game {
  }
 
  private boolean isNotGameOver() {
-  return !(getCurrentPlayer().getPurses() == WINNING_PURSES);
+  return getCurrentPlayer().getPurses() != WINNING_PURSES;
  }
 
  private boolean playerAnsweredWrong(Random random) {
