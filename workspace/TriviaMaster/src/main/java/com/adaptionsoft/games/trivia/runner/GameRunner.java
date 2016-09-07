@@ -17,12 +17,12 @@ public final class GameRunner {
   playGame(new Random(), new ConsolePrinter());
  }
 
- public static void playGame(Random rand, Printer printer) {
-  Game aGame = GameFactory.createGame(printer);
-  aGame.addPlayer("Chet");
-  aGame.addPlayer("Pat");
-  aGame.addPlayer("Sue");
+ public static void playGame(Random random, Printer printer) {
+  Game game = GameFactory.createGame(printer);
+  game.addPlayer("Chet");
+  game.addPlayer("Pat");
+  game.addPlayer("Sue");
 
-  aGame.play(rand);
+  game.play(random);
  }
 }
