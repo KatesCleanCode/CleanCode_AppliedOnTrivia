@@ -17,7 +17,8 @@ public class Questions {
   Question question = Question.getQuestion(location);
   int questionNumber = lastNumbers.get(question);
   question.setNumber(questionNumber);
-  lastNumbers.put(question, questionNumber + 1);
+  questionNumber++;
+  lastNumbers.put(question, questionNumber);
   return question.getName();
  }
 }
