@@ -25,22 +25,21 @@ public class Questions {
  public String askQuestion(int location) {
   Question question = Question.getQuestion(location);
   String askedQuestion = "";
-  if (question == Question.POP) {
-// askedQuestion = popQuestions.removeFirst();
-   int questionNumber = lastNumbers.get(question);
-   lastNumbers.put(question, questionNumber + 1);
-   question.setNumber(questionNumber);
-   askedQuestion = question.getName();
-  }
-  if (question == Question.SCIENCE) {
-   askedQuestion = scienceQuestions.removeFirst();
-  }
-  if (question == Question.SPORTS) {
-   askedQuestion = sportsQuestions.removeFirst();
-  }
-  if (question == Question.ROCK) {
-   askedQuestion = rockQuestions.removeFirst();
-  }
+// if (question == Question.POP) {
+  int questionNumber = lastNumbers.get(question);
+  lastNumbers.put(question, questionNumber + 1);
+  question.setNumber(questionNumber);
+  askedQuestion = question.getName();
+// }
+// if (question == Question.SCIENCE) {
+// askedQuestion = scienceQuestions.removeFirst();
+// }
+// if (question == Question.SPORTS) {
+// askedQuestion = sportsQuestions.removeFirst();
+// }
+// if (question == Question.ROCK) {
+// askedQuestion = rockQuestions.removeFirst();
+// }
   return askedQuestion;
  }
 
