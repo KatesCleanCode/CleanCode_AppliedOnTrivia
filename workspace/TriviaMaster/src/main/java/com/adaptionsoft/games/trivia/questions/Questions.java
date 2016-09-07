@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class Questions {
 
- private static final int NUMBER_OF_QUESTION_CATEGORIES = 4;
+ static final int NUMBER_OF_QUESTION_CATEGORIES = 4;
  private static final int MAX_NUMBER_OF_QUESTIONS = 50;
 
  private LinkedList<String> popQuestions = new LinkedList<>();
@@ -16,22 +16,8 @@ public class Questions {
   initializeQuestions();
  }
 
- public static Question currentCategory(int location) {
-  int questionOrder = location % NUMBER_OF_QUESTION_CATEGORIES;
-  if (questionOrder == 0) {
-   return Question.POP;
-  }
-  if (questionOrder == 1) {
-   return Question.SCIENCE;
-  }
-  if (questionOrder == 2) {
-   return Question.SPORTS;
-  }
-  return Question.ROCK;
- }
-
  public String askQuestion(int location) {
-  Question currentCategory = currentCategory(location);
+  Question currentCategory = Question.currentCategory(location);
   String askedQuestion = "";
   if (currentCategory == Question.POP) {
    askedQuestion = popQuestions.removeFirst();

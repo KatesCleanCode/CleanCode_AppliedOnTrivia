@@ -5,6 +5,7 @@ import java.util.Random;
 import com.adaptionsoft.games.trivia.news.News;
 import com.adaptionsoft.games.trivia.news.Printer;
 import com.adaptionsoft.games.trivia.player.Players;
+import com.adaptionsoft.games.trivia.questions.Question;
 import com.adaptionsoft.games.trivia.questions.Questions;
 
 public class TriviaGame implements Game {
@@ -58,7 +59,7 @@ public class TriviaGame implements Game {
   news.playersNewLocation(players.getCurrentPlayer().getName(),
    players.getCurrentPlayer().getLocation());
   news.category(
-   questions.currentCategory(players.getCurrentPlayer().getLocation())
+   Question.currentCategory(players.getCurrentPlayer().getLocation())
     .getCategory());
   String askedQuestion =
    questions.askQuestion(players.getCurrentPlayer().getLocation());

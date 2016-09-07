@@ -12,4 +12,18 @@ public enum Question {
  public String getCategory() {
   return category;
  }
+
+ public static Question currentCategory(int location) {
+  int questionOrder = location % Questions.NUMBER_OF_QUESTION_CATEGORIES;
+  if (questionOrder == 0) {
+   return POP;
+  }
+  if (questionOrder == 1) {
+   return SCIENCE;
+  }
+  if (questionOrder == 2) {
+   return SPORTS;
+  }
+  return ROCK;
+ }
 }
