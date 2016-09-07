@@ -16,6 +16,9 @@ public class Questions {
  private Map<Question, Integer> lastNumbers = new HashMap<>();
 
  public Questions() {
+  for (Question question : Question.values()) {
+   lastNumbers.put(question, 0);
+  }
   initializeQuestions();
  }
 
