@@ -40,8 +40,8 @@ public class TriviaGame implements Game {
    if (playerAnsweredWrong(random)) {
     processWrongAnswer();
    } else {
-    notAWinner = processCorrectAnswer();
-    notAWinner = didPlayerWin();
+    processCorrectAnswer();
+    notAWinner = isNotGameOver();
    }
    players.switchToNextPlayer();
   } while (notAWinner);
@@ -102,7 +102,7 @@ public class TriviaGame implements Game {
 
  }
 
- private boolean didPlayerWin() {
+ private boolean isNotGameOver() {
   return !(players.getCurrentPlayer().getPurses() == WINNING_PURSES);
  }
 
