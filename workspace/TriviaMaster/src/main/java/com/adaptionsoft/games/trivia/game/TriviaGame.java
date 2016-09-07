@@ -81,12 +81,11 @@ public class TriviaGame implements Game {
  }
 
  public void processCorrectAnswer() {
-  if (!getCurrentPlayer().isInPenaltyBox()
-   || getCurrentPlayer().isLeavingPenaltyBox()) {
+  Player player = getCurrentPlayer();
+  if (!player.isInPenaltyBox() || player.isLeavingPenaltyBox()) {
    news.answerWasCorrect();
-   getCurrentPlayer().increasePursus();
-   news.playersPurses(getCurrentPlayer().getName(),
-    getCurrentPlayer().getPurses());
+   player.increasePursus();
+   news.playersPurses(player.getName(), player.getPurses());
   }
  }
 
