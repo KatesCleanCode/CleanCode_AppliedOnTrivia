@@ -35,7 +35,8 @@ public class TriviaGame implements Game {
  public void play(Random random) {
   boolean notAWinner = true;
   do {
-   roll(rollDice(random));
+   int dieRoll = rollDice(random);
+   roll(dieRoll);
    if (playerAnsweredWrong(random)) {
     processWrongAnswer();
    } else {
