@@ -1,5 +1,6 @@
 package com.adaptionsoft.games.trivia.game;
 
+import org.junit.Ignore;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
@@ -50,6 +51,7 @@ public class TriviaGameCharacterizationTest {
  }
 
  @Test
+ @Ignore
  void
   whenDicesAreRolledThenCurrentPlayerDataAndQuestionArePublished() {
   game.addPlayer(FIRST_PLAYER);
