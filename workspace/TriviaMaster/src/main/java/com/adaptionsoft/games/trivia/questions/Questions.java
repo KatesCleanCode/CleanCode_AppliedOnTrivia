@@ -16,7 +16,7 @@ public class Questions {
   initializeQuestions();
  }
 
- public Question currentCategory(int location) {
+ public static Question currentCategory(int location) {
   int questionOrder = location % NUMBER_OF_QUESTION_CATEGORIES;
   if (questionOrder == 0) {
    return Question.POP;
