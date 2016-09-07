@@ -60,7 +60,7 @@ public class TriviaGame implements Game {
    players.getCurrentPlayer().getLocation());
   Question askedQuestion =
    questions.askQuestion(players.getCurrentPlayer().getLocation());
-  news.question(askedQuestion);
+  news.askedQuestion(askedQuestion);
  }
 
  private boolean isEven(int dieRoll) {

@@ -48,10 +48,9 @@ public class News {
    playersName + " is not getting out of the penalty box");
  }
 
- public void question(Question askedQuestion) {
-  printer
-   .printMessage("The category is " + askedQuestion.getCategory());
-  printer.printMessage(askedQuestion.getName());
+ public void askedQuestion(Question question) {
+  printer.printMessage("The category is " + question.getCategory());
+  printer.printMessage(question.getName());
  }
 
  public void playersNewLocation(String playersName, int location) {
