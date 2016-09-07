@@ -30,10 +30,6 @@ public class News {
   printer.printMessage(playersName + " was sent to the penalty box");
  }
 
- public void category(String category) {
-  printer.printMessage("The category is " + category);
- }
-
  public void currentPlayer(String playersName) {
   printer.printMessage(playersName + " is the current player");
  }
@@ -53,6 +49,8 @@ public class News {
  }
 
  public void question(Question askedQuestion) {
+  printer
+   .printMessage("The category is " + askedQuestion.getCategory());
   printer.printMessage(askedQuestion.getName());
  }
 

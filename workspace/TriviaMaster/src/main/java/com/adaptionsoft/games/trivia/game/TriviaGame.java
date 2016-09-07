@@ -58,9 +58,6 @@ public class TriviaGame implements Game {
   players.getCurrentPlayer().updateLocation(roll);
   news.playersNewLocation(players.getCurrentPlayer().getName(),
    players.getCurrentPlayer().getLocation());
-  news.category(
-   Question.getQuestion(players.getCurrentPlayer().getLocation())
-    .getCategory());
   Question askedQuestion =
    questions.askQuestion(players.getCurrentPlayer().getLocation());
   news.question(askedQuestion);
