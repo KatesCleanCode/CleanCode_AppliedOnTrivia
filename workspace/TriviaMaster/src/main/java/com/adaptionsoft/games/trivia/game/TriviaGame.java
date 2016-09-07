@@ -106,7 +106,7 @@ public class TriviaGame implements Game {
   return random.nextInt(BOUND_FOR_WRONG_ANSWER) == WRONG_ANSWER;
  }
 
- private int rollDice(Random random) {
+ int rollDice(Random random) {
   return random.nextInt(MAX_DIE_ROLL) + MIN_DIE_ROLL;
  }
 }

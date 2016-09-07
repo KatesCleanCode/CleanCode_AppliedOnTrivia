@@ -1,5 +1,7 @@
 package com.adaptionsoft.games.trivia.game;
 
+import java.util.Random;
+
 import org.junit.Ignore;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -48,6 +50,16 @@ public class TriviaGameCharacterizationTest {
 
   assertThat(getCurrentOutput(),
    equalTo("Harry was added\r\nHe/She is player number 2\r\n"));
+ }
+
+ @Test
+ void whenDicesAreRolledThenCurrentPlayerDataArePublished() {
+  game.addPlayer(FIRST_PLAYER);
+  printer.reset();
+  game.rollDice(new Random(5));
+
+  assertThat(getCurrentOutput(), equalTo(FIRST_PLAYER
+   + " is the current player\r\nThey have rolled a 5\r\n"));
  }
 
  @Test
