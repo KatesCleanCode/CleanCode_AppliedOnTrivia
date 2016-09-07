@@ -6,6 +6,8 @@ public enum Question {
  SCIENCE("Science", 1),
  POP("Pop", 0);
 
+ private static final String QUESTION = " Question ";
+
  private String category;
  private int number;
  private int order;
@@ -40,6 +42,6 @@ public enum Question {
  }
 
  public String getName() {
-  return getCategory() + " Question " + number;
+  return category + QUESTION + number;
  }
 }
