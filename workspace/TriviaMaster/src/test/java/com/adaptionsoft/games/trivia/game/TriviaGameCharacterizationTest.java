@@ -17,6 +17,7 @@ import static org.junit.Assert.assertThat;
 @RunWith(JUnitPlatform.class)
 public class TriviaGameCharacterizationTest {
 
+ private static final int SEED_FOR_SCIENCE_QUESTION = 3;
  private static final int SCIENCE_QUESTION_DIE_ROLL = 5;
  private static final String FIRST_PLAYER = "John";
 
@@ -56,7 +57,7 @@ public class TriviaGameCharacterizationTest {
  void whenDicesAreRolledThenCurrentPlayerDataArePublished() {
   game.addPlayer(FIRST_PLAYER);
   printer.reset();
-  game.rollDice(new Random(3));
+  game.rollDice(new Random(SEED_FOR_SCIENCE_QUESTION));
 
   assertThat(getCurrentOutput(), equalTo(FIRST_PLAYER
    + " is the current player\r\nThey have rolled a 5\r\n"));
